@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.spring.ecomerce.comstants.SystemConstants;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -14,7 +15,9 @@ public class UpdateAdDTO {
     private String content;
     private String link;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = SystemConstants.DATETIME_FORMAT)
+    @DateTimeFormat(pattern = SystemConstants.DATETIME_FORMAT)
     private Date startedAt;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = SystemConstants.DATETIME_FORMAT)
+    @DateTimeFormat(pattern = SystemConstants.DATETIME_FORMAT)
     private Date endedAt;
 }
