@@ -85,7 +85,7 @@ public class AdServiceImpl implements AdService {
                 AdEntity updateEntity = recordFound.get();
 
                 //copy properties
-                if(updateAd.getStartAt() != null && updateAd.getEndAt() != null){
+                if(updateAd.getStartedAt() != null && updateAd.getEndedAt() != null){
                     BeanUtils.copyProperties(updateAd, updateEntity);
                 }
 
