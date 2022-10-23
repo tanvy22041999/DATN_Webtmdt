@@ -1,0 +1,96 @@
+package com.spring.ecomerce.services.impl;
+
+import com.spring.ecomerce.arch.service.ObjectConverter;
+import com.spring.ecomerce.commons.CloudinaryService;
+import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
+import com.spring.ecomerce.entities.clone.AdEntity;
+import com.spring.ecomerce.entities.clone.BrandEntity;
+import com.spring.ecomerce.entities.clone.ImageEntity;
+import com.spring.ecomerce.exception.SystemException;
+import com.spring.ecomerce.repositories.BrandRepository;
+import com.spring.ecomerce.services.BrandService;
+import com.spring.ecomerce.services.ImageService;
+import org.apache.commons.lang3.StringUtils;
+import org.bson.BSONObject;
+import org.bson.BasicBSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Service
+public class BrandServiceImpl implements BrandService {
+    @Autowired
+    private BrandRepository brandRepository;
+
+    @Autowired
+    private ImageService imageService;
+
+    @Autowired
+    private CloudinaryService cloudinaryService;
+
+    @Override
+    public Page<BrandEntity> getAll(Integer limit, Integer page, String keyword) throws SystemException {
+        Pageable pageable = PageRequest.of(page, limit);
+
+        BSONObject queryData = new BasicBSONObject();
+        queryData.put("validFlg", 1);
+        queryData.put("delFlg", 0);
+        if(!"".equals(keyword)){
+            keyword = keyword.replace("/[`~!@#$%^&*()_|+\\-=?;:'\",.<>\\{\\}\\[\\]\\\\\\/]/gi", "").trim();
+            Map<String, Object> queryName = new HashMap<>();
+            queryName.put("$regex", ".*" + keyword + ".*");
+            queryName.put("$options", "i");
+            queryData.put("name", queryName);
+        }
+
+        Page<BrandEntity> results = brandRepository.getAll(queryData, pageable);
+        return results;
+    }
+
+    @Override
+    public BrandEntity findById(String id) {
+        return null;
+    }
+
+    @Override
+    public BrandEntity addNewBrand(RegistryBrandDTO brandRegistry) {
+        //check duplicate brand name
+        String brandName = brandRegistry.getName();
+        MultipartFile image = brandRegistry.getFiles();
+        if(brandName != null){
+            ImageEntity imageEntity = null;
+            List<BrandEntity> brandConflict = brandRepository.findByBrandNameAndIgnoreCase(brandName);
+            if(brandConflict.size() == 0) {
+                if(image != null && !StringUtils.isEmpty(image.getName())){
+                    if(image.getContentType().substring(0,5).equals("image")){
+                        Map uploadResult = cloudinaryService.uploadImageBrand(image);
+                        imageEntity = imageService.addNewImage(uploadResult.get("url").toString());
+                    }
+                }
+
+                BrandEntity newBrand = new BrandEntity();
+                newBrand.setName(brandName);
+                newBrand.setImage(imageEntity);
+                return brandRepository.save(newBrand);
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public BrandEntity updateBrand(String id, RegistryBrandDTO updateBrand) {
+        return null;
+    }
+
+    @Override
+    public boolean deleteBrand(String id) {
+        return false;
+    }
+}
