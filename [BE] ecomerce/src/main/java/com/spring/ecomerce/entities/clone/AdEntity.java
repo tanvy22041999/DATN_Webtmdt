@@ -23,7 +23,7 @@ public class AdEntity extends BasicEntity {
     private String link;
     private boolean active;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = SystemConstants.DATETIME_FORMAT)
-    private Date startAt;
+    private Date startedAt;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = SystemConstants.DATETIME_FORMAT)
-    private Date endAt;
+    private Date endedAt;
 }
