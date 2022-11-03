@@ -86,7 +86,10 @@ public class AdServiceImpl implements AdService {
 
                 //copy properties
                 if(updateAd.getStartedAt() != null && updateAd.getEndedAt() != null){
-                    BeanUtils.copyProperties(updateAd, updateEntity);
+                    if(updateAd.getName() != null) updateEntity.setName(updateAd.getName());
+                    if(updateAd.getContent() != null) updateEntity.setContent(updateAd.getContent());
+                    if(updateAd.getLink() != null) updateEntity.setLink(updateAd.getLink());
+                    if(updateAd.isActive()) updateEntity.setActive(true);
                 }
 
                 //check file to change image

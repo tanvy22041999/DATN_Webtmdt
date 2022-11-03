@@ -3089,3 +3089,6 @@ Field error in object 'registryAdDTO' on field 'startedAt': rejected value [2022
 2022-10-23 20:27:47 [http-nio-3000-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-23 20:27:47 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2022-10-23 20:27:47 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2022-10-23 21:31:33 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-10-23 21:31:33 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-10-23 21:31:33 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:7, serverValue:360134}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 because the pool has been closed.
