@@ -119,6 +119,17 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public boolean deleteBrand(String id) {
+        Optional<BrandEntity> record = brandRepository.findById(id);
+        if(record.isPresent()){
+            BrandEntity recordDelete = record.get();
+            recordDelete.setDelFlg(1);
+            BrandEntity resultDelete = brandRepository.save(recordDelete);
+            if(resultDelete != null)
+            {
+                return true;
+            }
+        }
+
         return false;
     }
 }
