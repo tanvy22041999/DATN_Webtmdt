@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class BrandServiceImpl implements BrandService {
@@ -56,6 +57,10 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public BrandEntity findById(String id) {
+        Optional<BrandEntity> result = brandRepository.findById(id);
+        if(result.isPresent()){
+            return result.get();
+        }
         return null;
     }
 
