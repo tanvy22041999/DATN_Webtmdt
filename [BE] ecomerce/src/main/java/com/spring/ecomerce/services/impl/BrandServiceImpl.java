@@ -91,6 +91,29 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public BrandEntity updateBrand(String id, RegistryBrandDTO updateBrand) {
+        Optional<BrandEntity> recordFound = brandRepository.findById(id);
+        if(recordFound.isPresent()){
+            BrandEntity updateEntity = recordFound.get();
+
+            if(updateEntity.getName() != null) updateEntity.setName(updateBrand.getName());
+
+            //check file to change image
+            if(updateBrand.getFiles() != null){
+                MultipartFile image = updateBrand.getFiles();
+                if(image != null && !StringUtils.isEmpty(image.getName())) {
+                    if (image.getContentType().substring(0, 5).equals("image")) {
+                        Map resultUpdate = cloudinaryService.uploadImageProduct(image);
+                        //Delete old  Image
+                        ImageEntity newImage = imageService.addNewImage(resultUpdate.get("url").toString());
+                        if(newImage == null){
+                            return null;
+                        }
+                        updateEntity.setImage(newImage);
+                    }
+                }
+            }
+            return brandRepository.save(updateEntity);
+        }
         return null;
     }
 
