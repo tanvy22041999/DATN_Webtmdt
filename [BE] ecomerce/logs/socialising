@@ -1,21 +1,5 @@
-2022-12-02 08:09:55 [cluster-ClusterId{value='63885818631525337ffe4384', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
-com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
-	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:631)
-	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:516)
-	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:356)
-	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:316)
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:215)
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.net.SocketTimeoutException: Read timed out
-	at java.net.SocketInputStream.socketRead0(Native Method)
-	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
-	at java.net.SocketInputStream.read(SocketInputStream.java:171)
-	at java.net.SocketInputStream.read(SocketInputStream.java:141)
-	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
-	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
-	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:648)
-	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:513)
-	... 5 common frames omitted
-2022-12-02 08:09:55 [cluster-ClusterId{value='63885818631525337ffe4384', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:556}] to localhost:27017
-2022-12-02 08:09:55 [cluster-ClusterId{value='63885818631525337ffe4384', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2782477}
+2022-12-03 17:30:59 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-03 17:30:59 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-03 17:30:59 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:523}] to localhost:27017 because there was a socket exception raised on another connection from this pool.
+2022-12-03 17:30:59 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:566}] to localhost:27017
+2022-12-03 17:30:59 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:5, serverValue:566}] to localhost:27017 because the pool has been closed.

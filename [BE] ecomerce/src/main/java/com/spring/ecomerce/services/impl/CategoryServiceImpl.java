@@ -2,6 +2,7 @@ package com.spring.ecomerce.services.impl;
 
 import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
 import com.spring.ecomerce.dtos.clone.RegistryCategoryDTO;
+import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.CategoryEntity;
 import com.spring.ecomerce.entities.clone.SpecificationEntity;
 import com.spring.ecomerce.exception.SystemException;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -107,6 +109,17 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public boolean deleteCate(String id) {
+        Optional<CategoryEntity> record = categoryRepository.findById(id);
+        if(record.isPresent()){
+            CategoryEntity recordDelete = record.get();
+            recordDelete.setDelFlg(1);
+            CategoryEntity resultDelete = categoryRepository.save(recordDelete);
+            if(resultDelete != null)
+            {
+                return true;
+            }
+        }
+
         return false;
     }
 }

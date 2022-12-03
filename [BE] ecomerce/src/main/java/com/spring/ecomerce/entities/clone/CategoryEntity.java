@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Document(collection = "category")
-public class CategoryEntity {
+public class CategoryEntity extends BasicEntity {
     @Id
     private String id;
 
