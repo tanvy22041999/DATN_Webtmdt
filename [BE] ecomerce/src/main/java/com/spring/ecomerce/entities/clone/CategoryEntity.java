@@ -1,4 +1,43 @@
 package com.spring.ecomerce.entities.clone;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Document(collection = "category")
 public class CategoryEntity {
+    @Id
+    private String id;
+
+    private String name;
+    private String name_en;
+    private String pathseo;
+    private ImageEntity image;
+    private List<SpecificationEntity> specifications;
+    private List<Filter> filter;
+    private List<Price> price;
+    private boolean accessories = true;
+    private String description;
+
+    @Getter
+    @Setter
+    public class Filter {
+        private String id;
+        private String query;
+    }
+
+    @Getter
+    @Setter
+    public class Price{
+        private String name;
+        private Integer min;
+        private Integer max;
+    }
 }
