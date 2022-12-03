@@ -55,12 +55,12 @@ public class CategoryServiceImpl implements CategoryService {
         }
         newCate.setSpecifications(specificationApplies);
 
-        List<CategoryEntity.Filter> filterApplies = new ArrayList<>();
+        List<SpecificationEntity> filterApplies = new ArrayList<>();
         if(categoryDTO.getFilter() != null){
             for(CategoryEntity.Filter filter: categoryDTO.getFilter()){
                 SpecificationEntity specifyData = specificationService.findById(filter.getId());
                 if(specifyData != null){
-                    filterApplies.add(filter);
+                    filterApplies.add(specifyData);
                 }
             }
         }
@@ -70,8 +70,39 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public CategoryEntity updateCate(String id, RegistryBrandDTO updateBrand) {
-        return null;
+    public CategoryEntity updateCate(String id, RegistryCategoryDTO categoryDTO) {
+        CategoryEntity newCate = new CategoryEntity();
+        if(categoryDTO.getName() != null) newCate.setName(categoryDTO.getName());
+        if(categoryDTO.getName_en() != null) newCate.setName_en(categoryDTO.getName_en());
+        if(categoryDTO.getPathseo() != null) newCate.setPathseo(categoryDTO.getPathseo());
+        if(categoryDTO.getImage() != null) newCate.setImage(categoryDTO.getImage());
+        if(categoryDTO.getPrice() != null) newCate.setPrice(categoryDTO.getPrice());
+        if(categoryDTO.getAccessories() != null) newCate.setAccessories(categoryDTO.getAccessories());
+        if(categoryDTO.getDescription() != null) newCate.setDescription(categoryDTO.getDescription());
+
+        List<SpecificationEntity> specificationApplies = new ArrayList<>();
+        if(categoryDTO.getSpecifications() != null){
+            for(String specifyId : categoryDTO.getSpecifications()){
+                SpecificationEntity specifyData = specificationService.findById(specifyId);
+                if(specifyData != null){
+                    specificationApplies.add(specifyData);
+                }
+            }
+        }
+        newCate.setSpecifications(specificationApplies);
+
+        List<SpecificationEntity> filterApplies = new ArrayList<>();
+        if(categoryDTO.getFilter() != null){
+            for(CategoryEntity.Filter filter: categoryDTO.getFilter()){
+                SpecificationEntity specifyData = specificationService.findById(filter.getId());
+                if(specifyData != null){
+                    filterApplies.add(specifyData);
+                }
+            }
+        }
+        newCate.setFilter(filterApplies);
+
+        return categoryRepository.save(newCate);
     }
 
     @Override

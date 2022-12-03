@@ -85,7 +85,7 @@ public class CategoryController {
 
     @PutMapping("/categories/{id}")
     public String updateCate(@PathVariable(value = "id", required = false) String id,
-                           @ModelAttribute RegistryBrandDTO updateDTO) throws SystemException {
+                           @ModelAttribute RegistryCategoryDTO updateDTO) throws SystemException {
         try{
             CategoryEntity result = categoryService.updateCate(id, updateDTO);
             if(result != null){

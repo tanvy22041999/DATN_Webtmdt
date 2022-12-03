@@ -13,7 +13,7 @@ public interface CategoryService {
 
     CategoryEntity addNewCate(RegistryCategoryDTO categoryDTO);
 
-    CategoryEntity updateCate(String id, RegistryBrandDTO updateBrand);
+    CategoryEntity updateCate(String id, RegistryCategoryDTO categoryDTO);
 
     boolean deleteCate(String id);
 }

@@ -21,7 +21,7 @@ public class CategoryEntity {
     private String pathseo;
     private ImageEntity image;
     private List<SpecificationEntity> specifications;
-    private List<Filter> filter;
+    private List<SpecificationEntity> filter;
     private List<Price> price;
     private boolean accessories = true;
     private String description;
