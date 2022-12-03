@@ -32,6 +32,10 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryEntity findById(String id) {
+        Optional<CategoryEntity> result = categoryRepository.findById(id);
+        if(result.isPresent()){
+            return result.get();
+        }
         return null;
     }
 
