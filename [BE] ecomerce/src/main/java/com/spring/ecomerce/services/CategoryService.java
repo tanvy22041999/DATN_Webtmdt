@@ -7,7 +7,7 @@ import com.spring.ecomerce.exception.SystemException;
 import org.springframework.data.domain.Page;
 
 public interface CategoryService {
-    Page<CategoryEntity> getAll(Integer limit, Integer page, String keyword) throws SystemException;
+    Page<CategoryEntity> getAll(Integer limit, Integer page, String keyword, String accessories) throws SystemException;
 
     CategoryEntity findById(String id);
 

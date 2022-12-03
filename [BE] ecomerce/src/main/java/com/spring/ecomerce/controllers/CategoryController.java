@@ -29,9 +29,10 @@ public class CategoryController {
     @GetMapping("/categories")
     public String getAllCate(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
                              @RequestParam(value = "page", defaultValue = "0") Integer page,
-                             @RequestParam(value = "keyword", defaultValue = "") String keyword) throws SystemException {
+                             @RequestParam(value = "keyword", defaultValue = "") String keyword,
+                             @RequestParam(value = "accessories", defaultValue = "") String accessories) throws SystemException {
         try{
-            Page<CategoryEntity> results = categoryService.getAll(limit, page, keyword);
+            Page<CategoryEntity> results = categoryService.getAll(limit, page, keyword, accessories);
 
             Map<String, Object> dataResponse = new HashMap<>();
             dataResponse.put("total", results.getTotalElements());
