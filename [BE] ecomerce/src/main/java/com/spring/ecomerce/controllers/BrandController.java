@@ -52,7 +52,7 @@ public class BrandController {
 
             baseResponse.retrieved();
             Map<String, Object> dataResponse = new HashMap<>();
-            dataResponse.put("ad", result);
+            dataResponse.put("brand", result);
             return baseResponse.getResponseBody(dataResponse);
 
         }catch (Exception ex){
@@ -90,7 +90,7 @@ public class BrandController {
             if(result != null){
                 baseResponse.updated();
                 Map<String, Object> dataResponse = new HashMap<>();
-                dataResponse.put("ad", result);
+                dataResponse.put("brand", result);
                 return baseResponse.getResponseBody(dataResponse);
             }
             else{

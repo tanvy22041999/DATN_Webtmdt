@@ -3,9 +3,12 @@ package com.spring.ecomerce.controllers;
 import com.spring.ecomerce.arch.BaseResponseEntity;
 import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
+import com.spring.ecomerce.dtos.clone.RegistryColorDTO;
 import com.spring.ecomerce.entities.clone.BrandEntity;
+import com.spring.ecomerce.entities.clone.ColorEntity;
 import com.spring.ecomerce.exception.SystemException;
 import com.spring.ecomerce.services.BrandService;
+import com.spring.ecomerce.services.ColorService;
 import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,7 +20,7 @@ import java.util.Map;
 @RestController
 public class ColorController {
     @Autowired
-    private BrandService brandService;
+    private ColorService colorService;
 
     @Autowired
     private MessageManager messageManager;
@@ -26,15 +29,14 @@ public class ColorController {
     private BaseResponseEntity baseResponse;
 
     @GetMapping("/colors")
-    public String getAllBrand(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
-                              @RequestParam(value = "page", defaultValue = "0") Integer page,
-                              @RequestParam(value = "keyword", defaultValue = "") String keyword) throws SystemException {
+    public String getAllColors(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
+                              @RequestParam(value = "page", defaultValue = "0") Integer page) throws SystemException {
         try{
-            Page<BrandEntity> results = brandService.getAll(limit, page, keyword);
+            Page<ColorEntity> results = colorService.getAll(limit, page);
 
             Map<String, Object> dataResponse = new HashMap<>();
             dataResponse.put("total", results.getTotalElements());
-            dataResponse.put("brands", results.getContent());
+            dataResponse.put("colors", results.getContent());
             baseResponse.retrieved();
             return baseResponse.getResponseBody(dataResponse);
 
@@ -48,11 +50,11 @@ public class ColorController {
     @GetMapping("/colors/{id}")
     public String getById(@PathVariable(value = "id", required = false) String id) throws SystemException {
         try{
-            BrandEntity result = brandService.findById(id);
+            ColorEntity result = colorService.findById(id);
 
             baseResponse.retrieved();
             Map<String, Object> dataResponse = new HashMap<>();
-            dataResponse.put("ad", result);
+            dataResponse.put("color", result);
             return baseResponse.getResponseBody(dataResponse);
 
         }catch (Exception ex){
@@ -63,9 +65,9 @@ public class ColorController {
     }
 
     @PostMapping("/colors")
-    public String addNewColor(@ModelAttribute RegistryBrandDTO brandDTO) throws SystemException {
+    public String addNewColor(@ModelAttribute RegistryColorDTO colorDTO) throws SystemException {
         try{
-            BrandEntity result = brandService.addNewBrand(brandDTO);
+            ColorEntity result = colorService.addNewColor(colorDTO);
             if(result == null){
                 baseResponse.failed(HttpStatus.SC_BAD_REQUEST, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
             }
@@ -84,9 +86,9 @@ public class ColorController {
 
     @PutMapping("/colors/{id}")
     public String updateColor(@PathVariable(value = "id", required = false) String id,
-                              @ModelAttribute RegistryBrandDTO updateDTO) throws SystemException {
+                              @ModelAttribute RegistryColorDTO updateDTO) throws SystemException {
         try{
-            BrandEntity result = brandService.updateBrand(id, updateDTO);
+            ColorEntity result = colorService.updateColor(id, updateDTO);
             if(result != null){
                 baseResponse.updated();
                 Map<String, Object> dataResponse = new HashMap<>();
@@ -106,7 +108,7 @@ public class ColorController {
     @DeleteMapping("/colors/{id}")
     public String deleteColor(@PathVariable(value = "id", required = false) String id) throws SystemException {
         try{
-            boolean result = brandService.deleteBrand(id);
+            boolean result = colorService.deleteColor(id);
             if(result){
                 baseResponse.deleted();
                 return baseResponse.getResponseBody();
