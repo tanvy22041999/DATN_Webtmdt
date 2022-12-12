@@ -28,6 +28,11 @@ public class CategoryServiceImpl implements CategoryService {
     private SpecificationService specificationService;
 
     @Override
+    public List<CategoryEntity> getAllCateProductAndSortKey(String keyword) {
+        return null;
+    }
+
+    @Override
     public Page<CategoryEntity> getAll(Integer limit, Integer page, String keyword, String accessories) throws SystemException {
         Pageable pageable = PageRequest.of(page, limit);
 
@@ -67,7 +72,7 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryEntity addNewCate(RegistryCategoryDTO categoryDTO) {
         CategoryEntity newCate = new CategoryEntity();
         if(categoryDTO.getName() != null) newCate.setName(categoryDTO.getName());
-        if(categoryDTO.getName_en() != null) newCate.setName_en(categoryDTO.getName_en());
+        if(categoryDTO.getName_en() != null) newCate.setNameEn(categoryDTO.getName_en());
         if(categoryDTO.getPathseo() != null) newCate.setPathseo(categoryDTO.getPathseo());
         if(categoryDTO.getImage() != null) newCate.setImage(categoryDTO.getImage());
         if(categoryDTO.getPrice() != null) newCate.setPrice(categoryDTO.getPrice());
@@ -103,7 +108,7 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryEntity updateCate(String id, RegistryCategoryDTO categoryDTO) {
         CategoryEntity newCate = new CategoryEntity();
         if(categoryDTO.getName() != null) newCate.setName(categoryDTO.getName());
-        if(categoryDTO.getName_en() != null) newCate.setName_en(categoryDTO.getName_en());
+        if(categoryDTO.getName_en() != null) newCate.setNameEn(categoryDTO.getName_en());
         if(categoryDTO.getPathseo() != null) newCate.setPathseo(categoryDTO.getPathseo());
         if(categoryDTO.getImage() != null) newCate.setImage(categoryDTO.getImage());
         if(categoryDTO.getPrice() != null) newCate.setPrice(categoryDTO.getPrice());

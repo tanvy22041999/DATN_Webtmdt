@@ -17,7 +17,7 @@ public class CategoryEntity extends BasicEntity {
     private String id;
 
     private String name;
-    private String name_en;
+    private String nameEn;
     private String pathseo;
     private ImageEntity image;
     private List<SpecificationEntity> specifications;

@@ -6,7 +6,10 @@ import com.spring.ecomerce.entities.clone.CategoryEntity;
 import com.spring.ecomerce.exception.SystemException;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 public interface CategoryService {
+    List<CategoryEntity> getAllCateProductAndSortKey(String keyword);
     Page<CategoryEntity> getAll(Integer limit, Integer page, String keyword, String accessories) throws SystemException;
 
     CategoryEntity findById(String id);
