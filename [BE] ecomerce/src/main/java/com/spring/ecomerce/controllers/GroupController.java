@@ -2,10 +2,10 @@ package com.spring.ecomerce.controllers;
 
 import com.spring.ecomerce.arch.BaseResponseEntity;
 import com.spring.ecomerce.commons.MessageManager;
-import com.spring.ecomerce.dtos.clone.RegistryColorDTO;
-import com.spring.ecomerce.entities.clone.ColorEntity;
+import com.spring.ecomerce.dtos.clone.RegistryGroupDTO;
+import com.spring.ecomerce.entities.clone.GroupEntity;
 import com.spring.ecomerce.exception.SystemException;
-import com.spring.ecomerce.services.ColorService;
+import com.spring.ecomerce.services.GroupService;
 import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,9 +15,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class ColorController {
+public class GroupController {
     @Autowired
-    private ColorService colorService;
+    private GroupService groupService;
 
     @Autowired
     private MessageManager messageManager;
@@ -25,15 +25,16 @@ public class ColorController {
     @Autowired
     private BaseResponseEntity baseResponse;
 
-    @GetMapping("/colors")
+    @GetMapping("/groups")
     public String getAllColors(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
-                              @RequestParam(value = "page", defaultValue = "0") Integer page) throws SystemException {
+                               @RequestParam(value = "page", defaultValue = "0") Integer page,
+                               @RequestParam(value = "keyword", defaultValue = "") String keyword) throws SystemException {
         try{
-            Page<ColorEntity> results = colorService.getAll(limit, page);
+            Page<GroupEntity> results = groupService.getAll(limit, page, keyword);
 
             Map<String, Object> dataResponse = new HashMap<>();
             dataResponse.put("total", results.getTotalElements());
-            dataResponse.put("colors", results.getContent());
+            dataResponse.put("groups", results.getContent());
             baseResponse.retrieved();
             return baseResponse.getResponseBody(dataResponse);
 
@@ -44,10 +45,10 @@ public class ColorController {
         return baseResponse.getResponseBody();
     }
 
-    @GetMapping("/colors/{id}")
+    @GetMapping("/groups/{id}")
     public String getById(@PathVariable(value = "id", required = false) String id) throws SystemException {
         try{
-            ColorEntity result = colorService.findById(id);
+            GroupEntity result = groupService.findById(id);
 
             baseResponse.retrieved();
             Map<String, Object> dataResponse = new HashMap<>();
@@ -61,17 +62,17 @@ public class ColorController {
         return baseResponse.getResponseBody();
     }
 
-    @PostMapping("/colors")
-    public String addNewColor(@ModelAttribute RegistryColorDTO colorDTO) throws SystemException {
+    @PostMapping("/groups")
+    public String addNewGroup(@ModelAttribute RegistryGroupDTO groupDTO) throws SystemException {
         try{
-            ColorEntity result = colorService.addNewColor(colorDTO);
+            GroupEntity result = groupService.addNewGroup(groupDTO);
             if(result == null){
                 baseResponse.failed(HttpStatus.SC_BAD_REQUEST, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
             }
             else {
                 baseResponse.created();
                 Map<String, Object> dataResponse = new HashMap<>();
-                dataResponse.put("brand", result);
+                dataResponse.put("group", result);
                 return baseResponse.getResponseBody(dataResponse);
             }
         }catch (Exception ex){
@@ -81,15 +82,15 @@ public class ColorController {
         return baseResponse.getResponseBody();
     }
 
-    @PutMapping("/colors/{id}")
-    public String updateColor(@PathVariable(value = "id", required = false) String id,
-                              @ModelAttribute RegistryColorDTO updateDTO) throws SystemException {
+    @PutMapping("/groups/{id}")
+    public String updateGroup(@PathVariable(value = "id", required = false) String id,
+                              @ModelAttribute RegistryGroupDTO updateDTO) throws SystemException {
         try{
-            ColorEntity result = colorService.updateColor(id, updateDTO);
+            GroupEntity result = groupService.updateGroup(id, updateDTO);
             if(result != null){
                 baseResponse.updated();
                 Map<String, Object> dataResponse = new HashMap<>();
-                dataResponse.put("ad", result);
+                dataResponse.put("group", result);
                 return baseResponse.getResponseBody(dataResponse);
             }
             else{
@@ -102,10 +103,10 @@ public class ColorController {
         return baseResponse.getResponseBody();
     }
 
-    @DeleteMapping("/colors/{id}")
+    @DeleteMapping("/groups/{id}")
     public String deleteColor(@PathVariable(value = "id", required = false) String id) throws SystemException {
         try{
-            boolean result = colorService.deleteColor(id);
+            boolean result = groupService.deleteGroup(id);
             if(result){
                 baseResponse.deleted();
                 return baseResponse.getResponseBody();
