@@ -8,5 +8,5 @@ import org.springframework.web.multipart.MultipartFile;
 @Setter
 public class RegistryBrandDTO {
     private String name;
-    private MultipartFile files;
+    private MultipartFile image;
 }

@@ -66,7 +66,7 @@ public class BrandServiceImpl implements BrandService {
     public BrandEntity addNewBrand(RegistryBrandDTO brandRegistry) {
         //check duplicate brand name
         String brandName = brandRegistry.getName();
-        MultipartFile image = brandRegistry.getFiles();
+        MultipartFile image = brandRegistry.getImage();
         if(brandName != null){
             ImageEntity imageEntity = null;
             List<BrandEntity> brandConflict = brandRepository.findByBrandNameAndIgnoreCase(brandName);
@@ -96,8 +96,8 @@ public class BrandServiceImpl implements BrandService {
             if(updateEntity.getName() != null) updateEntity.setName(updateBrand.getName());
 
             //check file to change image
-            if(updateBrand.getFiles() != null){
-                MultipartFile image = updateBrand.getFiles();
+            if(updateBrand.getImage() != null){
+                MultipartFile image = updateBrand.getImage();
                 if(image != null && !StringUtils.isEmpty(image.getName())) {
                     if (image.getContentType().substring(0, 5).equals("image")) {
                         Map resultUpdate = cloudinaryService.uploadImageProduct(image);

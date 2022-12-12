@@ -90,8 +90,8 @@ public class AdServiceImpl implements AdService {
                 if(updateAd.getActive() != null) updateEntity.setActive(updateAd.getActive());
 
                 //check file to change image
-                if(updateAd.getFiles() != null){
-                    MultipartFile image = updateAd.getFiles();
+                if(updateAd.getImage() != null){
+                    MultipartFile image = updateAd.getImage();
                     if(image != null && !StringUtils.isEmpty(image.getName())) {
                         if (image.getContentType().substring(0, 5).equals("image")) {
                             Map resultUpdate = cloudinaryService.uploadImageProduct(image);

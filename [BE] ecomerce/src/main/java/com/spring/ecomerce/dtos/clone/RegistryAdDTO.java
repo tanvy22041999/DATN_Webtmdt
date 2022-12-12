@@ -11,5 +11,5 @@ import java.util.Date;
 @Getter
 @Setter
 public class    RegistryAdDTO extends UpdateAdDTO{
-    private MultipartFile files;
+    private MultipartFile image;
 }

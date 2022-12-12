@@ -68,7 +68,7 @@ public class AdController {
     @PostMapping("/ad")
     public String addNewAd(@ModelAttribute RegistryAdDTO adDTO) throws SystemException {
         try{
-            AdEntity result = adService.addNewAd(adDTO, adDTO.getFiles());
+            AdEntity result = adService.addNewAd(adDTO, adDTO.getImage());
             if(result == null){
                 throw new SystemException();
             }
