@@ -37,16 +37,18 @@ public class AdServiceImpl implements AdService {
     @Override
     public Page<AdEntity> getAll(Integer limit, Integer page, Integer active, Integer status) throws SystemException {
         Pageable pageable = PageRequest.of(page, limit);
-        boolean activeQuery = false;
-        if(active.intValue() == 1){
-            activeQuery = true;
-        }
-
         BSONObject queryData = new BasicBSONObject();
         queryData.put("validFlg", 1);
         queryData.put("delFlg", 0);
-        queryData.put("active", activeQuery);
         queryData = this.prepareConditionForStatus(queryData, status);
+        if(active.intValue() != 0){
+            boolean activeQuery = false;
+            if(active.intValue() == 1){
+                activeQuery = true;
+            }
+            queryData.put("active", activeQuery);
+        }
+
         Page<AdEntity> results = adRepository.getAll(queryData, pageable);
         return results;
     }
@@ -75,6 +77,7 @@ public class AdServiceImpl implements AdService {
         AdEntity newAd = new AdEntity();
         BeanUtils.copyProperties(adRegistry, newAd);
         newAd.setImage(imageEntity);
+        newAd.setActive(false);
         return adRepository.save(newAd);
     }
 

@@ -21,7 +21,7 @@ public class AdEntity extends BasicEntity {
     private String content;
     private ImageEntity image;
     private String link;
-    private boolean active;
+    private Boolean active;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = SystemConstants.DATETIME_FORMAT)
     private Date startedAt;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = SystemConstants.DATETIME_FORMAT)

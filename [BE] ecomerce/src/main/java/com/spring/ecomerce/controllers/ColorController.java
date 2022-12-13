@@ -52,7 +52,7 @@ public class ColorController {
 
             baseResponse.retrieved();
             Map<String, Object> dataResponse = new HashMap<>();
-            dataResponse.put("color", result);
+            dataResponse.put("category", result);
             return baseResponse.getResponseBody(dataResponse);
 
         }catch (Exception ex){
@@ -63,7 +63,7 @@ public class ColorController {
     }
 
     @PostMapping("/colors")
-    public String addNewColor(@ModelAttribute RegistryColorDTO colorDTO) throws SystemException {
+    public String addNewColor(@RequestBody RegistryColorDTO colorDTO) throws SystemException {
         try{
             ColorEntity result = colorService.addNewColor(colorDTO);
             if(result == null){
@@ -84,13 +84,13 @@ public class ColorController {
 
     @PutMapping("/colors/{id}")
     public String updateColor(@PathVariable(value = "id", required = false) String id,
-                              @ModelAttribute RegistryColorDTO updateDTO) throws SystemException {
+                              @RequestBody RegistryColorDTO updateDTO) throws SystemException {
         try{
             ColorEntity result = colorService.updateColor(id, updateDTO);
             if(result != null){
                 baseResponse.updated();
                 Map<String, Object> dataResponse = new HashMap<>();
-                dataResponse.put("ad", result);
+                dataResponse.put("color", result);
                 return baseResponse.getResponseBody(dataResponse);
             }
             else{
