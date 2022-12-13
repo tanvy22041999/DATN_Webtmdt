@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/products")
 public class ColorController {
     @Autowired
     private ColorService colorService;

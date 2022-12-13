@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/products")
 public class GroupController {
     @Autowired
     private GroupService groupService;

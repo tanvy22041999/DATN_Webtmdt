@@ -2,7 +2,6 @@ package com.spring.ecomerce.controllers;
 
 import com.spring.ecomerce.arch.BaseResponseEntity;
 import com.spring.ecomerce.commons.MessageManager;
-import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
 import com.spring.ecomerce.dtos.clone.RegistryCategoryDTO;
 import com.spring.ecomerce.entities.clone.CategoryEntity;
 import com.spring.ecomerce.exception.SystemException;
@@ -16,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/products")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
