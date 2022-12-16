@@ -4,10 +4,15 @@ import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
 import com.spring.ecomerce.dtos.clone.RegistryCategoryDTO;
 import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.CategoryEntity;
+import com.spring.ecomerce.entities.clone.ImageEntity;
 import com.spring.ecomerce.entities.clone.SpecificationEntity;
+import com.spring.ecomerce.entities.inner.Filter;
+import com.spring.ecomerce.entities.inner.Price;
+import com.spring.ecomerce.entities.inner.Specifications;
 import com.spring.ecomerce.exception.SystemException;
 import com.spring.ecomerce.repositories.CategoryRepository;
 import com.spring.ecomerce.services.CategoryService;
+import com.spring.ecomerce.services.ImageService;
 import com.spring.ecomerce.services.SpecificationService;
 import org.bson.BSONObject;
 import org.bson.BasicBSONObject;
@@ -26,6 +31,8 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryRepository categoryRepository;
     @Autowired
     private SpecificationService specificationService;
+    @Autowired
+    private ImageService imageService;
 
     @Override
     public List<CategoryEntity> getAllCateProductAndSortKey(String keyword) {
@@ -72,34 +79,50 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryEntity addNewCate(RegistryCategoryDTO categoryDTO) {
         CategoryEntity newCate = new CategoryEntity();
         if(categoryDTO.getName() != null) newCate.setName(categoryDTO.getName());
-        if(categoryDTO.getName_en() != null) newCate.setNameEn(categoryDTO.getName_en());
+        if(categoryDTO.getNameEn() != null) newCate.setNameEn(categoryDTO.getNameEn());
         if(categoryDTO.getPathseo() != null) newCate.setPathseo(categoryDTO.getPathseo());
-        if(categoryDTO.getImage() != null) newCate.setImage(categoryDTO.getImage());
-        if(categoryDTO.getPrice() != null) newCate.setPrice(categoryDTO.getPrice());
-        if(categoryDTO.getAccessories() != null) newCate.setAccessories(categoryDTO.getAccessories());
         if(categoryDTO.getDescription() != null) newCate.setDescription(categoryDTO.getDescription());
+        
+        //handle image
+        String imageId = categoryDTO.getImage();
+        if(imageId != null){
+            ImageEntity imageFound = imageService.findById(imageId);
+            if(imageFound != null){
+                newCate.setImage(imageFound);
+            }
+        }
 
-        List<SpecificationEntity> specificationApplies = new ArrayList<>();
-        if(categoryDTO.getSpecifications() != null){
-            for(String specifyId : categoryDTO.getSpecifications()){
-                SpecificationEntity specifyData = specificationService.findById(specifyId);
-                if(specifyData != null){
-                    specificationApplies.add(specifyData);
+        List<Filter> filters = categoryDTO.getFilter();
+        if(filters != null && filters.size() > 0){
+            for(Filter filter : filters){
+                if(filter.getId() != null){
+                    SpecificationEntity specificationFound = specificationService.findById(filter.getId());
+                    if(specificationFound != null){
+                        CategoryEntity.FilterEntity filterAdd = newCate.new FilterEntity();
+                        filterAdd.setSpecification(specificationFound);
+                        filterAdd.setQuery(filter.getQuery());
+                        newCate.getFilter().add(filterAdd);
+                    }
                 }
             }
         }
-        newCate.setSpecifications(specificationApplies);
 
-        List<SpecificationEntity> filterApplies = new ArrayList<>();
-        if(categoryDTO.getFilter() != null){
-            for(CategoryEntity.Filter filter: categoryDTO.getFilter()){
-                SpecificationEntity specifyData = specificationService.findById(filter.getId());
-                if(specifyData != null){
-                    filterApplies.add(specifyData);
+        List<Specifications> specifications = categoryDTO.getSpecifications();
+        if(specifications != null && specifications.size() > 0){
+            for(Specifications specification : specifications){
+                if(specification.getId() != null){
+                    SpecificationEntity specificationFound = specificationService.findById(specification.getId());
+                    if(specificationFound != null){
+                        newCate.getSpecifications().add(specificationFound);
+                    }
                 }
             }
         }
-        newCate.setFilter(filterApplies);
+
+        List<Price> prices = categoryDTO.getPrice();
+        if(prices != null && prices.size() > 0){
+            newCate.setPrice(prices);
+        }
 
         return categoryRepository.save(newCate);
     }
@@ -108,34 +131,23 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryEntity updateCate(String id, RegistryCategoryDTO categoryDTO) {
         CategoryEntity newCate = new CategoryEntity();
         if(categoryDTO.getName() != null) newCate.setName(categoryDTO.getName());
-        if(categoryDTO.getName_en() != null) newCate.setNameEn(categoryDTO.getName_en());
+        if(categoryDTO.getNameEn() != null) newCate.setNameEn(categoryDTO.getNameEn());
         if(categoryDTO.getPathseo() != null) newCate.setPathseo(categoryDTO.getPathseo());
-        if(categoryDTO.getImage() != null) newCate.setImage(categoryDTO.getImage());
+      //  if(categoryDTO.getImage() != null) newCate.setImage(categoryDTO.getImage());
         if(categoryDTO.getPrice() != null) newCate.setPrice(categoryDTO.getPrice());
-        if(categoryDTO.getAccessories() != null) newCate.setAccessories(categoryDTO.getAccessories());
+      //  if(categoryDTO.getAccessories() != null) newCate.setAccessories(categoryDTO.getAccessories());
         if(categoryDTO.getDescription() != null) newCate.setDescription(categoryDTO.getDescription());
 
         List<SpecificationEntity> specificationApplies = new ArrayList<>();
         if(categoryDTO.getSpecifications() != null){
-            for(String specifyId : categoryDTO.getSpecifications()){
-                SpecificationEntity specifyData = specificationService.findById(specifyId);
-                if(specifyData != null){
-                    specificationApplies.add(specifyData);
-                }
-            }
+//            for(String specifyId : categoryDTO.getSpecifications()){
+//                SpecificationEntity specifyData = specificationService.findById(specifyId);
+//                if(specifyData != null){
+//                    specificationApplies.add(specifyData);
+//                }
+//            }
         }
         newCate.setSpecifications(specificationApplies);
-
-        List<SpecificationEntity> filterApplies = new ArrayList<>();
-        if(categoryDTO.getFilter() != null){
-            for(CategoryEntity.Filter filter: categoryDTO.getFilter()){
-                SpecificationEntity specifyData = specificationService.findById(filter.getId());
-                if(specifyData != null){
-                    filterApplies.add(specifyData);
-                }
-            }
-        }
-        newCate.setFilter(filterApplies);
 
         return categoryRepository.save(newCate);
     }

@@ -86,7 +86,7 @@ public class CategoryController {
     }
 
     @PostMapping("/categories")
-    public String addNewCate(@ModelAttribute RegistryCategoryDTO cateDTO) throws SystemException {
+    public String addNewCate(@RequestBody RegistryCategoryDTO cateDTO) throws SystemException {
         try{
             CategoryEntity result = categoryService.addNewCate(cateDTO);
             if(result == null){
@@ -95,7 +95,7 @@ public class CategoryController {
 
             baseResponse.created();
             Map<String, Object> dataResponse = new HashMap<>();
-            dataResponse.put("ad", result);
+            dataResponse.put("category", result);
             return baseResponse.getResponseBody(dataResponse);
 
         }catch (Exception ex){

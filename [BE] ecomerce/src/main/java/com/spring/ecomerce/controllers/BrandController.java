@@ -53,7 +53,7 @@ public class BrandController {
 
             baseResponse.retrieved();
             Map<String, Object> dataResponse = new HashMap<>();
-            dataResponse.put("brand", result);
+            dataResponse.put("category", result);
             return baseResponse.getResponseBody(dataResponse);
 
         }catch (Exception ex){
@@ -91,7 +91,7 @@ public class BrandController {
             if(result != null){
                 baseResponse.updated();
                 Map<String, Object> dataResponse = new HashMap<>();
-                dataResponse.put("brand", result);
+                dataResponse.put("data", result);
                 return baseResponse.getResponseBody(dataResponse);
             }
             else{
@@ -107,7 +107,7 @@ public class BrandController {
     @DeleteMapping("/brands/{id}")
     public String deleteBrand(@PathVariable(value = "id", required = false) String id) throws SystemException {
         try{
-            boolean result = brandService.deleteBrand(id);
+             boolean result = brandService.deleteBrand(id);
             if(result){
                 baseResponse.deleted();
                 return baseResponse.getResponseBody();
