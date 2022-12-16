@@ -82,7 +82,7 @@ public class CategoryServiceImpl implements CategoryService {
         if(categoryDTO.getNameEn() != null) newCate.setNameEn(categoryDTO.getNameEn());
         if(categoryDTO.getPathseo() != null) newCate.setPathseo(categoryDTO.getPathseo());
         if(categoryDTO.getDescription() != null) newCate.setDescription(categoryDTO.getDescription());
-        
+
         //handle image
         String imageId = categoryDTO.getImage();
         if(imageId != null){
