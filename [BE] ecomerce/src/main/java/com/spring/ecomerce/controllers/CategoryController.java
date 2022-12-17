@@ -57,7 +57,7 @@ public class CategoryController {
 
             Map<String, Object> dataResponse = new HashMap<>();
             dataResponse.put("total", results.getTotalElements());
-            dataResponse.put("ads", results.getContent());
+            dataResponse.put("categories", results.getContent());
             baseResponse.retrieved();
             return baseResponse.getResponseBody(dataResponse);
 
@@ -75,7 +75,7 @@ public class CategoryController {
 
             baseResponse.retrieved();
             Map<String, Object> dataResponse = new HashMap<>();
-            dataResponse.put("ad", result);
+            dataResponse.put("category", result);
             return baseResponse.getResponseBody(dataResponse);
 
         }catch (Exception ex){
@@ -107,13 +107,13 @@ public class CategoryController {
 
     @PutMapping("/categories/{id}")
     public String updateCate(@PathVariable(value = "id", required = false) String id,
-                           @ModelAttribute RegistryCategoryDTO updateDTO) throws SystemException {
+                           @RequestBody RegistryCategoryDTO updateDTO) throws SystemException {
         try{
             CategoryEntity result = categoryService.updateCate(id, updateDTO);
             if(result != null){
                 baseResponse.updated();
                 Map<String, Object> dataResponse = new HashMap<>();
-                dataResponse.put("ad", result);
+                dataResponse.put("category", result);
                 return baseResponse.getResponseBody(dataResponse);
             }
             else{

@@ -129,27 +129,58 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryEntity updateCate(String id, RegistryCategoryDTO categoryDTO) {
-        CategoryEntity newCate = new CategoryEntity();
-        if(categoryDTO.getName() != null) newCate.setName(categoryDTO.getName());
-        if(categoryDTO.getNameEn() != null) newCate.setNameEn(categoryDTO.getNameEn());
-        if(categoryDTO.getPathseo() != null) newCate.setPathseo(categoryDTO.getPathseo());
-      //  if(categoryDTO.getImage() != null) newCate.setImage(categoryDTO.getImage());
-        if(categoryDTO.getPrice() != null) newCate.setPrice(categoryDTO.getPrice());
-      //  if(categoryDTO.getAccessories() != null) newCate.setAccessories(categoryDTO.getAccessories());
-        if(categoryDTO.getDescription() != null) newCate.setDescription(categoryDTO.getDescription());
-
-        List<SpecificationEntity> specificationApplies = new ArrayList<>();
-        if(categoryDTO.getSpecifications() != null){
-//            for(String specifyId : categoryDTO.getSpecifications()){
-//                SpecificationEntity specifyData = specificationService.findById(specifyId);
-//                if(specifyData != null){
-//                    specificationApplies.add(specifyData);
-//                }
-//            }
+        CategoryEntity categoryUpdate = this.findById(id);
+        if(categoryUpdate == null){
+            return null;
         }
-        newCate.setSpecifications(specificationApplies);
 
-        return categoryRepository.save(newCate);
+        if(categoryDTO.getName() != null) categoryUpdate.setName(categoryDTO.getName());
+        if(categoryDTO.getNameEn() != null) categoryUpdate.setNameEn(categoryDTO.getNameEn());
+        if(categoryDTO.getPathseo() != null) categoryUpdate.setPathseo(categoryDTO.getPathseo());
+        if(categoryDTO.getDescription() != null) categoryUpdate.setDescription(categoryDTO.getDescription());
+
+        //handle image
+        String imageId = categoryDTO.getImage();
+        if(imageId != null){
+            ImageEntity imageFound = imageService.findById(imageId);
+            if(imageFound != null){
+                categoryUpdate.setImage(imageFound);
+            }
+        }
+
+        List<Filter> filters = categoryDTO.getFilter();
+        if(filters != null && filters.size() > 0){
+            for(Filter filter : filters){
+                if(filter.getId() != null){
+                    SpecificationEntity specificationFound = specificationService.findById(filter.getId());
+                    if(specificationFound != null){
+                        CategoryEntity.FilterEntity filterAdd = categoryUpdate.new FilterEntity();
+                        filterAdd.setSpecification(specificationFound);
+                        filterAdd.setQuery(filter.getQuery());
+                        categoryUpdate.getFilter().add(filterAdd);
+                    }
+                }
+            }
+        }
+
+        List<Specifications> specifications = categoryDTO.getSpecifications();
+        if(specifications != null && specifications.size() > 0){
+            for(Specifications specification : specifications){
+                if(specification.getId() != null){
+                    SpecificationEntity specificationFound = specificationService.findById(specification.getId());
+                    if(specificationFound != null){
+                        categoryUpdate.getSpecifications().add(specificationFound);
+                    }
+                }
+            }
+        }
+
+        List<Price> prices = categoryDTO.getPrice();
+        if(prices != null && prices.size() > 0){
+            categoryUpdate.setPrice(prices);
+        }
+
+        return categoryRepository.save(categoryUpdate);
     }
 
     @Override
