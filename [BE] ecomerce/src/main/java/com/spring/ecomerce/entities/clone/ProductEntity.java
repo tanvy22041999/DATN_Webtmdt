@@ -1,5 +1,7 @@
 package com.spring.ecomerce.entities.clone;
 
+import com.spring.ecomerce.entities.inner.ColorProduct;
+import com.spring.ecomerce.entities.inner.SpecifyProduct;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -37,30 +39,4 @@ public class ProductEntity extends BasicEntity {
     private Float length;
     private Float height;
     private Float width;
-
-
-    @Getter
-    @Setter
-    public class SpecifyProduct {
-        private SpecificationEntity specification;
-
-        private String name;
-
-        private String value;
-
-        private List<SelectorEntity> selection;
-    }
-
-    @Getter
-    @Setter
-    public class ColorProduct {
-        private ColorEntity color;
-        private String nameEn;
-        private String nameVn;
-        private ImageEntity image;
-        private String imageLink;
-        private Integer amount;
-        private Double realPrice;
-        private Double price;
-    }
 }
