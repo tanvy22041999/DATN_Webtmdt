@@ -1,6 +1,7 @@
 package com.spring.ecomerce.services.impl;
 
 import com.spring.ecomerce.dtos.clone.RegistrySelectorDTO;
+import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.ColorEntity;
 import com.spring.ecomerce.entities.clone.SelectorEntity;
 import com.spring.ecomerce.repositories.SelectorRepository;
@@ -14,6 +15,15 @@ import java.util.Optional;
 public class SelectorServiceImpl implements SelectorService {
     @Autowired
     private SelectorRepository selectorRepository;
+
+    @Override
+    public SelectorEntity findById(String id) {
+        Optional<SelectorEntity> result = selectorRepository.findById(id);
+        if(result.isPresent()){
+            return result.get();
+        }
+        return null;
+    }
 
     @Override
     public SelectorEntity addNewSelector(RegistrySelectorDTO selectorDTO) {

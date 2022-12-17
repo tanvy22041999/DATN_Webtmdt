@@ -1,6 +1,7 @@
 package com.spring.ecomerce.services;
 
 import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
+import com.spring.ecomerce.dtos.clone.RegistrySpecificationDTO;
 import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.SpecificationEntity;
 import com.spring.ecomerce.exception.SystemException;
@@ -11,9 +12,9 @@ public interface SpecificationService {
 
     SpecificationEntity findById(String id);
 
-    BrandEntity addNewSpecify(RegistryBrandDTO brandRegistry);
+    SpecificationEntity addNewSpecify(RegistrySpecificationDTO specificationDTO);
 
-    BrandEntity updateSpecify(String id, RegistryBrandDTO updateBrand);
+    SpecificationEntity updateSpecify(String id, RegistrySpecificationDTO updateSpecification);
 
     boolean deleteSpecify(String id);
 }

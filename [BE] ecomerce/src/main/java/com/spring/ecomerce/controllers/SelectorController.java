@@ -2,9 +2,7 @@ package com.spring.ecomerce.controllers;
 
 import com.spring.ecomerce.arch.BaseResponseEntity;
 import com.spring.ecomerce.commons.MessageManager;
-import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
 import com.spring.ecomerce.dtos.clone.RegistrySelectorDTO;
-import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.SelectorEntity;
 import com.spring.ecomerce.exception.SystemException;
 import com.spring.ecomerce.services.SelectorService;
