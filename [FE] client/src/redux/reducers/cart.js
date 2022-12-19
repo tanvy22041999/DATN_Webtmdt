@@ -48,7 +48,7 @@ const cart = (state = initialState, action) =>{
         order_list[index].product = {
           id: item.product,
           bigimage: {
-            public_url: item.image,
+            publicUrl: item.image,
           },
           name : item.name,
           colors: [

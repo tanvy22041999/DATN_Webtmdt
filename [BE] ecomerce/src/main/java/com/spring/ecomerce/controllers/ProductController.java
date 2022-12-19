@@ -2,9 +2,7 @@ package com.spring.ecomerce.controllers;
 
 import com.spring.ecomerce.arch.BaseResponseEntity;
 import com.spring.ecomerce.commons.MessageManager;
-import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
 import com.spring.ecomerce.dtos.clone.RegistryProductDTO;
-import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.ProductEntity;
 import com.spring.ecomerce.exception.SystemException;
 import com.spring.ecomerce.services.ProductService;
@@ -78,10 +76,27 @@ public class ProductController {
     @GetMapping("/hot-sold")
     public  String gotHotSellProduct() throws  SystemException{
         try{
-            List<ProductEntity> results = productService.getHotSold();
+            Page<ProductEntity> results = productService.getAll(4, 0, "");
 
             Map<String, Object> dataResponse = new HashMap<>();
-            dataResponse.put("products", results);
+            dataResponse.put("products", results.getContent());
+            baseResponse.retrieved();
+            return baseResponse.getResponseBody(dataResponse);
+
+        }catch (Exception ex){
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_GET", null));
+        }
+
+        return baseResponse.getResponseBody();
+    }
+
+    @GetMapping("/newest")
+    public  String getNewestProduct() throws  SystemException{
+        try{
+            Page<ProductEntity> results = productService.getAll(4, 0, "");
+
+            Map<String, Object> dataResponse = new HashMap<>();
+            dataResponse.put("products", results.getContent());
             baseResponse.retrieved();
             return baseResponse.getResponseBody(dataResponse);
 

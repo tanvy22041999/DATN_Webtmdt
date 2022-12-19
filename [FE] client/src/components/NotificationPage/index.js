@@ -198,7 +198,7 @@ class NotificationPage extends Component {
                   <p className="mb-0 text-secondary">{new Date(notification.createdAt).toLocaleDateString("vi-VN")}</p>
                 </div>
                 <div className="col-2 text-center h-100">
-                  <img className="h-100" src={notification.image ? notification.image.public_url : INITIAL_IMAGE} alt=""></img>
+                  <img className="h-100" src={notification.image ? notification.image.publicUrl : INITIAL_IMAGE} alt=""></img>
                 </div>
                 <div className="col-7 align-self-center">
             <p className="font-weight-bold">{notification.name}</p>

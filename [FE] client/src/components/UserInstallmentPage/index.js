@@ -206,7 +206,7 @@ class UserInstallmentPage extends Component {
                     <div className="card-body">
                       <div className="row">
                         <div className="col-6 col-md-3 text-center  h-120">
-                          <img className="h-100" src={installment.product.id.bigimage ? installment.product.id.bigimage.public_url : INITIAL_IMAGE} alt={installment.product.id.name}></img>
+                          <img className="h-100" src={installment.product.id.bigimage ? installment.product.id.bigimage.publicUrl : INITIAL_IMAGE} alt={installment.product.id.name}></img>
                         </div>
                         <div className="col-6 col-md-3 align-self-center">
                           <p className="font-weight-bold mb-0">{installment.product.id.name}</p>

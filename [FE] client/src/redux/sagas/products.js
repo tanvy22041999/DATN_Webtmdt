@@ -3,7 +3,7 @@ import { get } from "lodash";
 import UIActions from "../actions/ui";
 import ProductsActions, { ProductsActionTypes } from "../actions/products";
 import { 
-  getAllProducts, getDetailProduct, getBestSeller, getFavorite, getNewest, getLikeProducts, getRelateProducts,
+  getAllProducts, getDetailProduct, getBestSeller, getNewest, getLikeProducts, getRelateProducts,
   getAllAccessory, compareProduct
 } from "../apis/products";
 import GroupActions from "../actions/group";
@@ -39,19 +39,6 @@ function* handleGetBestSeller({ payload }) {
     yield put(ProductsActions.onGetBestSellerSuccess(data.products));
   } catch (error) {
     yield put(ProductsActions.onGetBestSellerError(error));
-  }
-  yield put(UIActions.hideLoading());
-}
-
-function* handleGetFavorite({ payload }) {
-  yield put(UIActions.showLoading());
-  try {
-    const result = yield call(getFavorite, payload);
-    const data = get(result, "data");
-    if (data.code !== 200) throw data;
-    yield put(ProductsActions.onGetFavoriteSuccess(data.products));
-  } catch (error) {
-    yield put(ProductsActions.onGetFavoriteError(error));
   }
   yield put(UIActions.hideLoading());
 }
@@ -165,9 +152,6 @@ export function* watchGetAccessory() {
 export function* watchGetBestSeller() {
   yield takeEvery(ProductsActionTypes.GET_BEST_SELLER, handleGetBestSeller);
 }
-export function* watchGetFavorite() {
-  yield takeEvery(ProductsActionTypes.GET_FAVORITE, handleGetFavorite);
-}
 export function* watchGetRelate() {
   yield takeEvery(ProductsActionTypes.GET_RELATE, handleGetRelate);
 }
@@ -193,7 +177,6 @@ export default function* rootSaga() {
     fork(watchCompare),
     fork(watchGetAccessory),
     fork(watchGetBestSeller),
-    fork(watchGetFavorite),
     fork(watchGetNewest),
     fork(watchGetLike),
     fork(watchGetRelate),

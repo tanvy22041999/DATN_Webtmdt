@@ -110,7 +110,7 @@ class InstallmentDetail extends Component {
                         <div className="rounded border">
                           {installmentItem.product &&<div className="row">
                             <div className="col-4">
-                              <img className="w-100" src={installmentItem.product.id.bigimage ? installmentItem.product.id.bigimage.public_url : INITIAL_IMAGE} alt={installmentItem.product.id.name}></img>
+                              <img className="w-100" src={installmentItem.product.id.bigimage ? installmentItem.product.id.bigimage.publicUrl : INITIAL_IMAGE} alt={installmentItem.product.id.name}></img>
                             </div>
                             <div className="col-8 align-self-center">
                               <p className="font-weight-bold mb-0">{installmentItem.product.id.name}</p>
@@ -163,7 +163,7 @@ class InstallmentDetail extends Component {
                         ? <div className="form-inline rounded border">
                             <div className="c-avatar">
                               <img
-                                src={installmentItem.staff.image ? installmentItem.staff.image.public_url : INITIAL_IMAGE}
+                                src={installmentItem.staff.image ? installmentItem.staff.image.publicUrl : INITIAL_IMAGE}
                                 className="c-avatar-img"
                                 alt={installmentItem.staff.id}
                               />

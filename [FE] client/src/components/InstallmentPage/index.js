@@ -172,7 +172,7 @@ class InstallmentPage extends Component {
                   <div className="row">
                     <div className="col-3">
                       <img
-                        src={product.bigimage.public_url}
+                        src={product.bigimage.publicUrl}
                         alt={product.name}
                         className="w-100"
                       ></img>

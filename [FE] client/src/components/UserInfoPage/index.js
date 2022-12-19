@@ -62,7 +62,7 @@ class UserInfoPage extends Component {
                     {
                       previewSource ? (
                         <img src={previewSource} alt=""/>
-                      ) : <img src={authInfo.image.public_url} alt="" />
+                      ) : <img src={authInfo.image.publicUrl} alt="" />
                     }
                       <div className="file btn btn-lg btn-primary">
                       {t('user.file.input')}

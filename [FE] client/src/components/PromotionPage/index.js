@@ -75,7 +75,7 @@ class PromotionPage extends Component {
               <div className="col-12 col-md-6 col-xl-4 my-2" key={index}>
                 <Link to={this.setStatus(ad.startedAt, ad.endedAt) !== t('promotion.done') && ad.link.replace("https://localhost:5000/#", "")}>
                 <div className="rounded shadow-sm my-2">
-                  <img className="rounded" src={ad.image.public_url}></img>
+                  <img className="rounded" src={ad.image.publicUrl}></img>
                   <div className="row px-3 py-2">
                     <div className="col-12">
                       <h4 className="font-weight-bold float-start">{ad.name}</h4>

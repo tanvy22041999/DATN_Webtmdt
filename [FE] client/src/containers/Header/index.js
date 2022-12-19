@@ -188,7 +188,7 @@ class Header extends Component {
           return(
           <div className="row" key={index}>
             <div className="col-3">
-            <img className="w-100 rounded" src={notification.image ? notification.image.public_url : INITIAL_IMAGE} alt={index}></img>
+            <img className="w-100 rounded" src={notification.image ? notification.image.publicUrl : INITIAL_IMAGE} alt={index}></img>
             </div>
             <div className="col-9">
         <p className="mb-0">{notification.name}</p>
@@ -204,7 +204,7 @@ class Header extends Component {
           return(
           <div className="row" key={index}>
             <div className="col-3">
-            <img className="w-100 rounded" src={notification.image ? notification.image.public_url : INITIAL_IMAGE} alt={index}></img>
+            <img className="w-100 rounded" src={notification.image ? notification.image.publicUrl : INITIAL_IMAGE} alt={index}></img>
             </div>
             <div className="col-9">
         <p className="mb-0">{notification.name}</p>
@@ -220,7 +220,7 @@ class Header extends Component {
           return(
           <div className="row" key={index}>
             <div className="col-3">
-            <img className="w-100 rounded" src={notification.image ? notification.image.public_url : INITIAL_IMAGE} alt={index}></img>
+            <img className="w-100 rounded" src={notification.image ? notification.image.publicUrl : INITIAL_IMAGE} alt={index}></img>
             </div>
             <div className="col-9">
         <p className="mb-0">{notification.name}</p>
@@ -370,7 +370,7 @@ class Header extends Component {
                       onClick={()=> this.onReload()} style={{textDecoration: 'none'}}>
                       <div className="row text-dark text-decoration-none " style={{height: "60px"}}>
                         <div className="col-3 my-auto">
-                          <><img style={{height: "60px"}} src={product.bigimage.public_url} alt={product.name}></img></>
+                          <><img style={{height: "60px"}} src={product.bigimage.publicUrl} alt={product.name}></img></>
                         </div>
                         <div className="col-9 text-left my-auto">
                           <p className="mb-0">{product.name}</p>
@@ -397,7 +397,7 @@ class Header extends Component {
                         return(
                         <div className="row" key={index}>
                           <div className="col-3">
-                          <img className="w-100 rounded" src={item.product.bigimage ? item.product.bigimage.public_url : INITIAL_IMAGE} alt={index}></img>
+                          <img className="w-100 rounded" src={item.product.bigimage ? item.product.bigimage.publicUrl : INITIAL_IMAGE} alt={index}></img>
                           </div>
                           <div className="col-9">
                       <p className="font-weight-bold mb-0">{item.product.name}</p>
@@ -436,7 +436,7 @@ class Header extends Component {
                     {location.hash.indexOf("account") === -1 && listCategories && <>
                       {listCategories.map((category, index)=>{
                         return (
-                          <MenuLink key={index} image={category.image.public_url} label={language ==="vn" ? category.name : category.name_en} to={`/products/${category.pathseo}.${category.id}`} activeOnlyWhenExact={true} />
+                          <MenuLink key={index} image={category.image.publicUrl} label={language ==="vn" ? category.name : category.name_en} to={`/products/${category.pathseo}.${category.id}`} activeOnlyWhenExact={true} />
                         )
                       })}
                       <MenuLink image={assets("module.png")} label={t('header.accessories.menu')} to={"/products/accessories"} activeOnlyWhenExact={true} />

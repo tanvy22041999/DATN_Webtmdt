@@ -108,11 +108,11 @@ class CartPage extends Component {
                     <div className="col-md-4 col-7">
                       <div className="row">
                         <div className="col-6 col-sm-4 col-md-3 text-center">
-                          <img className="float-start" alt={item.product.name} src={item.product.bigimage ? item.product.bigimage.public_url : "http://www.pha.gov.pk/img/img-02.jpg"}></img>
+                          <img className="float-start" alt={item.product.name} src={item.product.bigimage ? item.product.bigimage.publicUrl : "http://www.pha.gov.pk/img/img-02.jpg"}></img>
                         </div>
                         <div className="col-6 col-sm-8 col-md-9 align-self-center">
                         <p className="font-weight-bold mb-0">{item.product.name}</p>
-                        <p className="mb-0 text-secondary">{t('common.color')} {item.product.colors.find(i => i.id === item.color).name_en}</p>
+                        <p className="mb-0 text-secondary">{t('common.color')} {item.product.colors.find(i => i.id === item.color).nameEn}</p>
                         </div>
                       </div>
                     </div>

@@ -27,7 +27,7 @@ class ProductItem extends Component {
               <img
                 src={
                   product.bigimage
-                    ? product.bigimage.public_url
+                    ? product.bigimage.publicUrl
                     : INITIAL_IMAGE
                 }
                 className="h-100 w-auto"

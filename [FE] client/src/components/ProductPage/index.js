@@ -261,7 +261,7 @@ class ProductPage extends Component {
               <button type="button" 
               className={filter.brand === brand.id.id ? "rounded-pill shadow-sm bg-aqua text-dark mr-2 my-2 position-relative btn-padding" : "rounded-pill shadow-sm bg-light text-dark mr-2 my-2 position-relative btn-padding"} 
               key={index} onClick={()=>this.onSetBrand(brand.id.id)}>
-                <img alt={brand.id.name} style={{height: "20px"}} src={brand.id.image && brand.id.image.public_url}/>
+                <img alt={brand.id.name} style={{height: "20px"}} src={brand.id.image && brand.id.image.publicUrl}/>
                 <span className="product-count">{brand.count}</span>
               </button>
             )})}

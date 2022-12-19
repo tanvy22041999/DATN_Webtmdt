@@ -27,11 +27,10 @@ class HomePage extends Component {
   }
 
   componentDidMount(){
-    const {onGetBestSeller, onGetFavorite, onGetNewest, onGetListAd} = this.props;
+    const {onGetBestSeller, onGetNewest, onGetListAd} = this.props;
     document.title = "[TellMe] Trang bán hàng"
     onGetListAd({active: 1});
     onGetBestSeller();
-    onGetFavorite();
     onGetNewest();
   }
   next = () => {
@@ -58,7 +57,7 @@ class HomePage extends Component {
 
   render() {
     const {activeIndex} = this.state;
-    const { t, bestSeller, newest, favorite, listAd } = this.props;
+    const { t, bestSeller, newest, listAd } = this.props;
     
     return (<>
       <div className="promo-area">
@@ -90,7 +89,7 @@ class HomePage extends Component {
                         key={item.id}
                       >
                         <Link to={item.link.replace("https://localhost:5000/#", "")}>
-                        <img src={item.image.public_url} alt={item.name} />
+                        <img src={item.image.publicUrl} alt={item.name} />
                         </Link>
                         
                       </CarouselItem>
@@ -155,20 +154,6 @@ class HomePage extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-12 my-2">
-              <div className="latest-product">
-                <h2 className="text-center">{t('home.list.favorite')}</h2>
-                <div className="shadow p-3 mb-5 bg-white rounded">
-                  <div className="row">
-                    {favorite ? favorite.map((product, index) => {
-                      return (
-                          <ProductItem product={product} key={index} />
-                        )
-                    }) : <Loader/>}
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -182,7 +167,6 @@ class HomePage extends Component {
 const mapStateToProps = (state) => {
   return {
     bestSeller: state.products.best,
-    favorite: state.products.favorite,
     newest: state.products.new,
     listAd: state.ad.list,
   }
@@ -192,9 +176,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onGetBestSeller: () => {
       dispatch(ProductsActions.onGetBestSeller());
-    },
-    onGetFavorite: () => {
-      dispatch(ProductsActions.onGetFavorite());
     },
     onGetNewest: () => {
       dispatch(ProductsActions.onGetNewest());

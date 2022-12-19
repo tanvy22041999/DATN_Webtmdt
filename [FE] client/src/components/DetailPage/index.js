@@ -542,7 +542,7 @@ class DetailPage extends Component {
                               <div className="row" key={index}>
                                 <div className="col-12">
                                 <div className="float-start mr-3">
-                                  <img className="rounded-circle square-60" src={item.user && item.user.image ? item.user.image.public_url : INITIAL_IMAGE} alt=""/>
+                                  <img className="rounded-circle square-60" src={item.user && item.user.image ? item.user.image.publicUrl : INITIAL_IMAGE} alt=""/>
                                 </div>
                                 <div className="">
                                   <p className="font-weight-bold mb-0">{item.user && item.user.firstname} {item.user && item.user.lastname}</p>

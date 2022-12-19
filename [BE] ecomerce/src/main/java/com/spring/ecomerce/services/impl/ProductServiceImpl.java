@@ -246,7 +246,7 @@ public class ProductServiceImpl implements ProductService {
         BSONObject queryData = new BasicBSONObject();
         queryData.put("validFlg", 1);
         queryData.put("delFlg", 0);
-        queryData.put("$unwind", "$order_lis");
+        queryData.put("$unwind", "$order_list");
         queryData.put("$project", Map.of("order_list", 1, "_id",0));
         queryData.put("$sort", Map.of("count", 1));
         queryData.put("$limit", 4);

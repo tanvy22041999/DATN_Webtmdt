@@ -210,7 +210,7 @@ class ComparePage extends Component {
                           <div className=" directory rounded p-2 mx-2" key={index} onClick={()=> this.setCompare(item.id)}>
                             <div className="row text-dark text-decoration-none" style={{height: "60px"}}>
                               <div className="col-xl-3 my-auto d-none d-xl-block">
-                                <img style={{height: "60px"}} src={item.bigimage.public_url} alt={item.name}></img>
+                                <img style={{height: "60px"}} src={item.bigimage.publicUrl} alt={item.name}></img>
                               </div>
                               <div className="col-12 col-xl-9 text-left my-auto">
                                 <p className="mb-0">{item.name}</p>
