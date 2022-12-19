@@ -143,7 +143,7 @@ function* handleGetDetail({ id }) {
     if (data.code !== 200) throw data;
     yield delay(2000)
     yield put(ProductsActions.onGetDetailSuccess(data.product));
-    if(data.product.group) yield put(GroupActions.onGetDetail(data.product.group._id))
+    if(data.product.group) yield put(GroupActions.onGetDetail(data.product.group.id))
   } catch (error) {
     yield put(ProductsActions.onGetDetailError(error));
   }

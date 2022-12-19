@@ -21,7 +21,7 @@ class ProductItem extends Component {
     const { product, currency, t } = this.props;
     return (
       <div className="col-lg-3 col-6 my-2">
-        {product && <Link to={`/product/${product.pathseo}.${product._id}`} onClick={()=> this.onReload(`/product/${product.pathseo}.${product._id}`)} style={{textDecoration: 'none'}}>
+        {product && <Link to={`/product/${product.pathseo}.${product.id}`} onClick={()=> this.onReload(`/product/${product.pathseo}.${product.id}`)} style={{textDecoration: 'none'}}>
         <div className="single-shop-product">
           <div className="product-upper text-center">
               <img

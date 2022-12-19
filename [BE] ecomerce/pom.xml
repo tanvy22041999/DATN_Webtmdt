@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.spring</groupId>
-    <artifactId>food</artifactId>
+    <artifactId>ecommerce</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>food</name>
-    <description>Food Store</description>
+    <name>ecommerce</name>
+    <description>Ecommerce Store</description>
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
@@ -113,10 +113,17 @@
                         </exclude>
                     </excludes>
                     <executable>true</executable>
-                    <finalName>food</finalName>
+                    <finalName>ecommerce</finalName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>

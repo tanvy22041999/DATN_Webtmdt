@@ -17,7 +17,7 @@ function* handleUpdate( {payload} ) {
       var image = yield call(addImage, payload.params.image);
       result = yield call(updateUserInfo,
       { firstname, lastname, phonenumber, address, email,
-        "image": image.data.images[0]._id
+        "image": image.data.images[0].id
       }, payload.id);
       if (result.data.code !== 200) throw result.data;
     }

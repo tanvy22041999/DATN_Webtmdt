@@ -105,9 +105,9 @@ class SearchPage extends Component {
               listCategory.map((category, index) =>{
               return(
                 <button type="button" 
-                className={filter.category === category._id._id ? "rounded-pill shadow-sm bg-info text-dark mr-2 my-2 position-relative btn-padding" : "rounded-pill shadow-sm bg-active text-dark mr-2 my-2 position-relative btn-padding"} 
-                key={index} onClick={()=>this.onSetCategory(category._id._id)}>
-                  {category._id.name}
+                className={filter.category === category.id.id ? "rounded-pill shadow-sm bg-info text-dark mr-2 my-2 position-relative btn-padding" : "rounded-pill shadow-sm bg-active text-dark mr-2 my-2 position-relative btn-padding"} 
+                key={index} onClick={()=>this.onSetCategory(category.id.id)}>
+                  {category.id.name}
                   <span className="product-count">{category.count}</span>
                 </button>
               )})}

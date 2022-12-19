@@ -86,7 +86,7 @@ class CheckoutPage extends Component {
     var { cart } = this.props;
     for (let i = 0; i < cart.length; i++) {
       total = total + cart[i].quantity;
-      totalPrice = totalPrice + cart[i].quantity * cart[i].product.colors.find(item=> item._id === cart[i].color).price;
+      totalPrice = totalPrice + cart[i].quantity * cart[i].product.colors.find(item=> item.id === cart[i].color).price;
       totalWeight = totalWeight + cart[i].quantity * cart[i].product.weight;
       totalHeight = totalHeight + cart[i].quantity * cart[i].product.height;
       totalWidth = totalWidth < cart[i].product.width ? cart[i].product.width : totalWidth;
@@ -262,22 +262,22 @@ class CheckoutPage extends Component {
                               </div>
                               <div className="col-6 col-sm-8 col-md-9 col-lg-10 align-self-center">
                               <p className="font-weight-bold mb-0">{item.product.name}</p>
-                              <p className="mb-0 text-secondary">{t('common.color')} {item.product.colors.find(i => i._id === item.color).name_en}</p>
+                              <p className="mb-0 text-secondary">{t('common.color')} {item.product.colors.find(i => i.id === item.color).name_en}</p>
                               </div>
                             </div>
                           </div>
                           <div className="col-2 align-self-center text-center">
                           {currency==="VND" 
-                          ? numberWithCommas(item.product.colors.find(i => i._id === item.color).price) 
-                          : numberWithCommas(parseFloat(tryConvert(item.product.colors.find(i => i._id === item.color).price, currency, false)).toFixed(2))} {currency}
+                          ? numberWithCommas(item.product.colors.find(i => i.id === item.color).price) 
+                          : numberWithCommas(parseFloat(tryConvert(item.product.colors.find(i => i.id === item.color).price, currency, false)).toFixed(2))} {currency}
                             </div>
                           <div className="col-2 align-self-center text-center">
                             <p className="font-weight-bold rounded-circle bg-primary py-1 px-2 w-fit-content text-white m-auto">x{item.quantity}</p>
                           </div>
                           <div className="col-2 align-self-center text-right font-weight-bold">
                           {currency==="VND" 
-                          ? numberWithCommas(item.quantity * item.product.colors.find(i => i._id === item.color).price) 
-                          : numberWithCommas(parseFloat(item.quantity * tryConvert(item.product.colors.find(i => i._id === item.color).price, currency, false)).toFixed(2))} {currency}
+                          ? numberWithCommas(item.quantity * item.product.colors.find(i => i.id === item.color).price) 
+                          : numberWithCommas(parseFloat(item.quantity * tryConvert(item.product.colors.find(i => i.id === item.color).price, currency, false)).toFixed(2))} {currency}
                           </div>
                         </div>
                       )

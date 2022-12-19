@@ -87,7 +87,7 @@ class HomePage extends Component {
                       <CarouselItem
                         onExiting={() => this.setState({animating: true})}
                         onExited={() => this.setState({animating: false})}
-                        key={item._id}
+                        key={item.id}
                       >
                         <Link to={item.link.replace("https://localhost:5000/#", "")}>
                         <img src={item.image.public_url} alt={item.name} />
@@ -134,7 +134,7 @@ class HomePage extends Component {
                   <div className="row">
                     {bestSeller ? bestSeller.map((product, index) => {
                       return (
-                          <ProductItem product={product._id} key={index} />
+                          <ProductItem product={product.id} key={index} />
                         )
                     }) : <Loader/>}
                   </div>

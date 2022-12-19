@@ -26,7 +26,7 @@ const findCheckout = (checkout, item) => {
   var index = -1;
   if(checkout.length>0){
     for(var i=0; i<checkout.length; i++){
-      if(checkout[i].product._id === item.product._id && checkout[i].color === item.color){
+      if(checkout[i].product.id === item.product.id && checkout[i].color === item.color){
         index = i;  //trả về vị trí
         break;
       }

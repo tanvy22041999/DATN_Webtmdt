@@ -62,7 +62,7 @@ class PurchasePage extends Component {
       var params = {
         ...filter,
         ...filters,
-        user: authInfo && authInfo._id
+        user: authInfo && authInfo.id
       };
       this.setState({queryParams: params})
       onGetList(params);
@@ -79,7 +79,7 @@ class PurchasePage extends Component {
       var params = {
         ...filter,
         ...filters,
-        user: props.authInfo && props.authInfo._id
+        user: props.authInfo && props.authInfo.id
       };
       this.setState({queryParams: params})
       if(props.authInfo)onGetList(params);
@@ -94,7 +94,7 @@ class PurchasePage extends Component {
       var params = {
         ...filter,
         ...filters,
-        user: authInfo && authInfo._id
+        user: authInfo && authInfo.id
       };
       this.setState({queryParams: params})
       onGetList(params);
@@ -231,7 +231,7 @@ class PurchasePage extends Component {
                 <div className="col-12 my-1" key={index}>
                   <div className="card shadow-sm">
                     <div className="card-header bg-primary text-white">
-                      <p className="float-start mb-0">{t('order.card.header')} {order._id}</p>
+                      <p className="float-start mb-0">{t('order.card.header')} {order.id}</p>
                       <p className="float-end mb-0">| {this.setStatus(order.confirmed, order.status, order.active)}</p>
                     </div>
                     <div className="card-body">
@@ -255,8 +255,8 @@ class PurchasePage extends Component {
                     </div>
                     <div className="card-footer">
                       <div className="float-start">
-                        <button type="button" className="btn btn-success mr-2" data-bs-toggle="modal" data-bs-target="#orderModal" onClick={()=> this.getInfoOrder(order._id)}>{t('common.detail.button')}</button>
-                        {this.setStatus(order.confirmed, order.status, order.active)==="Chờ xác nhận" && <button type="button" className="btn btn-danger" onClick={()=> this.onDeactivate(order._id)}>{t('common.destroy.button')}</button>}
+                        <button type="button" className="btn btn-success mr-2" data-bs-toggle="modal" data-bs-target="#orderModal" onClick={()=> this.getInfoOrder(order.id)}>{t('common.detail.button')}</button>
+                        {this.setStatus(order.confirmed, order.status, order.active)==="Chờ xác nhận" && <button type="button" className="btn btn-danger" onClick={()=> this.onDeactivate(order.id)}>{t('common.destroy.button')}</button>}
                       </div>
                       <div className="float-end font-weight-bold">
                         {numberWithCommas(order.total_price)} VND

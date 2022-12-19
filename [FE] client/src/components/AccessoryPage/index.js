@@ -95,7 +95,7 @@ class AccessoryPage extends Component {
 
   redirectCategory = (category) =>{
     const {history} = this.props;
-    history.push(`/products/${category.pathseo}.${category._id}`)
+    history.push(`/products/${category.pathseo}.${category.id}`)
   }
 
   // Sort with brands
@@ -182,9 +182,9 @@ class AccessoryPage extends Component {
             totalBrand.map((brand, index) =>{
             return(
               <button type="button" 
-              className={filter.brand === brand._id._id ? "rounded-pill shadow-sm bg-aqua text-dark mr-2 my-2 position-relative btn-padding" : "rounded-pill shadow-sm bg-light text-dark mr-2 my-2 position-relative btn-padding"} 
-              key={index} onClick={()=>this.onSetBrand(brand._id._id)}>
-                <img alt={brand._id.name} style={{height: "20px"}} src={brand._id.image && brand._id.image.public_url}/>
+              className={filter.brand === brand.id.id ? "rounded-pill shadow-sm bg-aqua text-dark mr-2 my-2 position-relative btn-padding" : "rounded-pill shadow-sm bg-light text-dark mr-2 my-2 position-relative btn-padding"} 
+              key={index} onClick={()=>this.onSetBrand(brand.id.id)}>
+                <img alt={brand.id.name} style={{height: "20px"}} src={brand.id.image && brand.id.image.public_url}/>
                 <span className="product-count">{brand.count}</span>
               </button>
             )})}

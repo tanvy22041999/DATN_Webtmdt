@@ -50,7 +50,7 @@ class InstallmentPage extends Component {
   onCreateInstallment = () => {
     const { onCreate, product, authInfo } = this.props;
     var { color, period, prepay } = this.state;
-    const productPrice = parseInt(product.colors.find((i) => i._id === color).price)
+    const productPrice = parseInt(product.colors.find((i) => i.id === color).price)
     if(productPrice < 2500000) return toastError("Không hỗ trợ trả góp cho sản phẩm dưới 2.500.000 VND");
     if (!authInfo) return toastError("Bạn phải đăng nhập để tiến hành xét duyệt trả góp");
     if (period === "") return toastWarning("Bạn chưa chọn thời gian vay");
@@ -61,11 +61,11 @@ class InstallmentPage extends Component {
       interest_rate,
       prepay,
       product: {
-        _id: product._id,
+        id: product.id,
         color,
-        product_price: product.colors.find((i) => i._id === color).price,
+        product_price: product.colors.find((i) => i.id === color).price,
       },
-      user: authInfo._id,
+      user: authInfo.id,
     };
     onCreate(data);
   };
@@ -82,14 +82,14 @@ class InstallmentPage extends Component {
         month: i + 1,
         origin:
           Math.ceil(
-            (product.colors.find((i) => i._id === color).price *
+            (product.colors.find((i) => i.id === color).price *
               (1 - percent * 0.01)) /
               period /
               1000
           ) * 1000,
         interest:
           Math.ceil(
-            (product.colors.find((i) => i._id === color).price *
+            (product.colors.find((i) => i.id === color).price *
               (1 - percent * 0.01) *
               interest_rate *
               0.01) /
@@ -98,7 +98,7 @@ class InstallmentPage extends Component {
           ) * 1000,
         total:
           Math.ceil(
-            (product.colors.find((i) => i._id === color).price *
+            (product.colors.find((i) => i.id === color).price *
               (1 - percent * 0.01) *
               (1 + interest_rate * 0.01)) /
               period /
@@ -109,19 +109,19 @@ class InstallmentPage extends Component {
     this.setState({
       prepay:
         Math.ceil(
-          (product.colors.find((i) => i._id === color).price * percent * 0.01) /
+          (product.colors.find((i) => i.id === color).price * percent * 0.01) /
             1000
         ) * 1000,
       loan:
         Math.ceil(
-          (product.colors.find((i) => i._id === color).price *
+          (product.colors.find((i) => i.id === color).price *
             (1 - percent * 0.01)) /
             1000
         ) * 1000,
       detail,
       total_interest:
         Math.ceil(
-          (product.colors.find((i) => i._id === color).price *
+          (product.colors.find((i) => i.id === color).price *
             (1 - percent * 0.01) *
             interest_rate *
             0.01) /
@@ -129,7 +129,7 @@ class InstallmentPage extends Component {
         ) * 1000,
       total:
         Math.ceil(
-          (product.colors.find((i) => i._id === color).price *
+          (product.colors.find((i) => i.id === color).price *
             (1 - percent * 0.01) *
             (1 + interest_rate * 0.01)) /
             1000
@@ -157,9 +157,9 @@ class InstallmentPage extends Component {
             <a className="text-decoration-none directory rounded p-2" href="/#/">{t('header.home.menu')}</a>
             <i className="fa fa-chevron-right px-2 w-25-px "></i>
             {product && <>
-            <a className="text-decoration-none directory rounded p-2" href={`/#/products/${product.category.pathseo}.${product.category._id}`}>{product.category.name}</a>
+            <a className="text-decoration-none directory rounded p-2" href={`/#/products/${product.category.pathseo}.${product.category.id}`}>{product.category.name}</a>
             <i className="fa fa-chevron-right px-2 w-25-px "></i>
-            <a className="text-decoration-none directory rounded p-2" href={`/#/product/${product.pathseo}.${product._id}`}>{product.name}</a>
+            <a className="text-decoration-none directory rounded p-2" href={`/#/product/${product.pathseo}.${product.id}`}>{product.name}</a>
             <i className="fa fa-chevron-right px-2 w-25-px "></i></>}
           </div>
           <h1 className="my-0 font-weight-bold">{t('installment.page.title')}</h1>
@@ -181,12 +181,12 @@ class InstallmentPage extends Component {
                       <p className="font-weight-bold mb-0">{product.name}</p>
                       <p className="font-italic mb-0">
                         {t('common.color')}{" "}
-                        {product.colors.find((i) => i._id === color).name_vn}
+                        {product.colors.find((i) => i.id === color).name_vn}
                       </p>
                       <p className="mb-0">
                       {currency==="VND" 
-                      ? numberWithCommas(product.colors.find((i) => i._id === color).price) 
-                      : numberWithCommas(parseFloat(tryConvert(product.colors.find((i) => i._id === color).price, currency, false)).toFixed(2))} {currency}
+                      ? numberWithCommas(product.colors.find((i) => i.id === color).price) 
+                      : numberWithCommas(parseFloat(tryConvert(product.colors.find((i) => i.id === color).price, currency, false)).toFixed(2))} {currency}
                       </p>
                     </div>
                   </div>

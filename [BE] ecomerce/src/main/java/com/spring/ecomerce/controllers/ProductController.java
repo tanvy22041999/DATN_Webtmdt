@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -29,7 +30,7 @@ public class ProductController {
     private BaseResponseEntity baseResponse;
 
     @GetMapping()
-    public String getAllBrand(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
+    public String getAllProduct(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
                               @RequestParam(value = "page", defaultValue = "0") Integer page,
                               @RequestParam(value = "keyword", defaultValue = "") String keyword) throws SystemException {
         try{
@@ -69,6 +70,23 @@ public class ProductController {
             }
         }catch (Exception ex){
             baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
+        }
+
+        return baseResponse.getResponseBody();
+    }
+
+    @GetMapping("/hot-sold")
+    public  String gotHotSellProduct() throws  SystemException{
+        try{
+            List<ProductEntity> results = productService.getHotSold();
+
+            Map<String, Object> dataResponse = new HashMap<>();
+            dataResponse.put("products", results);
+            baseResponse.retrieved();
+            return baseResponse.getResponseBody(dataResponse);
+
+        }catch (Exception ex){
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_GET", null));
         }
 
         return baseResponse.getResponseBody();

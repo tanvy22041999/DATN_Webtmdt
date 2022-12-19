@@ -59,7 +59,7 @@ class UserInstallmentPage extends Component {
       var params = {
         ...filter,
         ...filters,
-        user: authInfo && authInfo._id
+        user: authInfo && authInfo.id
       };
       this.setState({queryParams: params})
       onGetList(params);
@@ -76,7 +76,7 @@ class UserInstallmentPage extends Component {
       var params = {
         ...filter,
         ...filters,
-        user: props.authInfo && props.authInfo._id
+        user: props.authInfo && props.authInfo.id
       };
       this.setState({queryParams: params})
       if(props.authInfo)onGetList(params);
@@ -91,7 +91,7 @@ class UserInstallmentPage extends Component {
       var params = {
         ...filter,
         ...filters,
-        user: authInfo && authInfo._id
+        user: authInfo && authInfo.id
       };
       this.setState({queryParams: params})
       onGetList(params);
@@ -200,16 +200,16 @@ class UserInstallmentPage extends Component {
                 <div className="col-12 my-1" key={index}>
                   <div className="card shadow-sm">
                     <div className="card-header bg-primary text-white">
-                      <p className="float-start mb-0">{t('installment.card.header')} {installment._id}</p>
+                      <p className="float-start mb-0">{t('installment.card.header')} {installment.id}</p>
                       <p className="float-end mb-0">| {this.setStatus(installment.status, installment.active)}</p>
                     </div>
                     <div className="card-body">
                       <div className="row">
                         <div className="col-6 col-md-3 text-center  h-120">
-                          <img className="h-100" src={installment.product._id.bigimage ? installment.product._id.bigimage.public_url : INITIAL_IMAGE} alt={installment.product._id.name}></img>
+                          <img className="h-100" src={installment.product.id.bigimage ? installment.product.id.bigimage.public_url : INITIAL_IMAGE} alt={installment.product.id.name}></img>
                         </div>
                         <div className="col-6 col-md-3 align-self-center">
-                          <p className="font-weight-bold mb-0">{installment.product._id.name}</p>
+                          <p className="font-weight-bold mb-0">{installment.product.id.name}</p>
                           <p className="font-italic mb-0">{t('common.color')} {installment.product.color && installment.product.color.name_vn}</p>
                           <p className="mb-0">{t('cart.price.table')} {numberWithCommas(installment.product.product_price)} VND</p>
                         </div>
@@ -239,8 +239,8 @@ class UserInstallmentPage extends Component {
                     </div>
                     <div className="card-footer">
                       <div className="float-start">
-                        <button type="button" className="btn btn-success mr-2" data-bs-toggle="modal" data-bs-target="#myModal" onClick={()=> this.getInfoInstallment(installment._id)}>{t('common.detail.button')}</button>
-                        {this.setStatus(installment.status, installment.active)==="Chờ duyệt" && <button type="button" className="btn btn-danger" onClick={()=> this.onDeactivate(installment._id)}>{t('common.destroy.button')}</button>}
+                        <button type="button" className="btn btn-success mr-2" data-bs-toggle="modal" data-bs-target="#myModal" onClick={()=> this.getInfoInstallment(installment.id)}>{t('common.detail.button')}</button>
+                        {this.setStatus(installment.status, installment.active)==="Chờ duyệt" && <button type="button" className="btn btn-danger" onClick={()=> this.onDeactivate(installment.id)}>{t('common.destroy.button')}</button>}
                       </div>
                       <div className="float-end font-weight-bold">
                         {installment.startedAt && installment.endedAt 

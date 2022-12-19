@@ -140,7 +140,7 @@ class ComparePage extends Component {
             <a className="text-decoration-none directory rounded p-2" href="/#/">{t('header.home.menu')}</a>
             <i className="fa fa-chevron-right px-2 w-25-px "></i>
             {category && <>
-            <a className="text-decoration-none directory rounded p-2" href={`/#/products/${category.pathseo}.${category._id}`}>{language==="vn" ? category.name : category.name_en}</a>
+            <a className="text-decoration-none directory rounded p-2" href={`/#/products/${category.pathseo}.${category.id}`}>{language==="vn" ? category.name : category.name_en}</a>
             <i className="fa fa-chevron-right px-2 w-25-px "></i></>}
           </div>
           <h1 className="my-0 font-weight-bold">{t("compare.page.title")}</h1>
@@ -153,11 +153,11 @@ class ComparePage extends Component {
             <div className="row">
               {listProducts && listProducts.map(product => {
                 return (
-                  <div className="col-4" key={product._id}>
+                  <div className="col-4" key={product.id}>
                     <div className="rounded border p-2 my-2 shadow-sm form-inline">
                       <h3 className="my-0">{product.name}</h3>
                       <div className="form-check form-switch ml-auto">
-                        <button type="button" className="btn-close rounded-circle bg-light p-2" onClick={()=> this.removeCompare(product._id)}></button>
+                        <button type="button" className="btn-close rounded-circle bg-light p-2" onClick={()=> this.removeCompare(product.id)}></button>
                       </div>
                     </div>
                     <ImageGalleries imageDetail={product.image}/>
@@ -191,7 +191,7 @@ class ComparePage extends Component {
                           readonly
                         /><span className="ml-2 text-secondary font-size-12">{product.reviewCount} {t('common.review')}</span></div>}
                       <div className={product.stars ? "col-12 col-xl-6" : "col-12"}>
-                        <button type="button" className="btn btn-primary w-100" onClick={() => {history.push(`/product/${product.pathseo}.${product._id}`)}}>{t("common.detail.button")}</button>
+                        <button type="button" className="btn btn-primary w-100" onClick={() => {history.push(`/product/${product.pathseo}.${product.id}`)}}>{t("common.detail.button")}</button>
                       </div>
                     </div>
                   </div>
@@ -207,7 +207,7 @@ class ComparePage extends Component {
                       {listSearch && keyword &&<div className="card position-absolute w-100 shadow-sm py-2" style={{ zIndex: 1}}>
                        <>{listSearch.map((item, index) =>{
                         return (
-                          <div className=" directory rounded p-2 mx-2" key={index} onClick={()=> this.setCompare(item._id)}>
+                          <div className=" directory rounded p-2 mx-2" key={index} onClick={()=> this.setCompare(item.id)}>
                             <div className="row text-dark text-decoration-none" style={{height: "60px"}}>
                               <div className="col-xl-3 my-auto d-none d-xl-block">
                                 <img style={{height: "60px"}} src={item.bigimage.public_url} alt={item.name}></img>
@@ -241,7 +241,7 @@ class ComparePage extends Component {
                 <tbody>
                   {specifications.map(item => {
                     return(
-                    <tr key={item._id}>
+                    <tr key={item.id}>
                       <th colSpan="1" style={{width: "16%"}}>{item.name}</th>
                       {item.product && item.product.length > 0 && item.product.map((element, index) => {
                         return (

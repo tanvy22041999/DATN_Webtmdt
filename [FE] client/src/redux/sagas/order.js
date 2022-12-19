@@ -58,12 +58,12 @@ function* handleCreate({ payload }) {
     if(payload.payment_method === "paypal"){
       socket.emit('order', { 
         email: data.order.email, 
-        order: data.order._id 
+        order: data.order.id 
       });
       yield put(NotificationActions.onCreate({
         name : "Đơn hàng mới được thanh toán qua Paypal",
         image : data.order.user.image,
-        link: data.order._id,
+        link: data.order.id,
         type: 0,
         user: null,
         content :  `${data.order.email} vừa thanh toán và xác nhận thành công`
@@ -72,7 +72,7 @@ function* handleCreate({ payload }) {
     /* Notification */
     yield put(ProductsActions.onClearCart({cart: state.cart, checkout: state.checkout}))
     yield put(ProductsActions.onClearCheckout())
-    const email = yield call(sendConfirmEmail, data.order._id);
+    const email = yield call(sendConfirmEmail, data.order.id);
     yield put(OrdersActions.onSendConfirmEmailSuccess(email.data));
   } catch (error) {
     yield put(OrdersActions.onCreateError(error));
@@ -86,11 +86,11 @@ function* handleConfirmOrder({ payload}) {
     if (data.code !== 200) throw data;
     yield put(OrdersActions.onConfirmOrderSuccess(data));
     /* Notification */
-    socket.emit('order', { email: data.order.email, order: data.order._id });
+    socket.emit('order', { email: data.order.email, order: data.order.id });
     yield put(NotificationActions.onCreate({
       name : "Đơn hàng mới được xác nhận",
       image : data.order.user.image,
-      link: data.order._id,
+      link: data.order.id,
       type: 0,
       content :  `${data.order.email} vừa xác nhận đặt hàng thành công`
     }))

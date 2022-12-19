@@ -8,10 +8,15 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ProductRepository extends MongoRepository<ProductEntity, String> {
     @Query(value = "?0", sort = "{'createTimeStamp': -1}")
-    Page<ProductEntity> getAll(BSONObject query, Pageable pageable);
+    Page<ProductEntity> getByConditionsForPageable(BSONObject query, Pageable pageable);
+
+    @Query(value = "?0", sort = "{'createTimeStamp': -1}")
+    List<ProductEntity> getByConditionsForList(BSONObject query);
     @Query(value = "?0", sort = "{'createTimeStamp': -1}")
     ProductEntity findProductByKeyPairAndIgnoredCase(BSONObject query);
 }

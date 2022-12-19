@@ -29,13 +29,13 @@ class ReviewDetail extends Component {
     const { onAddReview, onUpdateReview,  authInfo, product, review, onCloseModal, modal, onClearDetail } = this.props;
     var data = {
       content: message,
-      user: authInfo._id,
+      user: authInfo.id,
       product: product.product,
       rating,
-      color: product.color._id
+      color: product.color.id
     }
     if(review){
-      onUpdateReview(review._id, data)
+      onUpdateReview(review.id, data)
     }
     else{
       onAddReview(data);

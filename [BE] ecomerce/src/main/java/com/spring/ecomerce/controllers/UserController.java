@@ -70,7 +70,7 @@ public class UserController {
         return baseResponse.getResponseBody();
     }
 
-    @PostMapping("/api/auth/profile")
+    @PostMapping("/auth/profile")
     public String getInfoLogin() throws SystemException {
         try{
             JwtUserDetails userDetails = (JwtUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -83,7 +83,7 @@ public class UserController {
             dataResponse.put("user", userLogin);
             return baseResponse.getResponseBody(dataResponse);
         }catch (Exception ex){
-            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_GET", null));
         }
 
         return baseResponse.getResponseBody();

@@ -44,16 +44,16 @@ const cart = (state = initialState, action) =>{
       // order_list : cart=[] mới truyền vào
       /* eslint-disable */
       order_list.map((item, index) => {
-        order_list[index].color = item.color._id;
+        order_list[index].color = item.color.id;
         order_list[index].product = {
-          _id: item.product,
+          id: item.product,
           bigimage: {
             public_url: item.image,
           },
           name : item.name,
           colors: [
             {
-              _id: item.color,
+              id: item.color,
               name_en: item.name_color,
               price: item.price
             }
@@ -73,7 +73,7 @@ const cart = (state = initialState, action) =>{
       /* eslint-disable */
     case ProductsActionTypes.CLEAR_CART:
       var {cart, checkout} = action.payload
-      cart = cart.filter(ar => !checkout.find(rm => (rm.product._id === ar.product._id && ar.color === rm.color) ))
+      cart = cart.filter(ar => !checkout.find(rm => (rm.product.id === ar.product.id && ar.color === rm.color) ))
       localStorage.setItem('CART', JSON.stringify(cart));
       return cart
     default : return [...state]
@@ -86,7 +86,7 @@ const findProductInCart = (cart, product, productColor) => {
   if(cart.length>0){
     for(var i=0; i<cart.length; i++){
       // xem coi các product trong mảng cart có tồn tại product mới chọn ko?
-      if(cart[i].color === productColor && cart[i].product._id === product._id){
+      if(cart[i].color === productColor && cart[i].product.id === product.id){
         index = i;  //trả về vị trí
         break;
       }

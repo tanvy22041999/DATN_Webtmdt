@@ -51,14 +51,14 @@ class DetailPage extends Component {
     const {authInfo, onHistoryProduct} = this.props;
     if (nextProps.authInfo !== authInfo && nextProps.authInfo) {
       var history = [];
-      nextProps.authInfo.history.map(item => history.push(item._id));
+      nextProps.authInfo.history.map(item => history.push(item.id));
       const index = history.findIndex(product => product === nextProps.match.params.productID)
       if(index === -1){
         history.push(nextProps.match.params.productID)
         if(history.length > 4){
           history.shift();
         }
-        onHistoryProduct(nextProps.authInfo._id, {history})
+        onHistoryProduct(nextProps.authInfo.id, {history})
       }
     }
   }
@@ -116,7 +116,7 @@ class DetailPage extends Component {
   setColor = (item) =>{
     this.setState({
       imageColor: item.image_link,
-      check: item._id
+      check: item.id
     })
   }
 
@@ -124,7 +124,7 @@ class DetailPage extends Component {
     var { onAddProductToCart, t } = this.props;
     const { check } = this.state;
     product = {
-      _id: product._id,
+      id: product.id,
       colors: product.colors,
       bigimage: product.bigimage,
       name: product.name,
@@ -148,14 +148,14 @@ class DetailPage extends Component {
       toastError(`${t('detail.toastify.error')}`)
     }
     else{
-      history.push(`/installment/${product.pathseo}.${product._id}.${check}`)
+      history.push(`/installment/${product.pathseo}.${product.id}.${check}`)
     }
   }
 
   onCompare = (product) => {
     const { history } = this.props;
-    console.log(product.category._id)
-    history.push(`/compare/${product.category._id}?compare=${product._id}`)
+    console.log(product.category.id)
+    history.push(`/compare/${product.category.id}?compare=${product.id}`)
   }
   
   setPrice = (currency, min, max) =>{
@@ -214,11 +214,11 @@ class DetailPage extends Component {
     const { onUpdateReview, authInfo, t } = this.props;
     const { queryParams } = this.state;
     if(authInfo){
-      if(like.indexOf(authInfo._id) === -1){
-        like.push(authInfo._id)
+      if(like.indexOf(authInfo.id) === -1){
+        like.push(authInfo.id)
       }
       else{
-        like.splice(like.indexOf(authInfo._id), 1);
+        like.splice(like.indexOf(authInfo.id), 1);
       }
       onUpdateReview(id, {like}, queryParams)
     }
@@ -247,7 +247,7 @@ class DetailPage extends Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>{product && product.name}</title>
-          <link rel="" href={product && `${LOCAL}/#/product/${product.pathseo}.${product._id}`} />
+          <link rel="" href={product && `${LOCAL}/#/product/${product.pathseo}.${product.id}`} />
         </Helmet>
       </div>
       {product ? <div className="container my-3">
@@ -260,7 +260,7 @@ class DetailPage extends Component {
               <div className="col-12 my-2">
                 <a className="text-decoration-none directory rounded p-2" href="/#/">{t('header.home.menu')}</a>
                 <i className="fa fa-chevron-right px-2 w-25-px "></i>
-                <a className="text-decoration-none directory rounded p-2" href={`/#/products/${product.category.pathseo}.${product.category._id}`}>{product.category.name}</a>
+                <a className="text-decoration-none directory rounded p-2" href={`/#/products/${product.category.pathseo}.${product.category.id}`}>{product.category.name}</a>
                 <i className="fa fa-chevron-right px-2 w-25-px "></i>
               </div>
               <div className="col-12">
@@ -293,10 +293,10 @@ class DetailPage extends Component {
               </div>
               {group && <div className="col-12 form-inline">
                 {group.products.map(item =>{
-                  return(<button type="button" key={item._id} 
+                  return(<button type="button" key={item.id} 
                     className="card text-dark py-2 px-3 my-2 mr-3 w-auto"
-                    onClick={()=> this.onReload(`/product/${item.product.pathseo}.${item.product._id}`)}>
-                    <p className="mb-0 h6">{item.name} <span className={_check===item.product._id ? "d-inline-block" : "d-none"}>
+                    onClick={()=> this.onReload(`/product/${item.product.pathseo}.${item.product.id}`)}>
+                    <p className="mb-0 h6">{item.name} <span className={_check===item.product.id ? "d-inline-block" : "d-none"}>
                       <i className="fa fa-check"></i></span></p>
                     <p className="mb-0 h7">{item.product.price_min ? this.setPrice(currency, item.product.price_min, item.product.price_min) : 'NaN'} {currency}</p>
                   </button>)
@@ -307,11 +307,11 @@ class DetailPage extends Component {
               <div className="col-12 form-inline">
                 {product.colors.map((item, index)=>{
                   return(
-                  <button type="button" key={item._id} 
+                  <button type="button" key={item.id} 
                     className={item.amount===0 ? "card text-dark py-2 px-3 my-2 mr-3 bg-active" :"card text-dark py-2 px-3 my-2 mr-3"} 
                     onClick={() => this.setColor(item)} 
                     disabled={item.amount===0 ? true : false}>
-                    <p className="mb-0 h6">{item.name_vn} <span className={check===item._id ? "d-inline-block" : "d-none"}>
+                    <p className="mb-0 h6">{item.name_vn} <span className={check===item.id ? "d-inline-block" : "d-none"}>
                       <i className="fa fa-check"></i></span></p>
                     <p className="mb-0 h7">{this.setPrice(currency, item.price, item.price)} {currency}</p>
                   </button>)
@@ -479,7 +479,7 @@ class DetailPage extends Component {
                   <div className="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="contact-tab">
                     <div className="row">
                       <div className="col-12">
-                        <div className="fb-comments" data-href={`${LOCAL}/#/product/${product.pathseo}/${product._id}`} data-width="100%" data-numposts="5"></div>
+                        <div className="fb-comments" data-href={`${LOCAL}/#/product/${product.pathseo}/${product.id}`} data-width="100%" data-numposts="5"></div>
                       </div>
                     </div>
                   </div>
@@ -504,31 +504,31 @@ class DetailPage extends Component {
                                   emptySymbol="fa fa-star text-secondary"
                                   fullSymbol="fa fa-star text-warning"
                                   readonly
-                                  /></span>{count.find(i => i._id===5) ? count.find(i => i._id===5).count  : 0}</li>
+                                  /></span>{count.find(i => i.id===5) ? count.find(i => i.id===5).count  : 0}</li>
                                 <li>4 Star <span className="mx-2"><Rating
                                   initialRating={4}
                                   emptySymbol="fa fa-star text-secondary"
                                   fullSymbol="fa fa-star text-warning"
                                   readonly
-                                  /></span>{count.find(i => i._id===4) ? count.find(i => i._id===4).count  : 0}</li>
+                                  /></span>{count.find(i => i.id===4) ? count.find(i => i.id===4).count  : 0}</li>
                                 <li>3 Star <span className="mx-2"><Rating
                                   initialRating={3}
                                   emptySymbol="fa fa-star text-secondary"
                                   fullSymbol="fa fa-star text-warning"
                                   readonly
-                                  /></span>{count.find(i => i._id===3) ? count.find(i => i._id===3).count  : 0}</li>
+                                  /></span>{count.find(i => i.id===3) ? count.find(i => i.id===3).count  : 0}</li>
                                 <li>2 Star <span className="mx-2"><Rating
                                   initialRating={2}
                                   emptySymbol="fa fa-star text-secondary"
                                   fullSymbol="fa fa-star text-warning"
                                   readonly
-                                /></span>{count.find(i => i._id===2) ? count.find(i => i._id===2).count  : 0}</li>
+                                /></span>{count.find(i => i.id===2) ? count.find(i => i.id===2).count  : 0}</li>
                                 <li>1 Star <span className="mx-2"><Rating
                                   initialRating={1}
                                   emptySymbol="fa fa-star text-secondary"
                                   fullSymbol="fa fa-star text-warning"
                                   readonly
-                                /></span>{count.find(i => i._id===1) ? count.find(i => i._id===1).count  : 0}</li>
+                                /></span>{count.find(i => i.id===1) ? count.find(i => i.id===1).count  : 0}</li>
                               </ul>}
                             </div>
                           </div>
@@ -554,7 +554,7 @@ class DetailPage extends Component {
                                   /> | <span className="font-italic">{item.updatedAt.slice(0,10)}</span></p>
                                   <p className="text-secondary mb-0">Màu sắc: {item.color.name_vn}</p>
                                   <p className="mb-0">{item.content}</p>
-                                  <p className="directory rounded p-2 w-fit-content" onClick={()=> this.onLiked(item._id, item.like)}><i className="fa fa-thumbs-up text-secondary"></i><span className="ml-2 text-secondary">{item.like.length > 0 ? item.like.length :  `${t('detail.review.useful')}?`}</span></p>
+                                  <p className="directory rounded p-2 w-fit-content" onClick={()=> this.onLiked(item.id, item.like)}><i className="fa fa-thumbs-up text-secondary"></i><span className="ml-2 text-secondary">{item.like.length > 0 ? item.like.length :  `${t('detail.review.useful')}?`}</span></p>
                                 </div>
                                 </div>
                               </div>

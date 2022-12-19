@@ -53,17 +53,17 @@ function* handleCreate({ payload }) {
     yield put(InstallmentActions.onCreateSuccess(data.installment));
     yield put(InstallmentActions.onGetList());
     const userRes = yield call(getUser, payload.params.user);
-    const instRes = yield call(getDetailInstallment, data.installment._id);
+    const instRes = yield call(getDetailInstallment, data.installment.id);
     /* Notification */
     socket.emit("installment", {
       email: userRes.data.user.email,
-      installment: data.installment._id,
+      installment: data.installment.id,
     });
     yield put(
       NotificationActions.onCreate({
         name: "Yêu cầu trả góp mới cần duyệt",
-        image: instRes.data.installment.product._id.bigimage._id,
-        link: data.installment._id,
+        image: instRes.data.installment.product.id.bigimage.id,
+        link: data.installment.id,
         type: 2,
         content: `${userRes.data.user.email} vừa gửi yêu cầu trả góp cho sản phẩm`,
       })
@@ -91,16 +91,16 @@ function* handleUpdate({ payload }) {
     if (payload.data.money) {
       socket.emit("installmentMoney", {
         email: userRes.data.user.email,
-        installment: data.installment._id,
+        installment: data.installment.id,
       });
       yield put(
         NotificationActions.onCreate({
           type: 2,
           user: null,
-          link: data.installment._id,
-          name: `Phiếu trả góp ${data.installment._id} vừa được thanh toán`,
-          image: detailResult.data.installment.product._id.bigimage._id,
-          content: `${data.installment._id} đã được thanh toán tại cửa hàng với số tiền là ${payload.data.money} VND`,
+          link: data.installment.id,
+          name: `Phiếu trả góp ${data.installment.id} vừa được thanh toán`,
+          image: detailResult.data.installment.product.id.bigimage.id,
+          content: `${data.installment.id} đã được thanh toán tại cửa hàng với số tiền là ${payload.data.money} VND`,
         })
       );
     }

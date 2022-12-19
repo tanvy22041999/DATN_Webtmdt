@@ -91,7 +91,7 @@ class InstallmentDetail extends Component {
           {installmentItem ? <div className="modal-content">
             <div className="modal-header">
               <div className="text-center w-100">
-                <h3 className="modal-title m-0">{t('installment.info.card.header')} {installmentItem._id}</h3>
+                <h3 className="modal-title m-0">{t('installment.info.card.header')} {installmentItem.id}</h3>
               </div>
               <div className="form-check form-switch">
                 <button type="button" className="btn-close rounded-circle bg-light p-2" onClick={() => this.onClose()} data-bs-dismiss="modal"></button>
@@ -110,10 +110,10 @@ class InstallmentDetail extends Component {
                         <div className="rounded border">
                           {installmentItem.product &&<div className="row">
                             <div className="col-4">
-                              <img className="w-100" src={installmentItem.product._id.bigimage ? installmentItem.product._id.bigimage.public_url : INITIAL_IMAGE} alt={installmentItem.product._id.name}></img>
+                              <img className="w-100" src={installmentItem.product.id.bigimage ? installmentItem.product.id.bigimage.public_url : INITIAL_IMAGE} alt={installmentItem.product.id.name}></img>
                             </div>
                             <div className="col-8 align-self-center">
-                              <p className="font-weight-bold mb-0">{installmentItem.product._id.name}</p>
+                              <p className="font-weight-bold mb-0">{installmentItem.product.id.name}</p>
                               <p className="font-italic mb-0">{t('common.color')} {installmentItem.product.color.name_vn}</p>
                               <p className="mb-0">{currency==="VND" 
                               ? numberWithCommas(installmentItem.product.product_price) 
@@ -165,7 +165,7 @@ class InstallmentDetail extends Component {
                               <img
                                 src={installmentItem.staff.image ? installmentItem.staff.image.public_url : INITIAL_IMAGE}
                                 className="c-avatar-img"
-                                alt={installmentItem.staff._id}
+                                alt={installmentItem.staff.id}
                               />
                             </div>
                         <p className="mb-0 ml-3">{installmentItem.staff.firstname} {installmentItem.staff.lastname} ({installmentItem.staff.phonenumber})</p>
@@ -194,7 +194,7 @@ class InstallmentDetail extends Component {
                         </div>
                       </div>
                     </div>}
-                    {money !== 0 && paypal && <Paypal money={money} moneyUSD={parseFloat(tryConvert(money, "USD", false)).toFixed(2)} onUpdate={onUpdate} id={installmentItem._id} queryParams={queryParams}/>}
+                    {money !== 0 && paypal && <Paypal money={money} moneyUSD={parseFloat(tryConvert(money, "USD", false)).toFixed(2)} onUpdate={onUpdate} id={installmentItem.id} queryParams={queryParams}/>}
                   </div>
                 </div>
                 <div className="col-12 col-md-6">

@@ -64,7 +64,7 @@ public class ProductServiceImpl implements ProductService {
             queryData.put("name", queryName);
         }
 
-        Page<ProductEntity> results = productRepository.getAll(queryData, pageable);
+        Page<ProductEntity> results = productRepository.getByConditionsForPageable(queryData, pageable);
         return results;
     }
 
@@ -239,6 +239,18 @@ public class ProductServiceImpl implements ProductService {
         productEntity.setColors(colorSaved);
 
         return productRepository.save(productEntity);
+    }
+
+    @Override
+    public List<ProductEntity> getHotSold() {
+        BSONObject queryData = new BasicBSONObject();
+        queryData.put("validFlg", 1);
+        queryData.put("delFlg", 0);
+        queryData.put("$unwind", "$order_lis");
+        queryData.put("$project", Map.of("order_list", 1, "_id",0));
+        queryData.put("$sort", Map.of("count", 1));
+        queryData.put("$limit", 4);
+        return productRepository.getByConditionsForList(queryData);
     }
 
     private ProductEntity findProductByKeyPairAndIgnoredCase(String key, String value){

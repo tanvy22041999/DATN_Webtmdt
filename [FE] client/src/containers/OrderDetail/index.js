@@ -42,9 +42,9 @@ class OrderDetail extends Component {
     const {onGetReview, authInfo} = this.props;
     this.setState({product});
     var params = {
-      user: authInfo._id,
+      user: authInfo.id,
       product: product.product,
-      color: product.color._id
+      color: product.color.id
     }
     onGetReview(params);
     this.onCloseModal("modal", true)
@@ -64,7 +64,7 @@ class OrderDetail extends Component {
           {orderItem ? <div className="modal-content">
             <div className="modal-header">
               <div className="text-center w-100">
-                <h3 className="modal-title m-0">{t('order.info-bill.card')} {orderItem._id}</h3>
+                <h3 className="modal-title m-0">{t('order.info-bill.card')} {orderItem.id}</h3>
               </div>
               <div className="form-check form-switch">
                 <button type="button" className="btn-close rounded-circle bg-light p-2" onClick={() => this.onClose()} data-bs-dismiss="modal"></button>
@@ -123,7 +123,7 @@ class OrderDetail extends Component {
                     <input type="text" className="form-control border-0" name="confirmed" id="confirmed" defaultValue={ orderItem.confirmed===true ? `${t('order.confirm.true')}` : `${t('order.confirm.false')}`}/>
                     <label htmlFor="confirmed">{t('order.confirm.label')}</label>
                     <span className={orderItem.confirmed===true && "d-none"}>
-                      <button className="btn btn-success" onClick={() => {this.confirmOrder(orderItem._id)}}>{t('order.confirm.button')}</button>
+                      <button className="btn btn-success" onClick={() => {this.confirmOrder(orderItem.id)}}>{t('order.confirm.button')}</button>
                     </span>
                   </div>
                   </>

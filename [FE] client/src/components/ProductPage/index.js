@@ -196,11 +196,11 @@ class ProductPage extends Component {
                     </li>
                     {category.price.map(price =>{
                       return (
-                      <li className="form-check" key={price._id}>
-                        <input type="radio" id={price._id} name="price"
+                      <li className="form-check" key={price.id}>
+                        <input type="radio" id={price.id} name="price"
                         checked={(filter.max_p === (price.max === null ? null : price.max.toString()) && (filter.min_p === (price.min == null ? null : price.min.toString()))) && "checked"} 
                         className="form-check-input"  onChange={(e) => this.distancePrice(price.min, price.max, e)}/>
-                        <label htmlFor={price._id} className="form-check-label">{price.name}</label>
+                        <label htmlFor={price.id} className="form-check-label">{price.name}</label>
                       </li>
                       )
                     })}
@@ -217,21 +217,21 @@ class ProductPage extends Component {
             </div>
             {category && category.filter.map(item=>{
               return (
-                <div className="col-6 col-md-12 mb-3" key={item._id._id}>
+                <div className="col-6 col-md-12 mb-3" key={item.id.id}>
                   <div className="shadow-sm rounded">
                     <div className="px-3 py-2">
-                      <h3 className="mb-1">{item._id.name}</h3>
+                      <h3 className="mb-1">{item.id.name}</h3>
                       <div className="mb-2 border-bottom"></div>
                       <ul className="pl-0">
                         <li className="form-check">
                           <input type="radio" checked={(filter[`${item.query}`] === "" || filter[`${item.query}`] === undefined) && "checked"} className="form-check-input" value="" id={item.query} name={item.query} onChange={this.onSetFilter}/>
                           <label htmlFor={item.query} className="form-check-label">{t('common.all')}</label>
                         </li>
-                        {item._id.selections.map(selector =>{
+                        {item.id.selections.map(selector =>{
                           return (
-                          <li className="form-check" key={selector._id}>
-                            <input type="radio" checked={filter[`${item.query}`] === selector._id && "checked"} value={selector._id} id={selector._id} name={item.query} className="form-check-input" onChange={this.onSetFilter} />
-                            <label htmlFor={selector._id} className="form-check-label">{selector.name}</label>
+                          <li className="form-check" key={selector.id}>
+                            <input type="radio" checked={filter[`${item.query}`] === selector.id && "checked"} value={selector.id} id={selector.id} name={item.query} className="form-check-input" onChange={this.onSetFilter} />
+                            <label htmlFor={selector.id} className="form-check-label">{selector.name}</label>
                           </li>
                           )
                         })}
@@ -259,9 +259,9 @@ class ProductPage extends Component {
             listBrand.map((brand, index) =>{
             return(
               <button type="button" 
-              className={filter.brand === brand._id._id ? "rounded-pill shadow-sm bg-aqua text-dark mr-2 my-2 position-relative btn-padding" : "rounded-pill shadow-sm bg-light text-dark mr-2 my-2 position-relative btn-padding"} 
-              key={index} onClick={()=>this.onSetBrand(brand._id._id)}>
-                <img alt={brand._id.name} style={{height: "20px"}} src={brand._id.image && brand._id.image.public_url}/>
+              className={filter.brand === brand.id.id ? "rounded-pill shadow-sm bg-aqua text-dark mr-2 my-2 position-relative btn-padding" : "rounded-pill shadow-sm bg-light text-dark mr-2 my-2 position-relative btn-padding"} 
+              key={index} onClick={()=>this.onSetBrand(brand.id.id)}>
+                <img alt={brand.id.name} style={{height: "20px"}} src={brand.id.image && brand.id.image.public_url}/>
                 <span className="product-count">{brand.count}</span>
               </button>
             )})}
@@ -277,7 +277,7 @@ class ProductPage extends Component {
                 <option value="1">{t('shop.sort.inc')}</option>
                 <option value="-1">{t('shop.sort.des')}</option>
               </select>
-              {category && <button type="button" className="btn float-end mr-2 mt-1 mt-lg-0 bg-aqua text-primary" onClick={()=> {history.push(`/compare/${category._id}?compare=`)}}><i className="fa fa-balance-scale"></i> {t("compare.page.title")}</button>}
+              {category && <button type="button" className="btn float-end mr-2 mt-1 mt-lg-0 bg-aqua text-primary" onClick={()=> {history.push(`/compare/${category.id}?compare=`)}}><i className="fa fa-balance-scale"></i> {t("compare.page.title")}</button>}
             </div>
           </div>
           <div className="row">
@@ -339,7 +339,7 @@ class ProductPage extends Component {
           </div>
           <div className="row">
             <div className="col-12">
-              <div className="fb-comments" data-href={`${LOCAL}/#/products/${category.pathseo}.${category._id}`} data-width="100%" data-numposts="5"></div>
+              <div className="fb-comments" data-href={`${LOCAL}/#/products/${category.pathseo}.${category.id}`} data-width="100%" data-numposts="5"></div>
             </div>
           </div></>}
         </div>
