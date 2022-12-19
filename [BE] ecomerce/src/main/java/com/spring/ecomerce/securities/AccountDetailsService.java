@@ -1,7 +1,7 @@
 package com.spring.ecomerce.securities;
 
 import com.spring.ecomerce.entities.Account;
-import com.spring.ecomerce.entities.User;
+import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.repositories.AccountRepository.AccountRepository;
 import com.spring.ecomerce.repositories.UserRepository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -36,14 +36,14 @@ public class AccountDetailsService implements UserDetailsService {
         Locale locale = LocaleContextHolder.getLocale();
 
         Account accountFound = accountRepository.findByPhoneNumber(phoneNumber);
-        User user = userRepository.findByPhoneNumber(phoneNumber);
+        UserEntity user = userRepository.findByPhonenumber(phoneNumber);
 
         if(accountFound == null || user == null){
             throw new UsernameNotFoundException(String.format(messageSource.getMessage("ERR0002", null, locale),phoneNumber));
         }
 
         return new JwtUserDetails(
-                user.getFullName(),
+                user.getFirstname() + user.getLastname(),
                 accountFound.getPhoneNumber(),
                 accountFound.getPassword(),
                 accountFound.getRoles().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()),

@@ -1,7 +1,7 @@
 package com.spring.ecomerce;
 
 import com.spring.ecomerce.entities.Account;
-import com.spring.ecomerce.entities.User;
+import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.repositories.UserRepository.UserRepository;
 import com.spring.ecomerce.services.AccountService.AccountService;
 import com.spring.ecomerce.utils.EnumRole;
@@ -40,9 +40,9 @@ public class MainApplication implements CommandLineRunner {
             accountAdmin.setUpdatedDate(LocalDateTime.now());
             accountService.createNewAccount(accountAdmin);
 
-            User userAdmin = new User();
-            userAdmin.setFullName("Admin");
-            userAdmin.setPhoneNumber(accountAdmin.getPhoneNumber());
+            UserEntity userAdmin = new UserEntity();
+//            userAdmin.setFullName("Admin");
+//            userAdmin.setPhoneNumber(accountAdmin.getPhoneNumber());
             userRepository.save(userAdmin);
 
         }

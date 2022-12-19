@@ -19,13 +19,14 @@ public class ProductEntity extends BasicEntity {
     private Double priceMin;
     private Double realPriceMax;
     private Double realPriceMin;
-    private Integer amount;
+    private int amount;
     private boolean active;
     private String pathseo;
     private String warrently;
     private String circumstance;
     private String included;
     private ImageEntity bigimage;
+    private List<ImageEntity> image;
     private CategoryEntity category;
     private BrandEntity brand;
     private List<SpecifyProduct> specifications;

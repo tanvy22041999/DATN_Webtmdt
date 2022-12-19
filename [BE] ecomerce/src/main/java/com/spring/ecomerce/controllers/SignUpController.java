@@ -2,8 +2,9 @@ package com.spring.ecomerce.controllers;
 
 import com.spring.ecomerce.dtos.OTPDTO;
 import com.spring.ecomerce.dtos.UserDTO;
+import com.spring.ecomerce.dtos.clone.RegistryUserDTO;
 import com.spring.ecomerce.entities.OTP;
-import com.spring.ecomerce.entities.User;
+import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.entities.response.ResponseData;
 import com.spring.ecomerce.services.OTPService.OTPService;
 import com.spring.ecomerce.services.UserService.UserService;
@@ -38,7 +39,7 @@ public class SignUpController {
     public ResponseEntity<ResponseData> sendOTPSignUp(@Valid @PathVariable("phonenumber") String number){
         Locale locale = LocaleContextHolder.getLocale();
         try{
-            User user = userService.findUserByPhoneNumber(number);
+            UserEntity user = userService.findUserByPhoneNumber(number);
 
             //Check account exist
             if(user != null){
@@ -112,10 +113,10 @@ public class SignUpController {
 
     @ApiOperation("Sign up information for new user")
     @PostMapping("/information/user")
-    public  ResponseEntity<ResponseData> signUpNewUserInformation(@RequestBody UserDTO userDTO){
+    public  ResponseEntity<ResponseData> signUpNewUserInformation(@RequestBody RegistryUserDTO userDTO){
         Locale locale = LocaleContextHolder.getLocale();
         try{
-            OTP otpFound = otpService.findByPhoneNumberAndType(userDTO.getPhoneNumber(),0);
+            OTP otpFound = otpService.findByPhoneNumberAndType(userDTO.getPhonenumber(),0);
             if(otpFound != null){
                 if(otpFound.isActive()){
                     userService.createUser(userDTO);

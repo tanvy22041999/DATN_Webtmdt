@@ -57,7 +57,7 @@ public class CategoryController {
 
             Map<String, Object> dataResponse = new HashMap<>();
             dataResponse.put("total", results.getTotalElements());
-            dataResponse.put("categories", results.getContent());
+            dataResponse.put("categorys", results.getContent());
             baseResponse.retrieved();
             return baseResponse.getResponseBody(dataResponse);
 

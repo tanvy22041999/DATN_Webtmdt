@@ -47,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
         queryData.put("validFlg", 1);
         queryData.put("delFlg", 0);
 
-        if(accessories != null && accessories != "" && accessories != "0"){
+        if(accessories != null && !"".equals(accessories) && !"0".equals(accessories)){
             queryData.put("accessories", (accessories == "1") ? true: false);
         }
         else if(!"".equals(keyword)){
