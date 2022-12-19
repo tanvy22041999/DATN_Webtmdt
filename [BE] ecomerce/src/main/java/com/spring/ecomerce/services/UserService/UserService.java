@@ -7,12 +7,15 @@ import com.spring.ecomerce.dtos.clone.RegistryUserDTO;
 import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.securities.JwtUserDetails;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+
 public interface UserService {
 
     String validateUserBeforeAdd(RegistryUserDTO userDTO);
     UserEntity findUserByPhoneNumber(String phoneNumber);
 
-   UserEntity createUser(RegistryUserDTO userDTO);
+   UserEntity createUser(RegistryUserDTO userDTO) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
     boolean changePasswordByOTP(String userName, String newPassword);
 

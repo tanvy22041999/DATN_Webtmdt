@@ -40,3 +40,813 @@
 2022-12-19 07:33:14 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
 2022-12-19 07:33:14 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
 2022-12-19 07:33:14 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:7, serverValue:1364339}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 because the pool has been closed.
+2022-12-19 10:41:55 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 5656 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 10:41:55 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 10:41:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 10:41:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 10:41:56 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@42d73c61' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 10:41:56 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 10:41:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 10:41:56 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 10:41:56 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 10:41:56 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 10:41:56 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1463 ms
+2022-12-19 10:41:56 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.cffdjx2.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-m3jp52-shard-0'}
+2022-12-19 10:41:56 [cluster-ClusterId{value='639fc164ea78cf5165d00b2e', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-19 10:41:56 [cluster-ClusterId{value='639fc164ea78cf5165d00b2e', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-19 10:41:56 [cluster-ClusterId{value='639fc164ea78cf5165d00b2e', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-19 10:41:56 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 10:41:57 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 10:41:57 [cluster-ClusterId{value='639fc164ea78cf5165d00b2e', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+com.mongodb.MongoSocketWriteException: Exception sending message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateWriteException(InternalStreamConnection.java:619)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:497)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:328)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:278)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:107)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:144)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1937)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:302)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:296)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1478)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:212)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:979)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:914)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1050)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1363)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:735)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	at com.mongodb.internal.connection.SocketStream.write(SocketStream.java:99)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:494)
+	... 10 common frames omitted
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:387)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:292)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1460)
+	... 19 common frames omitted
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:145)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:131)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:382)
+	... 25 common frames omitted
+2022-12-19 10:41:57 [cluster-ClusterId{value='639fc164ea78cf5165d00b2e', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+com.mongodb.MongoSocketWriteException: Exception sending message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateWriteException(InternalStreamConnection.java:619)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:497)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:328)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:278)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:107)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:144)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1937)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:302)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:296)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1478)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:212)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:979)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:914)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1050)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1363)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:735)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	at com.mongodb.internal.connection.SocketStream.write(SocketStream.java:99)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:494)
+	... 10 common frames omitted
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:387)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:292)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1460)
+	... 19 common frames omitted
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:145)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:131)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:382)
+	... 25 common frames omitted
+2022-12-19 10:41:57 [cluster-ClusterId{value='639fc164ea78cf5165d00b2e', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+com.mongodb.MongoSocketWriteException: Exception sending message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateWriteException(InternalStreamConnection.java:619)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:497)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:328)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:278)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:107)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:144)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1937)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:302)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:296)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1478)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:212)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:979)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:914)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1050)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1363)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:735)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	at com.mongodb.internal.connection.SocketStream.write(SocketStream.java:99)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:494)
+	... 10 common frames omitted
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:387)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:292)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1460)
+	... 19 common frames omitted
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:145)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:131)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:382)
+	... 25 common frames omitted
+2022-12-19 10:41:57 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 10:41:57 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6650a6c, org.springframework.security.web.context.SecurityContextPersistenceFilter@747f6c5a, org.springframework.security.web.header.HeaderWriterFilter@7994a0d1, org.springframework.security.web.authentication.logout.LogoutFilter@52ecc989, com.spring.ecomerce.securities.JwtTokenFilter@62cba181, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b48f0f4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62f9c790, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64279ab, org.springframework.security.web.session.SessionManagementFilter@72c9ebfa, org.springframework.security.web.access.ExceptionTranslationFilter@3457cc8d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@194012a2]
+2022-12-19 10:41:57 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 10:41:58 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 10:41:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 10:41:58 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 10:41:58 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 10:41:58 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 10:41:58 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 3.522 seconds (JVM running for 3.89)
+2022-12-19 10:41:58 [main] INFO  org.mongodb.driver.cluster - No server chosen by com.mongodb.client.internal.MongoClientDelegate$1@4eeb14e0 from cluster description ClusterDescription{type=REPLICA_SET, connectionMode=MULTIPLE, serverDescriptions=[ServerDescription{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}, ServerDescription{address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}, ServerDescription{address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}]}. Waiting for 30000 ms before timing out
+2022-12-19 10:42:28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-19 10:42:28 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:809)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:790)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at com.spring.ecomerce.MainApplication.main(MainApplication.java:29)
+Caused by: org.springframework.dao.DataAccessResourceFailureException: Timed out after 30000 ms while waiting for a server that matches com.mongodb.client.internal.MongoClientDelegate$1@4eeb14e0. Client view of cluster state is {type=REPLICA_SET, servers=[{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}, {address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}, {address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches com.mongodb.client.internal.MongoClientDelegate$1@4eeb14e0. Client view of cluster state is {type=REPLICA_SET, servers=[{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}, {address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}, {address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}]
+	at org.springframework.data.mongodb.core.MongoExceptionTranslator.translateExceptionIfPossible(MongoExceptionTranslator.java:95)
+	at org.springframework.data.mongodb.core.MongoTemplate.potentiallyConvertRuntimeException(MongoTemplate.java:2881)
+	at org.springframework.data.mongodb.core.MongoTemplate.execute(MongoTemplate.java:563)
+	at org.springframework.data.mongodb.core.MongoTemplate.doCount(MongoTemplate.java:1133)
+	at org.springframework.data.mongodb.core.MongoTemplate.count(MongoTemplate.java:1123)
+	at org.springframework.data.mongodb.core.MongoTemplate.count(MongoTemplate.java:1106)
+	at org.springframework.data.mongodb.repository.support.SimpleMongoRepository.count(SimpleMongoRepository.java:144)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker$$Lambda$877/1113898680.invoke(Unknown Source)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy83.count(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy83.count(Unknown Source)
+	at com.spring.ecomerce.services.AccountService.AccountServiceImpl.count(AccountServiceImpl.java:48)
+	at com.spring.ecomerce.MainApplication.run(MainApplication.java:34)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:806)
+	... 5 common frames omitted
+Caused by: com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches com.mongodb.client.internal.MongoClientDelegate$1@4eeb14e0. Client view of cluster state is {type=REPLICA_SET, servers=[{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}, {address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}, {address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketWriteException: Exception sending message}, caused by {javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}, caused by {sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target}}]
+	at com.mongodb.internal.connection.BaseCluster.createTimeoutException(BaseCluster.java:407)
+	at com.mongodb.internal.connection.BaseCluster.selectServer(BaseCluster.java:118)
+	at com.mongodb.internal.connection.AbstractMultiServerCluster.selectServer(AbstractMultiServerCluster.java:52)
+	at com.mongodb.client.internal.MongoClientDelegate.getConnectedClusterDescription(MongoClientDelegate.java:137)
+	at com.mongodb.client.internal.MongoClientDelegate.createClientSession(MongoClientDelegate.java:95)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.getClientSession(MongoClientDelegate.java:266)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:170)
+	at com.mongodb.client.internal.MongoCollectionImpl.executeCount(MongoCollectionImpl.java:223)
+	at com.mongodb.client.internal.MongoCollectionImpl.countDocuments(MongoCollectionImpl.java:192)
+	at org.springframework.data.mongodb.core.MongoTemplate.lambda$doCount$14(MongoTemplate.java:1134)
+	at org.springframework.data.mongodb.core.MongoTemplate$$Lambda$882/1152029154.doInCollection(Unknown Source)
+	at org.springframework.data.mongodb.core.MongoTemplate.execute(MongoTemplate.java:561)
+	... 44 common frames omitted
+2022-12-19 10:42:28 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 10:42:28 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 10:43:03 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 16352 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 10:43:03 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 10:43:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 10:43:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 10:43:04 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@42d73c61' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 10:43:04 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 10:43:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 10:43:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 10:43:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 10:43:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 10:43:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1231 ms
+2022-12-19 10:43:04 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 10:43:05 [cluster-ClusterId{value='639fc1a8f49d5252f0d7310a', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:14}] to localhost:27017
+2022-12-19 10:43:05 [cluster-rtt-ClusterId{value='639fc1a8f49d5252f0d7310a', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:13}] to localhost:27017
+2022-12-19 10:43:05 [cluster-ClusterId{value='639fc1a8f49d5252f0d7310a', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=14025600}
+2022-12-19 10:43:05 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 10:43:05 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 10:43:05 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 10:43:05 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@755a7218, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ab595c8, org.springframework.security.web.header.HeaderWriterFilter@2e952845, org.springframework.security.web.authentication.logout.LogoutFilter@325162e9, com.spring.ecomerce.securities.JwtTokenFilter@4dad0eed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cbf1997, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b5a19ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70c29356, org.springframework.security.web.session.SessionManagementFilter@13278a41, org.springframework.security.web.access.ExceptionTranslationFilter@68dfda77, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@115c946b]
+2022-12-19 10:43:05 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 10:43:06 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 10:43:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 10:43:06 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 10:43:06 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 10:43:06 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 10:43:06 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 2.963 seconds (JVM running for 3.293)
+2022-12-19 10:43:06 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:15}] to localhost:27017
+2022-12-19 10:43:20 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 10:43:20 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 10:43:20 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:15}] to localhost:27017 because the pool has been closed.
+2022-12-19 13:31:55 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 11580 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 13:31:55 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 13:31:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 13:31:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 116 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 13:31:56 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6a1ef65c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 13:31:56 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 13:31:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 13:31:56 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 13:31:56 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 13:31:56 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 13:31:56 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1727 ms
+2022-12-19 13:31:57 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 13:31:57 [cluster-rtt-ClusterId{value='639fe93db043a13169b0da74', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:16}] to localhost:27017
+2022-12-19 13:31:57 [cluster-ClusterId{value='639fe93db043a13169b0da74', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:17}] to localhost:27017
+2022-12-19 13:31:57 [cluster-ClusterId{value='639fe93db043a13169b0da74', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=19078700}
+2022-12-19 13:31:57 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 13:31:57 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 13:31:58 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 13:31:58 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14b5325f, org.springframework.security.web.context.SecurityContextPersistenceFilter@2382b2f, org.springframework.security.web.header.HeaderWriterFilter@7a78d380, org.springframework.security.web.authentication.logout.LogoutFilter@7f70e244, com.spring.ecomerce.securities.JwtTokenFilter@98637a2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71734463, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f1f0ee6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13404f75, org.springframework.security.web.session.SessionManagementFilter@7402c49f, org.springframework.security.web.access.ExceptionTranslationFilter@792e8181, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ab2009f]
+2022-12-19 13:31:58 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 13:31:59 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 13:31:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 13:31:59 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 13:31:59 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 13:31:59 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 13:31:59 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.658 seconds (JVM running for 5.688)
+2022-12-19 13:31:59 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:18}] to localhost:27017
+2022-12-19 15:42:59 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 15:42:59 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 15:42:59 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2022-12-19 15:42:59 [http-nio-3000-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-12-19 15:44:21 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 15:44:21 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:44:21 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:18}] to localhost:27017 because the pool has been closed.
+2022-12-19 15:44:26 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 14372 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 15:44:26 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 15:44:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 15:44:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 15:44:27 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3b55dd15' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:44:27 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:44:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 15:44:27 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 15:44:27 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 15:44:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 15:44:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1527 ms
+2022-12-19 15:44:28 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 15:44:28 [cluster-ClusterId{value='63a0084cb5201d32b830c9e4', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:20}] to localhost:27017
+2022-12-19 15:44:28 [cluster-rtt-ClusterId{value='63a0084cb5201d32b830c9e4', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:19}] to localhost:27017
+2022-12-19 15:44:28 [cluster-ClusterId{value='63a0084cb5201d32b830c9e4', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15927500}
+2022-12-19 15:44:28 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:44:28 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:44:29 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 15:44:29 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c6fc3e7, org.springframework.security.web.context.SecurityContextPersistenceFilter@65262308, org.springframework.security.web.header.HeaderWriterFilter@41f686af, org.springframework.security.web.authentication.logout.LogoutFilter@5e1d1524, com.spring.ecomerce.securities.JwtTokenFilter@b55f5b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@511d5e6e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bf4e48e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@aa8dce8, org.springframework.security.web.session.SessionManagementFilter@1607d391, org.springframework.security.web.access.ExceptionTranslationFilter@1b4ba615, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d17906]
+2022-12-19 15:44:30 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:44:30 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 15:44:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 15:44:30 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 15:44:30 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 15:44:30 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 15:44:30 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.472 seconds (JVM running for 4.927)
+2022-12-19 15:44:30 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:21}] to localhost:27017
+2022-12-19 15:45:06 [http-nio-3000-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 15:45:06 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 15:45:06 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-19 15:50:38 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 15:50:38 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:50:38 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:21}] to localhost:27017 because the pool has been closed.
+2022-12-19 15:50:41 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 15388 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 15:50:41 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 15:50:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 15:50:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 15:50:42 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3ba3d4b6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:50:42 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:50:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 15:50:42 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 15:50:42 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 15:50:42 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 15:50:42 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1479 ms
+2022-12-19 15:50:43 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 15:50:43 [cluster-ClusterId{value='63a009c3ca56da15da1cae4e', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:36}] to localhost:27017
+2022-12-19 15:50:43 [cluster-rtt-ClusterId{value='63a009c3ca56da15da1cae4e', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:37}] to localhost:27017
+2022-12-19 15:50:43 [cluster-ClusterId{value='63a009c3ca56da15da1cae4e', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15469300}
+2022-12-19 15:50:43 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:50:43 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:50:44 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 15:50:44 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a06602f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1450ffa3, org.springframework.security.web.header.HeaderWriterFilter@2a11ae0b, org.springframework.security.web.authentication.logout.LogoutFilter@8d29719, com.spring.ecomerce.securities.JwtTokenFilter@16ea0f22, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38ebc866, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f5ae29e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46591e98, org.springframework.security.web.session.SessionManagementFilter@53e4a19e, org.springframework.security.web.access.ExceptionTranslationFilter@6d4502ca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@71668a67]
+2022-12-19 15:50:44 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:50:44 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 15:50:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 15:50:45 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 15:50:45 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 15:50:45 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 15:50:45 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.208 seconds (JVM running for 4.678)
+2022-12-19 15:50:45 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:38}] to localhost:27017
+2022-12-19 15:51:47 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 15:51:47 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:51:47 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:38}] to localhost:27017 because the pool has been closed.
+2022-12-19 15:51:51 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 10996 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 15:51:51 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 15:51:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 15:51:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 15:51:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@45ab3bdd' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:51:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:51:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 15:51:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 15:51:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 15:51:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 15:51:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1335 ms
+2022-12-19 15:51:52 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 15:51:52 [cluster-rtt-ClusterId{value='63a00a081df15069c0bdfaba', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:39}] to localhost:27017
+2022-12-19 15:51:52 [cluster-ClusterId{value='63a00a081df15069c0bdfaba', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:40}] to localhost:27017
+2022-12-19 15:51:52 [cluster-ClusterId{value='63a00a081df15069c0bdfaba', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15393800}
+2022-12-19 15:51:52 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:51:53 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:51:54 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 15:51:54 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49cceb19, org.springframework.security.web.context.SecurityContextPersistenceFilter@2d230cff, org.springframework.security.web.header.HeaderWriterFilter@7962a746, org.springframework.security.web.authentication.logout.LogoutFilter@420b55ed, com.spring.ecomerce.securities.JwtTokenFilter@67afe909, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c87e851, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3534651a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@197d5a87, org.springframework.security.web.session.SessionManagementFilter@47b961e2, org.springframework.security.web.access.ExceptionTranslationFilter@38ebc866, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5fe3b058]
+2022-12-19 15:51:54 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:51:54 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 15:51:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 15:51:54 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 15:51:54 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 15:51:54 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 15:51:54 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.036 seconds (JVM running for 4.472)
+2022-12-19 15:51:54 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:41}] to localhost:27017
+2022-12-19 15:52:36 [http-nio-3000-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 15:52:36 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 15:52:36 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-19 15:53:18 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 15:53:18 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:53:18 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:41}] to localhost:27017 because the pool has been closed.
+2022-12-19 15:53:20 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 12304 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 15:53:20 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 15:53:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 15:53:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 15:53:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3382cf68' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:53:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:53:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 15:53:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 15:53:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 15:53:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 15:53:22 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1524 ms
+2022-12-19 15:53:22 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 15:53:22 [cluster-ClusterId{value='63a00a620d1b823e787c6219', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:43}] to localhost:27017
+2022-12-19 15:53:22 [cluster-rtt-ClusterId{value='63a00a620d1b823e787c6219', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:42}] to localhost:27017
+2022-12-19 15:53:22 [cluster-ClusterId{value='63a00a620d1b823e787c6219', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=61639900}
+2022-12-19 15:53:22 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:53:22 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:53:23 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 15:53:24 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b0325d0, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d7865d6, org.springframework.security.web.header.HeaderWriterFilter@261a66b8, org.springframework.security.web.authentication.logout.LogoutFilter@2a54c92e, com.spring.ecomerce.securities.JwtTokenFilter@6164e137, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77f03916, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ac19bc6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70439c3, org.springframework.security.web.session.SessionManagementFilter@73dbe25, org.springframework.security.web.access.ExceptionTranslationFilter@5342eec5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@347b370c]
+2022-12-19 15:53:24 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:53:24 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 15:53:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 15:53:24 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 15:53:24 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 15:53:24 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 15:53:24 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.323 seconds (JVM running for 4.769)
+2022-12-19 15:53:24 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:44}] to localhost:27017
+2022-12-19 15:53:34 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 15:53:34 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 15:53:34 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-19 15:54:18 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 15:54:18 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:54:18 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:44}] to localhost:27017 because the pool has been closed.
+2022-12-19 15:54:21 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 11164 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 15:54:21 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 15:54:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 15:54:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 15:54:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ff0b1cc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:54:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 15:54:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 15:54:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 15:54:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 15:54:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 15:54:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1379 ms
+2022-12-19 15:54:23 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 15:54:23 [cluster-rtt-ClusterId{value='63a00a9ff95760034f6f6a8e', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:46}] to localhost:27017
+2022-12-19 15:54:23 [cluster-ClusterId{value='63a00a9ff95760034f6f6a8e', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:45}] to localhost:27017
+2022-12-19 15:54:23 [cluster-ClusterId{value='63a00a9ff95760034f6f6a8e', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15923000}
+2022-12-19 15:54:23 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:54:23 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 15:54:24 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 15:54:24 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6aaa678d, org.springframework.security.web.context.SecurityContextPersistenceFilter@3dded90a, org.springframework.security.web.header.HeaderWriterFilter@fb5d334, org.springframework.security.web.authentication.logout.LogoutFilter@7cbf4f8c, com.spring.ecomerce.securities.JwtTokenFilter@141aba65, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29f8134, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38848217, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25dcf1b6, org.springframework.security.web.session.SessionManagementFilter@4407b042, org.springframework.security.web.access.ExceptionTranslationFilter@42dd7d82, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@236b4a44]
+2022-12-19 15:54:24 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 15:54:25 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 15:54:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 15:54:25 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 15:54:25 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 15:54:25 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 15:54:25 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.065 seconds (JVM running for 4.49)
+2022-12-19 15:54:25 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:47}] to localhost:27017
+2022-12-19 15:54:31 [http-nio-3000-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 15:54:31 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 15:54:31 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-19 18:10:23 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 18:10:23 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:10:23 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:47}] to localhost:27017 because the pool has been closed.
+2022-12-19 18:15:24 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 22304 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 18:15:24 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 18:15:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 18:15:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 18:15:25 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ff0b1cc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:15:25 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:15:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 18:15:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 18:15:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 18:15:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 18:15:26 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1544 ms
+2022-12-19 18:15:26 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 18:15:26 [cluster-ClusterId{value='63a02baea3902b531cbf2512', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:49}] to localhost:27017
+2022-12-19 18:15:26 [cluster-rtt-ClusterId{value='63a02baea3902b531cbf2512', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:48}] to localhost:27017
+2022-12-19 18:15:26 [cluster-ClusterId{value='63a02baea3902b531cbf2512', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16922800}
+2022-12-19 18:15:26 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:15:26 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:15:27 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 18:15:28 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c60c08, org.springframework.security.web.context.SecurityContextPersistenceFilter@45ad3cd8, org.springframework.security.web.header.HeaderWriterFilter@53e4a19e, org.springframework.security.web.authentication.logout.LogoutFilter@670a4738, com.spring.ecomerce.securities.JwtTokenFilter@67c21bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a2f401a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6124dda2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cb44a2f, org.springframework.security.web.session.SessionManagementFilter@f5ae29e, org.springframework.security.web.access.ExceptionTranslationFilter@2cdb5974, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3b56947a]
+2022-12-19 18:15:36 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:15:36 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 18:15:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 18:15:36 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 18:15:36 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 18:15:36 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 18:15:36 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 12.799 seconds (JVM running for 13.194)
+2022-12-19 18:15:37 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:50}] to localhost:27017
+2022-12-19 18:16:14 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 18:16:14 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:16:14 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:50}] to localhost:27017 because the pool has been closed.
+2022-12-19 18:16:18 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 22096 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 18:16:18 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 18:16:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 18:16:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 18:16:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6bcb12e6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:16:19 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:16:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 18:16:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 18:16:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 18:16:19 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 18:16:19 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1456 ms
+2022-12-19 18:16:19 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 18:16:19 [cluster-rtt-ClusterId{value='63a02be33672047cd0f33bf3', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:51}] to localhost:27017
+2022-12-19 18:16:19 [cluster-ClusterId{value='63a02be33672047cd0f33bf3', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:52}] to localhost:27017
+2022-12-19 18:16:19 [cluster-ClusterId{value='63a02be33672047cd0f33bf3', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=61320900}
+2022-12-19 18:16:19 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:16:20 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:16:21 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 18:16:21 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c47e077, org.springframework.security.web.context.SecurityContextPersistenceFilter@39e7e040, org.springframework.security.web.header.HeaderWriterFilter@380e33c2, org.springframework.security.web.authentication.logout.LogoutFilter@4a58e0e9, com.spring.ecomerce.securities.JwtTokenFilter@2a7ebe07, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c1f15df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47ffdbba, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41bd6a0f, org.springframework.security.web.session.SessionManagementFilter@65259c53, org.springframework.security.web.access.ExceptionTranslationFilter@54556723, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@152891f8]
+2022-12-19 18:16:21 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:16:21 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 18:16:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 18:16:21 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 18:16:21 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 18:16:21 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 18:16:21 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.236 seconds (JVM running for 4.692)
+2022-12-19 18:16:21 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:53}] to localhost:27017
+2022-12-19 18:21:55 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 18:21:55 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:21:55 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:53}] to localhost:27017 because the pool has been closed.
+2022-12-19 18:21:58 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 11384 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 18:21:58 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 18:21:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 18:21:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 18:21:59 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@29c17c3d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:21:59 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:21:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 18:21:59 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 18:21:59 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 18:21:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 18:21:59 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1481 ms
+2022-12-19 18:22:00 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 18:22:00 [cluster-ClusterId{value='63a02d38c87a0d1e0cebfbd3', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:54}] to localhost:27017
+2022-12-19 18:22:00 [cluster-rtt-ClusterId{value='63a02d38c87a0d1e0cebfbd3', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:55}] to localhost:27017
+2022-12-19 18:22:00 [cluster-ClusterId{value='63a02d38c87a0d1e0cebfbd3', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=17306100}
+2022-12-19 18:22:00 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:22:00 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:22:01 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 18:22:01 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f70e244, org.springframework.security.web.context.SecurityContextPersistenceFilter@563ada5, org.springframework.security.web.header.HeaderWriterFilter@2e0fdc83, org.springframework.security.web.authentication.logout.LogoutFilter@5a583720, com.spring.ecomerce.securities.JwtTokenFilter@46b6701e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@156ff70f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68c4db77, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@fd14789, org.springframework.security.web.session.SessionManagementFilter@47c81e89, org.springframework.security.web.access.ExceptionTranslationFilter@6c1e40d9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23a78c77]
+2022-12-19 18:22:01 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:22:02 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 18:22:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 18:22:02 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 18:22:02 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 18:22:02 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 18:22:02 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.42 seconds (JVM running for 4.834)
+2022-12-19 18:22:02 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:56}] to localhost:27017
+2022-12-19 18:22:37 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 18:22:37 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:22:37 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:56}] to localhost:27017 because the pool has been closed.
+2022-12-19 18:22:39 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 14596 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 18:22:39 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 18:22:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 18:22:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 18:22:40 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1163a27' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:22:40 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:22:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 18:22:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 18:22:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 18:22:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 18:22:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1517 ms
+2022-12-19 18:22:41 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 18:22:41 [cluster-ClusterId{value='63a02d612d53d82f9e939afe', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:57}] to localhost:27017
+2022-12-19 18:22:41 [cluster-rtt-ClusterId{value='63a02d612d53d82f9e939afe', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:58}] to localhost:27017
+2022-12-19 18:22:41 [cluster-ClusterId{value='63a02d612d53d82f9e939afe', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15318500}
+2022-12-19 18:22:41 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:22:41 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:22:42 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 18:22:42 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62794582, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b98355f, org.springframework.security.web.header.HeaderWriterFilter@6b6fd0, org.springframework.security.web.authentication.logout.LogoutFilter@73ddb7ef, com.spring.ecomerce.securities.JwtTokenFilter@15d65fcf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f5ae29e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d230cff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c82ad22, org.springframework.security.web.session.SessionManagementFilter@7a7f9d45, org.springframework.security.web.access.ExceptionTranslationFilter@13404f75, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b6cc344]
+2022-12-19 18:22:42 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:22:42 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 18:22:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 18:22:42 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 18:22:43 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 18:22:43 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 18:22:43 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.332 seconds (JVM running for 4.749)
+2022-12-19 18:22:43 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:59}] to localhost:27017
+2022-12-19 18:23:06 [http-nio-3000-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 18:23:06 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 18:23:06 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-12-19 18:29:37 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 18:29:37 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:29:37 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:59}] to localhost:27017 because the pool has been closed.
+2022-12-19 18:29:40 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 3352 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 18:29:40 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 18:29:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 18:29:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 18:29:41 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3e1fd62b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:29:41 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 18:29:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 18:29:42 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 18:29:42 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 18:29:42 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 18:29:42 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1489 ms
+2022-12-19 18:29:42 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 18:29:42 [cluster-ClusterId{value='63a02f06a15bdb083b9716d3', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:60}] to localhost:27017
+2022-12-19 18:29:42 [cluster-rtt-ClusterId{value='63a02f06a15bdb083b9716d3', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:61}] to localhost:27017
+2022-12-19 18:29:42 [cluster-ClusterId{value='63a02f06a15bdb083b9716d3', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=17603800}
+2022-12-19 18:29:42 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:29:42 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 18:29:43 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 18:29:43 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a661215, org.springframework.security.web.context.SecurityContextPersistenceFilter@6bdedbbd, org.springframework.security.web.header.HeaderWriterFilter@4e756867, org.springframework.security.web.authentication.logout.LogoutFilter@45311a99, com.spring.ecomerce.securities.JwtTokenFilter@3dde5f38, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d2cb2d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@445b85d7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f75fd1d, org.springframework.security.web.session.SessionManagementFilter@2b90cc1, org.springframework.security.web.access.ExceptionTranslationFilter@62360a68, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c82ad22]
+2022-12-19 18:29:43 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 18:29:44 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 18:29:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 18:29:44 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 18:29:44 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 18:29:44 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 18:29:44 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.297 seconds (JVM running for 4.72)
+2022-12-19 18:29:44 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:62}] to localhost:27017
+2022-12-19 18:29:53 [http-nio-3000-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 18:29:53 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 18:29:53 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-12-19 19:10:10 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 19:10:10 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:10:10 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:62}] to localhost:27017 because the pool has been closed.
+2022-12-19 19:10:13 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 8556 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 19:10:13 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 19:10:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 19:10:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 19:10:14 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2262d6d5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:10:14 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:10:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 19:10:14 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 19:10:14 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 19:10:14 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 19:10:14 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1453 ms
+2022-12-19 19:10:15 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 19:10:15 [cluster-rtt-ClusterId{value='63a038877b667c38ad4b219b', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:64}] to localhost:27017
+2022-12-19 19:10:15 [cluster-ClusterId{value='63a038877b667c38ad4b219b', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:63}] to localhost:27017
+2022-12-19 19:10:15 [cluster-ClusterId{value='63a038877b667c38ad4b219b', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=20227600}
+2022-12-19 19:10:15 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:10:15 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:10:16 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 19:10:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@543da15, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f65aa58, org.springframework.security.web.header.HeaderWriterFilter@77020328, org.springframework.security.web.authentication.logout.LogoutFilter@511d5e6e, com.spring.ecomerce.securities.JwtTokenFilter@37fef327, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36d7a68a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27ec0d06, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69d7bc1a, org.springframework.security.web.session.SessionManagementFilter@4ed19b69, org.springframework.security.web.access.ExceptionTranslationFilter@28b5d5dc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@acd3460]
+2022-12-19 19:10:16 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:10:17 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 19:10:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 19:10:17 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 19:10:17 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 19:10:17 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 19:10:17 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.171 seconds (JVM running for 4.607)
+2022-12-19 19:10:17 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:65}] to localhost:27017
+2022-12-19 19:10:23 [http-nio-3000-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 19:10:23 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 19:10:23 [http-nio-3000-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-19 19:22:45 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 19:22:45 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:22:45 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:65}] to localhost:27017 because the pool has been closed.
+2022-12-19 19:24:09 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 12652 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 19:24:09 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 19:24:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 19:24:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 19:24:10 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@726934e2' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:24:10 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:24:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 19:24:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 19:24:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 19:24:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 19:24:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1549 ms
+2022-12-19 19:24:11 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 19:24:11 [cluster-ClusterId{value='63a03bcb73170c0f3aa2d595', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:66}] to localhost:27017
+2022-12-19 19:24:11 [cluster-rtt-ClusterId{value='63a03bcb73170c0f3aa2d595', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:67}] to localhost:27017
+2022-12-19 19:24:11 [cluster-ClusterId{value='63a03bcb73170c0f3aa2d595', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=20757800}
+2022-12-19 19:24:11 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:24:11 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:24:12 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 19:24:12 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69de72ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ceb11f9, org.springframework.security.web.header.HeaderWriterFilter@77cc6a28, org.springframework.security.web.authentication.logout.LogoutFilter@bf4e48e, com.spring.ecomerce.securities.JwtTokenFilter@7608a838, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27ec0d06, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41f686af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21c99abf, org.springframework.security.web.session.SessionManagementFilter@45dc7be, org.springframework.security.web.access.ExceptionTranslationFilter@720c8f80, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@cb318ac]
+2022-12-19 19:24:13 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:24:13 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 19:24:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 19:24:13 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 19:24:13 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 19:24:13 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 19:24:13 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.676 seconds (JVM running for 5.083)
+2022-12-19 19:24:13 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:68}] to localhost:27017
+2022-12-19 19:24:17 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 19:24:17 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 19:24:17 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-19 19:27:36 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 19:27:36 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:27:36 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:68}] to localhost:27017 because the pool has been closed.
+2022-12-19 19:33:15 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 14992 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 19:33:15 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 19:33:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 19:33:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 114 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 19:33:17 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@f3560d4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:33:17 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:33:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 19:33:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 19:33:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 19:33:17 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 19:33:17 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1672 ms
+2022-12-19 19:33:17 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 19:33:18 [cluster-ClusterId{value='63a03dedb890d210eec48f11', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:69}] to localhost:27017
+2022-12-19 19:33:18 [cluster-rtt-ClusterId{value='63a03dedb890d210eec48f11', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:70}] to localhost:27017
+2022-12-19 19:33:18 [cluster-ClusterId{value='63a03dedb890d210eec48f11', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=20944100}
+2022-12-19 19:33:18 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:33:18 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:33:19 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 19:33:19 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28dacf31, org.springframework.security.web.context.SecurityContextPersistenceFilter@18a0721b, org.springframework.security.web.header.HeaderWriterFilter@113d0f75, org.springframework.security.web.authentication.logout.LogoutFilter@1fc5c0b2, com.spring.ecomerce.securities.JwtTokenFilter@71f0806b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66e12c3b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e4d8770, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47e60b71, org.springframework.security.web.session.SessionManagementFilter@aa8dce8, org.springframework.security.web.access.ExceptionTranslationFilter@6aaa678d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@664f49f]
+2022-12-19 19:33:19 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:33:19 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 19:33:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 19:33:20 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 19:33:20 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 19:33:20 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 19:33:20 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.821 seconds (JVM running for 5.237)
+2022-12-19 19:33:20 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:71}] to localhost:27017
+2022-12-19 19:33:31 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 19:33:31 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 19:33:31 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-12-19 19:50:03 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 19:50:03 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:50:03 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:71}] to localhost:27017 because the pool has been closed.
+2022-12-19 19:50:06 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 24144 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 19:50:06 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 19:50:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 19:50:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 19:50:07 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6bcb12e6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:50:07 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:50:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 19:50:08 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 19:50:08 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 19:50:08 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 19:50:08 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1436 ms
+2022-12-19 19:50:08 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 19:50:08 [cluster-rtt-ClusterId{value='63a041e036a47239ca0dbde2', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:73}] to localhost:27017
+2022-12-19 19:50:08 [cluster-ClusterId{value='63a041e036a47239ca0dbde2', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:72}] to localhost:27017
+2022-12-19 19:50:08 [cluster-ClusterId{value='63a041e036a47239ca0dbde2', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15421400}
+2022-12-19 19:50:08 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:50:08 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:50:09 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 19:50:10 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@356f20b7, org.springframework.security.web.context.SecurityContextPersistenceFilter@45dc7be, org.springframework.security.web.header.HeaderWriterFilter@720c8f80, org.springframework.security.web.authentication.logout.LogoutFilter@1e95f584, com.spring.ecomerce.securities.JwtTokenFilter@32dcfeea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ceb11f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b4ba615, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f4adaab, org.springframework.security.web.session.SessionManagementFilter@2838eb, org.springframework.security.web.access.ExceptionTranslationFilter@1dcca426, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@543da15]
+2022-12-19 19:50:10 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:50:10 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 19:50:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 19:50:10 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 19:50:10 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 19:50:10 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 19:50:10 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.14 seconds (JVM running for 4.568)
+2022-12-19 19:50:10 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:74}] to localhost:27017
+2022-12-19 19:50:19 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 19:50:19 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 19:50:19 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-19 19:52:14 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 19:52:14 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:52:14 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:74}] to localhost:27017 because the pool has been closed.
+2022-12-19 19:52:17 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 11096 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 19:52:17 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 19:52:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 19:52:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 19:52:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6d67f5eb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:52:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:52:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 19:52:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 19:52:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 19:52:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 19:52:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1401 ms
+2022-12-19 19:52:18 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 19:52:19 [cluster-rtt-ClusterId{value='63a042624514504d2f5822a7', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:76}] to localhost:27017
+2022-12-19 19:52:19 [cluster-ClusterId{value='63a042624514504d2f5822a7', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:75}] to localhost:27017
+2022-12-19 19:52:19 [cluster-ClusterId{value='63a042624514504d2f5822a7', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15484500}
+2022-12-19 19:52:19 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:52:19 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:52:20 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 19:52:20 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f793f15, org.springframework.security.web.context.SecurityContextPersistenceFilter@38848217, org.springframework.security.web.header.HeaderWriterFilter@3a48c398, org.springframework.security.web.authentication.logout.LogoutFilter@7434ee13, com.spring.ecomerce.securities.JwtTokenFilter@37fef327, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38826984, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2430cf17, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ec7eb5, org.springframework.security.web.session.SessionManagementFilter@335b3d6, org.springframework.security.web.access.ExceptionTranslationFilter@6da646b8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@773f3360]
+2022-12-19 19:52:20 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:52:20 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 19:52:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 19:52:20 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 19:52:21 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 19:52:21 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 19:52:21 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.288 seconds (JVM running for 4.714)
+2022-12-19 19:52:21 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:77}] to localhost:27017
+2022-12-19 19:52:57 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 19:52:57 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:52:57 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:77}] to localhost:27017 because the pool has been closed.
+2022-12-19 19:53:00 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 1.8.0_45 on DESKTOP-A4B8MNF with PID 20988 (D:\SoruceCode\[BE] ecomerce\target\classes started by Admin in D:\SoruceCode\[BE] ecomerce)
+2022-12-19 19:53:00 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-19 19:53:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-19 19:53:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 14 MongoDB repository interfaces.
+2022-12-19 19:53:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@502a4156' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:53:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-19 19:53:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-19 19:53:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 19:53:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-19 19:53:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 19:53:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1347 ms
+2022-12-19 19:53:02 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-12-19 19:53:02 [cluster-rtt-ClusterId{value='63a0428e4ffffa6fb5d12fc8', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:79}] to localhost:27017
+2022-12-19 19:53:02 [cluster-ClusterId{value='63a0428e4ffffa6fb5d12fc8', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:78}] to localhost:27017
+2022-12-19 19:53:02 [cluster-ClusterId{value='63a0428e4ffffa6fb5d12fc8', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15035900}
+2022-12-19 19:53:02 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:53:02 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-19 19:53:03 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-19 19:53:03 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@369a95a5, org.springframework.security.web.context.SecurityContextPersistenceFilter@59a5bb61, org.springframework.security.web.header.HeaderWriterFilter@407f2029, org.springframework.security.web.authentication.logout.LogoutFilter@792e8181, com.spring.ecomerce.securities.JwtTokenFilter@7608a838, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@749f61a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d664323, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@543da15, org.springframework.security.web.session.SessionManagementFilter@5a583720, org.springframework.security.web.access.ExceptionTranslationFilter@6b3b2c34, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c1b82cd]
+2022-12-19 19:53:03 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:53:04 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-19 19:53:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-19 19:53:04 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-19 19:53:04 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-19 19:53:04 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-19 19:53:04 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 4.042 seconds (JVM running for 4.433)
+2022-12-19 19:53:04 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:80}] to localhost:27017
+2022-12-19 19:53:09 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 19:53:09 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 19:53:09 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-19 19:53:36 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-19 19:53:36 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-19 19:53:36 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:80}] to localhost:27017 because the pool has been closed.

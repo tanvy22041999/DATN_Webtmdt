@@ -1,7 +1,12 @@
 package com.spring.ecomerce.securities.provider;
 
+import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.securities.AccountDetailsService;
+import com.spring.ecomerce.utils.EncodeUtils;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -15,16 +20,15 @@ import java.util.Locale;
 
 @Slf4j
 @Service
+@NoArgsConstructor
+@AllArgsConstructor
 public class AccountAuthenticationProvider implements AuthenticationProvider {
 
-    private final AccountDetailsService accountDetailsService;
+    @Autowired
+    private AccountDetailsService accountDetailsService;
 
-    private final MessageSource messageSource;
-
-    public AccountAuthenticationProvider(AccountDetailsService accountDetailsService, MessageSource messageSource) {
-        this.accountDetailsService = accountDetailsService;
-        this.messageSource = messageSource;
-    }
+    @Autowired
+    private MessageManager messageManager;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -35,13 +39,13 @@ public class AccountAuthenticationProvider implements AuthenticationProvider {
         UserDetails userDetails = accountDetailsService.loadUserByUsername(username);
         Locale locale = LocaleContextHolder.getLocale();
         if (!userDetails.isEnabled())
-            throw new BadCredentialsException(messageSource.getMessage("error.account.disable", null, locale));
+            throw new BadCredentialsException(messageManager.getMessage("ERROR_AUTHENTICATE", null));
         if (verifyCredentials) {
             assert password != null;
-            if (password.equals(userDetails.getPassword())) {
+            if (EncodeUtils.getPasswordHash(password, "SHA1").equals(userDetails.getPassword())) {
                 return new AccountAuthenticationToken(username, password, verifyCredentials, userDetails.getAuthorities());
             } else {
-                throw new BadCredentialsException(messageSource.getMessage("error.account.wrongpass", null, locale));
+                throw new BadCredentialsException(messageManager.getMessage("ERROR_AUTHENTICATE", null));
             }
         } else {
             return new AccountAuthenticationToken(username, "N/A", verifyCredentials, userDetails.getAuthorities());

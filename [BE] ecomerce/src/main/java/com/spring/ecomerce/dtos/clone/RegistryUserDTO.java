@@ -11,4 +11,5 @@ public class RegistryUserDTO {
     private String phonenumber;
     private String password;
     private String email;
+    private String address;
 }

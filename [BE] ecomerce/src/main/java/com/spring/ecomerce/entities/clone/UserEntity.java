@@ -26,7 +26,7 @@ public class UserEntity extends BasicEntity {
     private String email;
     private String password;
     private String authType;
-    private String confirmed;
+    private boolean confirmed;
     private String role;
     private String token;
     private List<String> history;

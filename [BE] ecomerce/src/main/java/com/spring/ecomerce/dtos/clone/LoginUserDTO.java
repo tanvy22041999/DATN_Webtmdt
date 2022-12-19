@@ -1,4 +1,4 @@
-package com.spring.ecomerce.dtos;
+package com.spring.ecomerce.dtos.clone;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class AccountDTO {
-    private String phoneNumber;
+public class LoginUserDTO {
+    private String phonenumber;
 
     private String password;
 }

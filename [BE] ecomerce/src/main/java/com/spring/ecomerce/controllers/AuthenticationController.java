@@ -1,8 +1,11 @@
 package com.spring.ecomerce.controllers;
 
-import com.spring.ecomerce.dtos.AccountDTO;
+import com.spring.ecomerce.arch.BaseResponseEntity;
+import com.spring.ecomerce.dtos.clone.LoginUserDTO;
 import com.spring.ecomerce.dtos.TokenDetails;
+import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.entities.response.ResponseData;
+import com.spring.ecomerce.exception.SystemException;
 import com.spring.ecomerce.exceptions.UserNotFoundAuthenticationException;
 import com.spring.ecomerce.securities.AccountDetailsService;
 import com.spring.ecomerce.securities.JwtTokenUtils;
@@ -17,10 +20,13 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.springframework.http.HttpStatus.*;
 
 @RestController
-@RequestMapping("/rest/login")
+@RequestMapping("/users")
 public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -31,31 +37,34 @@ public class AuthenticationController {
     @Autowired
     private JwtTokenUtils jwtTokenUtils;
 
+    @Autowired
+    private BaseResponseEntity baseResponse;
+
     @ApiOperation("User login form (phone_number, password)")
-    @PostMapping()
-    public ResponseEntity<ResponseData> loginUser(@Valid @RequestBody AccountDTO dto){
+    @PostMapping("/signin")
+    public String loginUser(@Valid @RequestBody LoginUserDTO dto) throws SystemException {
         AccountAuthenticationToken authenticationToken = new AccountAuthenticationToken(
-                dto.getPhoneNumber(),
+                dto.getPhonenumber(),
                 dto.getPassword(),
                 true
         );
         try{
             authenticationManager.authenticate(authenticationToken);
             final JwtUserDetails userDetails = accountDetailsService
-                    .loadUserByUsername(dto.getPhoneNumber());
+                    .loadUserByUsername(dto.getPhonenumber());
 
             final TokenDetails result = jwtTokenUtils.getTokenDetails(userDetails, null);
 
-            return new ResponseEntity<>(ResponseData.builder()
-                    .success(true)
-                    .data(result)
-                    .build(),OK);
-        }catch (UserNotFoundAuthenticationException | BadCredentialsException ex){
-            return new ResponseEntity<>(ResponseData.builder()
-                    .success(false)
-                    .message(ex.getMessage())
-                    .data(dto)
-                    .build(), BAD_REQUEST);
+            UserEntity userLogin = result.getUserLogin();
+            userLogin.setToken("Bearer " + result.getToken());
+
+            baseResponse.retrieved();
+            Map<String, Object> dataResponse = new HashMap<>();
+            dataResponse.put("user", userLogin);
+            return baseResponse.getResponseBody(dataResponse);
+        }catch (Exception ex){
+            baseResponse.failed(401, ex.getMessage());
         }
+        return baseResponse.getResponseBody();
     }
 }

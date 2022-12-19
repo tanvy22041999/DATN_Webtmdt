@@ -1,5 +1,6 @@
 package com.spring.ecomerce.dtos;
 
+import com.spring.ecomerce.entities.clone.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,11 +15,9 @@ import java.util.List;
 @AllArgsConstructor
 public class TokenDetails {
 
-    private String fullName;
+    private UserEntity userLogin;
 
     private String token;
-
-    private String avatar;
 
     private long expired;
 

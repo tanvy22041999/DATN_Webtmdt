@@ -1,5 +1,6 @@
 package com.spring.ecomerce.configs;
 
+import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.securities.*;
 import com.spring.ecomerce.securities.provider.AccountAuthenticationProvider;
 import com.spring.ecomerce.utils.EnumRole;
@@ -35,11 +36,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Autowired
-    private MessageSource messageSource;
+    private MessageManager messageManager;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(getTaiKhoanProvider());
+        auth.authenticationProvider(getAccountProvider());
     }
 
     @Override
@@ -60,10 +61,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().cacheControl();
     }
 
-    private AuthenticationProvider getTaiKhoanProvider() {
-        return new AccountAuthenticationProvider(accountDetailsService, messageSource);
+    private AuthenticationProvider getAccountProvider() {
+        return new AccountAuthenticationProvider(accountDetailsService, messageManager);
     }
-
 
     @Bean
     public JwtTokenFilter authenticationTokenFilterBean() throws Exception {

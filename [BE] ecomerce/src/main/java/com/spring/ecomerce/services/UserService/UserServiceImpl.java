@@ -12,6 +12,7 @@ import com.spring.ecomerce.repositories.AccountRepository.AccountRepository;
 import com.spring.ecomerce.repositories.OTPRepository.OTPRepository;
 import com.spring.ecomerce.repositories.UserRepository.UserRepository;
 import com.spring.ecomerce.securities.JwtUserDetails;
+import com.spring.ecomerce.utils.EncodeUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 @Slf4j
@@ -64,18 +68,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public UserEntity createUser(RegistryUserDTO userDTO) {
+    public UserEntity createUser(RegistryUserDTO userDTO) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        String password = EncodeUtils.getPasswordHash(userDTO.getPassword(), "SHA1");
+        if("".equals(password)){
+            return null;
+        }
 
-        UserEntity user = new UserEntity();
-        BeanUtils.copyProperties(userDTO, user);
-        userRepository.save(user);
-
-        //create account for user
-        Account account = new Account();
-        account.setPassword(userDTO.getPassword());
-        account.setRoles(new ArrayList<>(Collections.singleton("USER")));
-        accountRepository.save(account);
-        return user;
+        UserEntity userEntity = new UserEntity();
+        userEntity.setFirstname(userDTO.getFirstname());
+        userEntity.setLastname(userDTO.getLastname());
+        userEntity.setPhonenumber(userDTO.getPhonenumber());
+        userEntity.setAddress(userDTO.getAddress());
+        userEntity.setEmail(userDTO.getEmail());
+        userEntity.setPassword(password);
+        userEntity.setAuthType("local");
+        userEntity.setConfirmed(true);
+        userEntity.setRole("1");
+        userEntity.setHistory(new ArrayList<>());
+        return userRepository.save(userEntity);
     }
 
     @Override

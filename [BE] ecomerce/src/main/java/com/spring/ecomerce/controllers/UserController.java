@@ -57,7 +57,6 @@ public class UserController {
             else {
                 baseResponse.created();
                 Map<String, Object> dataResponse = new HashMap<>();
-                dataResponse.put("brand", result);
                 return baseResponse.getResponseBody(dataResponse);
             }
         }catch (Exception ex){

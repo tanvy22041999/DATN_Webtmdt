@@ -1,5 +1,6 @@
 package com.spring.ecomerce.securities;
 
+import com.spring.ecomerce.entities.clone.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -7,7 +8,8 @@ import java.util.Collection;
 
 public class JwtUserDetails implements UserDetails {
 
-    private final String hoTen;
+    private final UserEntity userLogin;
+    private final String fullname;
 
     private final String username;
 
@@ -15,15 +17,15 @@ public class JwtUserDetails implements UserDetails {
 
     private final Collection<? extends GrantedAuthority> authorities;
 
-    private final boolean trangThai;
+    private final boolean confirmed;
 
-    public JwtUserDetails(String hoTen, String username,
-                          String password, Collection<? extends GrantedAuthority> authorities, boolean trangThai) {
-        this.hoTen = hoTen;
-        this.username = username;
-        this.password = password;
+    public JwtUserDetails(UserEntity userLogin, Collection<? extends GrantedAuthority> authorities) {
+        this.userLogin = userLogin;
+        this.fullname = userLogin.getFirstname() + " " + userLogin.getLastname();
+        this.username = userLogin.getPhonenumber();
+        this.password = userLogin.getPassword();
         this.authorities = authorities;
-        this.trangThai = trangThai;
+        this.confirmed = userLogin.isConfirmed();
     }
 
     @Override
@@ -31,9 +33,11 @@ public class JwtUserDetails implements UserDetails {
         return authorities;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getFullname() {
+        return fullname;
     }
+
+    public UserEntity getUserLogin(){ return userLogin;}
 
     @Override
     public String getPassword() {
@@ -52,7 +56,7 @@ public class JwtUserDetails implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return trangThai;
+        return confirmed;
     }
 
     @Override
@@ -62,6 +66,6 @@ public class JwtUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return trangThai;
+        return confirmed;
     }
 }

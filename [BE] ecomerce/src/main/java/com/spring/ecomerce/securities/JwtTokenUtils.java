@@ -18,10 +18,13 @@ import java.util.stream.Collectors;
 @Component
 public class JwtTokenUtils implements Serializable {
 
-    private static final long JWT_TOKEN_VALIDITY = 100 * 24 * 60 * 60;
+//    private static final long JWT_TOKEN_VALIDITY = 100 * 24 * 60 * 60;
 
     @Value("${jwt.secret}")
     private String secret;
+
+    @Value("${jwt.token_validity}")
+    private Long tokenValidity;
 
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
@@ -52,10 +55,9 @@ public class JwtTokenUtils implements Serializable {
 
     public TokenDetails getTokenDetails(JwtUserDetails userDetails, String avatar) {
         TokenDetails tokenDetails = new TokenDetails();
-        tokenDetails.setFullName(userDetails.getHoTen());
-        tokenDetails.setAvatar(avatar);
+        tokenDetails.setUserLogin(userDetails.getUserLogin());
         tokenDetails.setToken(generateToken(userDetails));
-        tokenDetails.setExpired(JWT_TOKEN_VALIDITY);
+        tokenDetails.setExpired(tokenValidity);
         tokenDetails.setRoles(userDetails.getAuthorities().stream().map(Object::toString).collect(Collectors.toList()));
         return tokenDetails;
     }
@@ -63,7 +65,7 @@ public class JwtTokenUtils implements Serializable {
 
     private String doGenerateToken(Map<String, Object> claims, String subject) {
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
+                .setExpiration(new Date(System.currentTimeMillis() + tokenValidity))
                 .signWith(SignatureAlgorithm.HS512, secret).compact();
     }
 
