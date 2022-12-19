@@ -7,6 +7,7 @@ import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.entities.response.ResponseData;
 import com.spring.ecomerce.exception.SystemException;
 import com.spring.ecomerce.exceptions.UserNotFoundAuthenticationException;
+import com.spring.ecomerce.repositories.UserRepository.UserRepository;
 import com.spring.ecomerce.securities.AccountDetailsService;
 import com.spring.ecomerce.securities.JwtTokenUtils;
 import com.spring.ecomerce.securities.JwtUserDetails;
@@ -35,6 +36,9 @@ public class AuthenticationController {
     private AccountDetailsService accountDetailsService;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private JwtTokenUtils jwtTokenUtils;
 
     @Autowired
@@ -57,6 +61,7 @@ public class AuthenticationController {
 
             UserEntity userLogin = result.getUserLogin();
             userLogin.setToken("Bearer " + result.getToken());
+            userRepository.save(userLogin);
 
             baseResponse.retrieved();
             Map<String, Object> dataResponse = new HashMap<>();

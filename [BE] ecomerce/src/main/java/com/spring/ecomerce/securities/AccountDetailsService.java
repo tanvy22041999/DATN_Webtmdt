@@ -2,11 +2,9 @@ package com.spring.ecomerce.securities;
 
 import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.entities.clone.UserEntity;
-import com.spring.ecomerce.repositories.AccountRepository.AccountRepository;
 import com.spring.ecomerce.repositories.UserRepository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -37,10 +34,10 @@ public class AccountDetailsService implements UserDetailsService {
 
         List<String> roles = new ArrayList<>();
         if("0".equals(user.getRole())){
-            roles.add("ADMIN");
+            roles.add("0");
         }
         else if("1".equals(user.getRole())){
-            roles.add("USER");
+            roles.add("1");
         }
 
         return new JwtUserDetails(user,

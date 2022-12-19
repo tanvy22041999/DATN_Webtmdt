@@ -5,7 +5,6 @@ import com.spring.ecomerce.securities.*;
 import com.spring.ecomerce.securities.provider.AccountAuthenticationProvider;
 import com.spring.ecomerce.utils.EnumRole;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -55,7 +54,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/v2/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/rest/sign-up/**").permitAll()
                 .antMatchers("/rest/client/**").hasAuthority(EnumRole.ROLE_USER.toString())
-                .antMatchers("/rest/admin/**").hasAuthority(EnumRole.ROLE_ADMIN.toString());
+                .antMatchers("/rest/admin/**").hasAuthority(EnumRole.ROLE_ADMIN.toString())
+                .antMatchers("/users/api/auth").hasAuthority("0");
         http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 
         http.headers().cacheControl();

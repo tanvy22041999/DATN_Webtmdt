@@ -1,0 +1,13 @@
+
+.footer-top-area {background: none repeat scroll 0 0 #333;
+color: #999;}
+
+
+.footer-bottom-area {background: #000;color: #fff}
+
+
+.fb-page, 
+.fb-page span, 
+.fb-page span iframe[style] { 
+    width: 100% !important; 
+}

@@ -4,6 +4,7 @@ import com.spring.ecomerce.arch.BaseResponseEntity;
 import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.dtos.OTPDTO;
 import com.spring.ecomerce.dtos.PasswordDTO;
+import com.spring.ecomerce.dtos.TokenDetails;
 import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
 import com.spring.ecomerce.dtos.clone.RegistryUserDTO;
 import com.spring.ecomerce.entities.OTP;
@@ -11,6 +12,7 @@ import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.entities.response.ResponseData;
 import com.spring.ecomerce.exception.SystemException;
+import com.spring.ecomerce.securities.JwtTokenUtils;
 import com.spring.ecomerce.securities.JwtUserDetails;
 import com.spring.ecomerce.services.OTPService.OTPService;
 import com.spring.ecomerce.services.UserService.UserService;
@@ -41,6 +43,8 @@ public class UserController {
     private BaseResponseEntity baseResponse;
     @Autowired
     private OTPService otpService;
+    @Autowired
+    private JwtTokenUtils jwtTokenUtils;
 
     @PostMapping("/signup")
     public String addNewUser(@RequestBody RegistryUserDTO userDTO) throws SystemException {
@@ -59,6 +63,25 @@ public class UserController {
                 Map<String, Object> dataResponse = new HashMap<>();
                 return baseResponse.getResponseBody(dataResponse);
             }
+        }catch (Exception ex){
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
+        }
+
+        return baseResponse.getResponseBody();
+    }
+
+    @PostMapping("/api/auth/profile")
+    public String getInfoLogin() throws SystemException {
+        try{
+            JwtUserDetails userDetails = (JwtUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            TokenDetails result = jwtTokenUtils.getTokenDetails(userDetails, null);
+            UserEntity userLogin = result.getUserLogin();
+            userLogin.setToken("Bearer " + result.getToken());
+
+            baseResponse.retrieved();
+            Map<String, Object> dataResponse = new HashMap<>();
+            dataResponse.put("user", userLogin);
+            return baseResponse.getResponseBody(dataResponse);
         }catch (Exception ex){
             baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
         }
