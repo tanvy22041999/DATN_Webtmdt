@@ -47,11 +47,6 @@ public class NotifyServiceImpl implements NotifyService {
     }
 
     @Override
-    public Page<NotificationEntity> getNewestNotify(String user, String admin, Integer type, Integer limit, Integer page) {
-        return null;
-    }
-
-    @Override
     public NotificationEntity addNewNotify(RegistryNofifyDTO nofifyDTO) {
         NotificationEntity notificationEntity = new NotificationEntity();
         notificationEntity.setName(nofifyDTO.getName());

@@ -7,8 +7,6 @@ import org.springframework.data.domain.Page;
 public interface NotifyService {
     Page<NotificationEntity> getAllNotify(String user, String admin, Integer type, Integer limit, Integer page);
 
-    Page<NotificationEntity> getNewestNotify(String user, String admin, Integer type, Integer limit, Integer page);
-
     NotificationEntity addNewNotify(RegistryNofifyDTO nofifyDTO);
 
     NotificationEntity updateNotify(String id, RegistryNofifyDTO nofifyDTO);

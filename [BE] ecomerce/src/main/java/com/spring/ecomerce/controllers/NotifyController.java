@@ -55,8 +55,8 @@ public class NotifyController {
         return baseResponse.getResponseBody();
     }
 
-    @GetMapping("//notification-newest")
-    public String getNewestNotify(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
+    @GetMapping("/notification-newest")
+    public String getNewestNotify(@RequestParam(value = "limit", defaultValue = "5") Integer limit,
                               @RequestParam(value = "page", defaultValue = "0") Integer page,
                               @RequestParam(value = "user", defaultValue = "") String user,
                                @RequestParam(value="admin", defaultValue = "") String admin,
