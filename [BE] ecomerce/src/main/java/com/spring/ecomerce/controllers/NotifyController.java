@@ -55,6 +55,28 @@ public class NotifyController {
         return baseResponse.getResponseBody();
     }
 
+    @GetMapping("//notification-newest")
+    public String getNewestNotify(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
+                              @RequestParam(value = "page", defaultValue = "0") Integer page,
+                              @RequestParam(value = "user", defaultValue = "") String user,
+                               @RequestParam(value="admin", defaultValue = "") String admin,
+                               @RequestParam(value = "type", defaultValue = "-1") Integer type) throws SystemException {
+        try{
+            Page<NotificationEntity> results = notifyService.getAllNotify(user, admin, type, limit, page);
+
+            Map<String, Object> dataResponse = new HashMap<>();
+            dataResponse.put("total", results.getTotalElements());
+            dataResponse.put("notifications", results.getContent());
+            baseResponse.retrieved();
+            return baseResponse.getResponseBody(dataResponse);
+
+        }catch (Exception ex){
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_GET", null));
+        }
+
+        return baseResponse.getResponseBody();
+    }
+
     @GetMapping("/brands/{id}")
     public String getById(@PathVariable(value = "id", required = false) String id) throws SystemException {
         try{
