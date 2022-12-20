@@ -14,8 +14,8 @@ import java.util.List;
 @Repository
 public interface NotifyRepository extends MongoRepository<NotificationEntity, String> {
     @Query(value = "?0", sort = "{'createTimeStamp': -1}")
-    Page<ProductEntity> getByConditionsForPageable(BSONObject query, Pageable pageable);
+    Page<NotificationEntity> getByConditionsForPageable(BSONObject query, Pageable pageable);
 
     @Query(value = "?0", sort = "{'createTimeStamp': -1}")
-    List<ProductEntity> getByConditionsForList(BSONObject query);
+    List<NotificationEntity> getByConditionsForList(BSONObject query);
 }
