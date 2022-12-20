@@ -16,7 +16,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class NotifyServiceImpl implements NotifyService {
@@ -66,16 +68,99 @@ public class NotifyServiceImpl implements NotifyService {
 
     @Override
     public NotificationEntity updateNotify(String id, RegistryNofifyDTO nofifyDTO) {
+        Optional<NotificationEntity> recordFound = notifyRepository.findById(id);
+        if(recordFound.isPresent()){
+            NotificationEntity notifyUpdate = recordFound.get();
+            if(nofifyDTO.getName() != null && !"".equals(nofifyDTO.getName())){
+                notifyUpdate.setName(nofifyDTO.getName());
+            }
+
+            if(nofifyDTO.getUser() != null && !"".equals(nofifyDTO.getUser())){
+                notifyUpdate.setUser(nofifyDTO.getUser());
+            }
+
+            if(nofifyDTO.getLink() != null && !"".equals(nofifyDTO.getLink())){
+                notifyUpdate.setLink(nofifyDTO.getLink());
+            }
+
+            if(nofifyDTO.getContent()!= null && !"".equals(nofifyDTO.getContent())){
+                notifyUpdate.setContent(nofifyDTO.getContent());
+            }
+
+            String image = nofifyDTO.getImage();
+            if(image != null && !"".equals(image)){
+                ImageEntity imageSaved = notifyUpdate.getImage();
+                if(imageSaved == null || !image.equals(imageSaved.getId())){
+                    ImageEntity imageFound = imageService.findById(image);
+                    if(imageFound != null){
+                        notifyUpdate.setImage(imageFound);
+                    }
+                }
+            }
+            return notifyRepository.save(notifyUpdate);
+        }
+
         return null;
     }
 
     @Override
     public boolean deleteNotifyById(String id) {
+        Optional<NotificationEntity> record = notifyRepository.findById(id);
+        if(record.isPresent()){
+            NotificationEntity recordDelete = record.get();
+            recordDelete.setDelFlg(1);
+            NotificationEntity resultDelete = notifyRepository.save(recordDelete);
+            if(resultDelete != null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateNotifyForUser(String userId) {
+        BSONObject queryData = new BasicBSONObject();
+        queryData.put("validFlg", 1);
+        queryData.put("delFlg", 0);
+        queryData.put("user", userId);
+        queryData.put("active", true);
+
+        List<NotificationEntity> dataUpdate = notifyRepository.getByConditionsForList(queryData);
+        if(dataUpdate.size() > 0){
+            for(NotificationEntity notify :  dataUpdate){
+                notify.setActive(false);
+            }
+        }
+
+        List<NotificationEntity> dataUpdated = notifyRepository.saveAll(dataUpdate);
+        if(dataUpdated != null){
+            return true;
+        }
+
         return false;
     }
 
     @Override
     public boolean deleteNotifyForUser(String userId) {
+        BSONObject queryData = new BasicBSONObject();
+        queryData.put("validFlg", 1);
+        queryData.put("delFlg", 0);
+        queryData.put("user", userId);
+        queryData.put("delFlg", 0);
+
+        List<NotificationEntity> dataUpdate = notifyRepository.getByConditionsForList(queryData);
+        if(dataUpdate.size() > 0){
+            for(NotificationEntity notify :  dataUpdate){
+                notify.setDelFlg(1);
+            }
+        }
+
+        List<NotificationEntity> dataUpdated = notifyRepository.saveAll(dataUpdate);
+        if(dataUpdated != null){
+            return true;
+        }
+
         return false;
     }
 }

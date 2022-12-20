@@ -91,6 +91,8 @@ public class AdServiceImpl implements AdService {
                 if(updateAd.getContent() != null) updateEntity.setContent(updateAd.getContent());
                 if(updateAd.getLink() != null) updateEntity.setLink(updateAd.getLink());
                 if(updateAd.getActive() != null) updateEntity.setActive(updateAd.getActive());
+                if(updateAd.getStartedAt() != null) updateEntity.setStartedAt(updateAd.getStartedAt());
+                if(updateAd.getEndedAt() != null) updateEntity.setEndedAt(updateAd.getEndedAt());
 
                 //check file to change image
                 if(updateAd.getImage() != null){

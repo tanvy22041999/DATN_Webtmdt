@@ -6,3 +6,786 @@
 2022-12-20 01:04:16 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:6, serverValue:1068}] to localhost:27017 because the pool has been closed.
 2022-12-20 01:04:16 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:8, serverValue:1067}] to localhost:27017 because the pool has been closed.
 2022-12-20 01:04:16 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:3, serverValue:1063}] to localhost:27017 because the pool has been closed.
+2022-12-20 10:56:47 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 11.0.15 on Tuongs-MacBook-Pro.local with PID 3178 (/Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce/target/classes started by devroot in /Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce)
+2022-12-20 10:56:47 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-20 10:56:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-20 10:56:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 138 ms. Found 15 MongoDB repository interfaces.
+2022-12-20 10:56:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7ea2412c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 10:56:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 10:56:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-20 10:56:49 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-20 10:56:49 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-20 10:56:49 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-20 10:56:49 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2315 ms
+2022-12-20 10:56:49 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.cffdjx2.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-m3jp52-shard-0'}
+2022-12-20 10:56:50 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 10:56:50 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 10:56:50 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 10:56:50 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 10:56:50 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 10:56:51 [cluster-rtt-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1407157}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:1423360}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:1407157}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=669205111, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd68301f1c4f04c74bd9f, counter=4}, lastWriteDate=Tue Dec 20 10:56:51 ICT 2022, lastUpdateTimeNanos=370881939174001}
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=668774935, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000016, setVersion=1, topologyVersion=TopologyVersion{processId=637cd6d60cac81c422e235e6, counter=6}, lastWriteDate=Tue Dec 20 10:56:51 ICT 2022, lastUpdateTimeNanos=370881939121125}
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff0000000000000016 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 1 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [cluster-rtt-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:1423360}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:1406325}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [cluster-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=672680245, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd72a704a2b1d8b208318, counter=3}, lastWriteDate=Tue Dec 20 10:56:51 ICT 2022, lastUpdateTimeNanos=370881946888568}
+2022-12-20 10:56:51 [cluster-rtt-ClusterId{value='63a1328107295716fd5eae23', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1406325}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 10:56:51 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-20 10:56:51 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a6c751f, org.springframework.security.web.context.SecurityContextPersistenceFilter@64688978, org.springframework.security.web.header.HeaderWriterFilter@7831d1aa, org.springframework.security.web.authentication.logout.LogoutFilter@7c5ac0, com.spring.ecomerce.securities.JwtTokenFilter@573a078, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25f14e93, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3278d065, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6dd2e453, org.springframework.security.web.session.SessionManagementFilter@c6c84fa, org.springframework.security.web.access.ExceptionTranslationFilter@3395c2a7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@674ed201]
+2022-12-20 10:56:52 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-20 10:56:52 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-20 10:56:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-20 10:56:52 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-20 10:56:52 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-20 10:56:52 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-20 10:56:52 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 6.305 seconds (JVM running for 6.983)
+2022-12-20 10:56:52 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:1423376}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 10:58:27 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-20 10:58:27 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-20 10:58:27 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-12-20 11:03:36 [http-nio-3000-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:03:36 [http-nio-3000-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:03:44 [http-nio-3000-exec-8] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:03:44 [http-nio-3000-exec-9] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:05:08 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-20 11:05:08 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-20 11:05:08 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:7, serverValue:1423376}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 because the pool has been closed.
+2022-12-20 11:05:14 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 11.0.15 on Tuongs-MacBook-Pro.local with PID 3293 (/Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce/target/classes started by devroot in /Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce)
+2022-12-20 11:05:14 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-20 11:05:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-20 11:05:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 15 MongoDB repository interfaces.
+2022-12-20 11:05:15 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@180b3819' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 11:05:15 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 11:05:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-20 11:05:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-20 11:05:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-20 11:05:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-20 11:05:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2289 ms
+2022-12-20 11:05:16 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.cffdjx2.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-m3jp52-shard-0'}
+2022-12-20 11:05:16 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:05:16 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:05:16 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:05:17 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 11:05:17 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:1407589}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:1423814}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:18 [cluster-rtt-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1423814}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:18 [cluster-rtt-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:1407589}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:18 [cluster-rtt-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:1406755}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1406755}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=817764099, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd68301f1c4f04c74bd9f, counter=4}, lastWriteDate=Tue Dec 20 11:05:17 ICT 2022, lastUpdateTimeNanos=371388839823728}
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=814640597, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000016, setVersion=1, topologyVersion=TopologyVersion{processId=637cd6d60cac81c422e235e6, counter=6}, lastWriteDate=Tue Dec 20 11:05:17 ICT 2022, lastUpdateTimeNanos=371388839886729}
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=814806504, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd72a704a2b1d8b208318, counter=3}, lastWriteDate=Tue Dec 20 11:05:17 ICT 2022, lastUpdateTimeNanos=371388839823591}
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff0000000000000016 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 1 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:18 [cluster-ClusterId{value='63a1347ced1f013066c27c17', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:19 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-20 11:05:19 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25dad235, org.springframework.security.web.context.SecurityContextPersistenceFilter@3580134d, org.springframework.security.web.header.HeaderWriterFilter@2cdcfaa6, org.springframework.security.web.authentication.logout.LogoutFilter@19c1f6f4, com.spring.ecomerce.securities.JwtTokenFilter@da22aa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b7e4b20, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c13af01, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3292eff7, org.springframework.security.web.session.SessionManagementFilter@76d1f6ea, org.springframework.security.web.access.ExceptionTranslationFilter@731ab49b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@30c03473]
+2022-12-20 11:05:19 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-20 11:05:19 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-20 11:05:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-20 11:05:20 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-20 11:05:20 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-20 11:05:20 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-20 11:05:20 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 7.029 seconds (JVM running for 7.868)
+2022-12-20 11:05:20 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-20 11:05:20 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-20 11:05:20 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-12-20 11:05:20 [http-nio-3000-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:05:20 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:1423813}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:05:27 [http-nio-3000-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:05:27 [http-nio-3000-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:05:27 [http-nio-3000-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:05:27 [http-nio-3000-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:05:27 [http-nio-3000-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:05:27 [http-nio-3000-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-12-20 11:11:57 [http-nio-3000-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=----WebKitFormBoundaryQx0a5H7Lm6jY1YXz;charset=UTF-8' not supported]
+2022-12-20 11:12:04 [http-nio-3000-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=----WebKitFormBoundaryYaFklM9MfUQuASRM;charset=UTF-8' not supported]
+2022-12-20 11:12:15 [http-nio-3000-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=----WebKitFormBoundarybsW3dVOJvPPB1T57;charset=UTF-8' not supported]
+2022-12-20 11:13:24 [http-nio-3000-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=----WebKitFormBoundaryFeZdSQyPEfCYkrUy;charset=UTF-8' not supported]
+2022-12-20 11:15:20 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-20 11:15:20 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-20 11:15:21 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:7, serverValue:1423813}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 because the pool has been closed.
+2022-12-20 11:15:26 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 11.0.15 on Tuongs-MacBook-Pro.local with PID 3416 (/Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce/target/classes started by devroot in /Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce)
+2022-12-20 11:15:26 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-20 11:15:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-20 11:15:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 135 ms. Found 15 MongoDB repository interfaces.
+2022-12-20 11:15:28 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@47acd13b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 11:15:28 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 11:15:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-20 11:15:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-20 11:15:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-20 11:15:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-20 11:15:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2241 ms
+2022-12-20 11:15:29 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.cffdjx2.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-m3jp52-shard-0'}
+2022-12-20 11:15:29 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:15:29 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 11:15:29 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:15:29 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:15:29 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1408093}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1407253}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:30 [cluster-rtt-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:1407253}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:1424302}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=741660459, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd68301f1c4f04c74bd9f, counter=4}, lastWriteDate=Tue Dec 20 11:15:30 ICT 2022, lastUpdateTimeNanos=372001051841580}
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=743941742, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd72a704a2b1d8b208318, counter=3}, lastWriteDate=Tue Dec 20 11:15:30 ICT 2022, lastUpdateTimeNanos=372001049273083}
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=740956204, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000016, setVersion=1, topologyVersion=TopologyVersion{processId=637cd6d60cac81c422e235e6, counter=6}, lastWriteDate=Tue Dec 20 11:15:30 ICT 2022, lastUpdateTimeNanos=372001047530194}
+2022-12-20 11:15:30 [cluster-rtt-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:1408093}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff0000000000000016 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 1 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:30 [cluster-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:30 [cluster-rtt-ClusterId{value='63a136e1bfda7a67caa6ca1f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:1424302}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:31 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-20 11:15:32 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@674e4c82, org.springframework.security.web.context.SecurityContextPersistenceFilter@106802ea, org.springframework.security.web.header.HeaderWriterFilter@2ca132ad, org.springframework.security.web.authentication.logout.LogoutFilter@217b0952, com.spring.ecomerce.securities.JwtTokenFilter@29892a77, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d8bd881, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@611587f7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@572b4072, org.springframework.security.web.session.SessionManagementFilter@6d5508a5, org.springframework.security.web.access.ExceptionTranslationFilter@56e8a8a0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5709e10b]
+2022-12-20 11:15:32 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-20 11:15:32 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-20 11:15:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-20 11:15:32 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-20 11:15:32 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-20 11:15:32 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-20 11:15:33 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 7.549 seconds (JVM running for 8.3)
+2022-12-20 11:15:33 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:1424328}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:15:34 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-20 11:15:34 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-20 11:15:34 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-20 11:16:37 [http-nio-3000-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'registryAdDTO' on field 'image': rejected value []; codes [typeMismatch.registryAdDTO.image,typeMismatch.image,typeMismatch.org.springframework.web.multipart.MultipartFile,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registryAdDTO.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image': no matching editors or conversion strategy found]]
+2022-12-20 11:16:49 [http-nio-3000-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'registryAdDTO' on field 'image': rejected value []; codes [typeMismatch.registryAdDTO.image,typeMismatch.image,typeMismatch.org.springframework.web.multipart.MultipartFile,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registryAdDTO.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image': no matching editors or conversion strategy found]]
+2022-12-20 11:17:00 [http-nio-3000-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'registryAdDTO' on field 'image': rejected value []; codes [typeMismatch.registryAdDTO.image,typeMismatch.image,typeMismatch.org.springframework.web.multipart.MultipartFile,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registryAdDTO.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image': no matching editors or conversion strategy found]]
+2022-12-20 11:18:59 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-20 11:18:59 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-20 11:18:59 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:7, serverValue:1424328}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 because the pool has been closed.
+2022-12-20 11:19:04 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 11.0.15 on Tuongs-MacBook-Pro.local with PID 3456 (/Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce/target/classes started by devroot in /Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce)
+2022-12-20 11:19:04 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-20 11:19:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-20 11:19:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 148 ms. Found 15 MongoDB repository interfaces.
+2022-12-20 11:19:06 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6f8e9d06' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 11:19:06 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 11:19:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-20 11:19:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-20 11:19:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-20 11:19:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-20 11:19:06 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2266 ms
+2022-12-20 11:19:07 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.cffdjx2.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-m3jp52-shard-0'}
+2022-12-20 11:19:07 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:19:07 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:19:07 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:19:07 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 11:19:07 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 11:19:08 [cluster-rtt-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:1424534}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:08 [cluster-rtt-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:1407454}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1407454}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:08 [cluster-rtt-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:1408298}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:1408298}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1424532}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=985613840, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000016, setVersion=1, topologyVersion=TopologyVersion{processId=637cd6d60cac81c422e235e6, counter=6}, lastWriteDate=Tue Dec 20 11:19:08 ICT 2022, lastUpdateTimeNanos=372219384872779}
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=942931474, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd72a704a2b1d8b208318, counter=3}, lastWriteDate=Tue Dec 20 11:19:08 ICT 2022, lastUpdateTimeNanos=372219384872779}
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=988308040, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd68301f1c4f04c74bd9f, counter=4}, lastWriteDate=Tue Dec 20 11:19:08 ICT 2022, lastUpdateTimeNanos=372219384886904}
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff0000000000000016 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 1 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:08 [cluster-ClusterId{value='63a137bb50558a4164ea19e6', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:19:09 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-20 11:19:10 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1df9f7c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@114b2414, org.springframework.security.web.header.HeaderWriterFilter@69ab2d6a, org.springframework.security.web.authentication.logout.LogoutFilter@6968bb65, com.spring.ecomerce.securities.JwtTokenFilter@72715e61, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@465d1345, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75d7297d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b5aa48b, org.springframework.security.web.session.SessionManagementFilter@674ed201, org.springframework.security.web.access.ExceptionTranslationFilter@45f8415b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3149409c]
+2022-12-20 11:19:10 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-20 11:19:10 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-20 11:19:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-20 11:19:10 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-20 11:19:10 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-20 11:19:11 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-20 11:19:11 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 7.574 seconds (JVM running for 8.252)
+2022-12-20 11:19:11 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:1424534}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:22:47 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-20 11:22:47 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-20 11:22:47 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-12-20 11:22:56 [http-nio-3000-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'registryAdDTO' on field 'image': rejected value []; codes [typeMismatch.registryAdDTO.image,typeMismatch.image,typeMismatch.org.springframework.web.multipart.MultipartFile,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registryAdDTO.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image': no matching editors or conversion strategy found]]
+2022-12-20 11:23:44 [http-nio-3000-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'registryAdDTO' on field 'image': rejected value []; codes [typeMismatch.registryAdDTO.image,typeMismatch.image,typeMismatch.org.springframework.web.multipart.MultipartFile,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registryAdDTO.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image': no matching editors or conversion strategy found]]
+2022-12-20 11:23:59 [http-nio-3000-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'registryAdDTO' on field 'image': rejected value []; codes [typeMismatch.registryAdDTO.image,typeMismatch.image,typeMismatch.org.springframework.web.multipart.MultipartFile,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registryAdDTO.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'org.springframework.web.multipart.MultipartFile' for property 'image': no matching editors or conversion strategy found]]
+2022-12-20 11:34:18 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-20 11:34:18 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-20 11:34:18 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:7, serverValue:1424534}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 because the pool has been closed.
+2022-12-20 11:34:24 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 11.0.15 on Tuongs-MacBook-Pro.local with PID 3620 (/Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce/target/classes started by devroot in /Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce)
+2022-12-20 11:34:24 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-20 11:34:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-20 11:34:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 184 ms. Found 15 MongoDB repository interfaces.
+2022-12-20 11:34:26 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1450131a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 11:34:26 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 11:34:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-20 11:34:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-20 11:34:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-20 11:34:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-20 11:34:26 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2649 ms
+2022-12-20 11:34:27 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.cffdjx2.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-m3jp52-shard-0'}
+2022-12-20 11:34:27 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:34:27 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:34:27 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 11:34:27 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 11:34:27 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:1425330}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:1408254}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:28 [cluster-rtt-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1409100}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=812303087, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd72a704a2b1d8b208318, counter=3}, lastWriteDate=Tue Dec 20 11:34:28 ICT 2022, lastUpdateTimeNanos=373139315179841}
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:1409100}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=821185171, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000016, setVersion=1, topologyVersion=TopologyVersion{processId=637cd6d60cac81c422e235e6, counter=6}, lastWriteDate=Tue Dec 20 11:34:28 ICT 2022, lastUpdateTimeNanos=373139315033302}
+2022-12-20 11:34:28 [cluster-rtt-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1425330}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:28 [cluster-rtt-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:1408254}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=821178222, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd68301f1c4f04c74bd9f, counter=4}, lastWriteDate=Tue Dec 20 11:34:28 ICT 2022, lastUpdateTimeNanos=373139315033234}
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff0000000000000016 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 1 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:28 [cluster-ClusterId{value='63a13b537bb7144977122a29', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:29 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-20 11:34:30 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77fceac6, org.springframework.security.web.context.SecurityContextPersistenceFilter@611587f7, org.springframework.security.web.header.HeaderWriterFilter@67ecf7ed, org.springframework.security.web.authentication.logout.LogoutFilter@1ce2029b, com.spring.ecomerce.securities.JwtTokenFilter@59d5c537, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ab1f85b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e19b30, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@563c3aca, org.springframework.security.web.session.SessionManagementFilter@66682e8f, org.springframework.security.web.access.ExceptionTranslationFilter@776e7dfb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4e4bfd9c]
+2022-12-20 11:34:30 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-20 11:34:30 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-20 11:34:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-20 11:34:31 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-20 11:34:31 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-20 11:34:31 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-20 11:34:31 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 8.278 seconds (JVM running for 9.023)
+2022-12-20 11:34:31 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:1425337}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 11:34:38 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-20 11:34:38 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-20 11:34:38 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-12-20 12:07:55 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-12-20 12:07:55 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-20 12:07:55 [SpringContextShutdownHook] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:7, serverValue:1425337}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 because the pool has been closed.
+2022-12-20 12:08:01 [main] INFO  com.spring.ecomerce.MainApplication - Starting MainApplication using Java 11.0.15 on Tuongs-MacBook-Pro.local with PID 4001 (/Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce/target/classes started by devroot in /Users/devroot/Documents/codedoan/Ecomerce/DATN_Webtmdt/[BE] ecomerce)
+2022-12-20 12:08:01 [main] INFO  com.spring.ecomerce.MainApplication - The following profiles are active: dev
+2022-12-20 12:08:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-12-20 12:08:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 142 ms. Found 15 MongoDB repository interfaces.
+2022-12-20 12:08:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5f7eee96' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 12:08:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-20 12:08:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 3000 (http)
+2022-12-20 12:08:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-20 12:08:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-20 12:08:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-20 12:08:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2161 ms
+2022-12-20 12:08:03 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.cffdjx2.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-m3jp52-shard-0'}
+2022-12-20 12:08:03 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 12:08:03 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 12:08:03 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 12:08:03 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-srv-cluster0.cffdjx2.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017 to client view of cluster
+2022-12-20 12:08:04 [main] WARN  o.s.data.convert.CustomConversions - Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-12-20 12:08:05 [cluster-rtt-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:1410514}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [cluster-rtt-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:1409683}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1426767}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1410513}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [cluster-rtt-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:1426767}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:1409683}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=928623303, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd68301f1c4f04c74bd9f, counter=4}, lastWriteDate=Tue Dec 20 12:08:05 ICT 2022, lastUpdateTimeNanos=375155831824975}
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=933844875, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000016, setVersion=1, topologyVersion=TopologyVersion{processId=637cd6d60cac81c422e235e6, counter=6}, lastWriteDate=Tue Dec 20 12:08:05 ICT 2022, lastUpdateTimeNanos=375155831825035}
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=924994755, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd72a704a2b1d8b208318, counter=3}, lastWriteDate=Tue Dec 20 12:08:05 ICT 2022, lastUpdateTimeNanos=375155831824915}
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max election id to 7fffffff0000000000000016 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Setting max set version to 1 from replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:05 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-20 12:08:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53e166ad, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ab1f85b, org.springframework.security.web.header.HeaderWriterFilter@6d5508a5, org.springframework.security.web.authentication.logout.LogoutFilter@7921a37d, com.spring.ecomerce.securities.JwtTokenFilter@59d5c537, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d8fd077, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ac0bf84, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30c03473, org.springframework.security.web.session.SessionManagementFilter@611587f7, org.springframework.security.web.access.ExceptionTranslationFilter@67ecf7ed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@24954e82]
+2022-12-20 12:08:06 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-20 12:08:06 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-12-20 12:08:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 3000 (http) with context path ''
+2022-12-20 12:08:06 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-20 12:08:06 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-20 12:08:07 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-20 12:08:07 [main] INFO  com.spring.ecomerce.MainApplication - Started MainApplication in 6.837 seconds (JVM running for 7.492)
+2022-12-20 12:08:07 [main] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:1426746}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 12:08:15 [http-nio-3000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-20 12:08:15 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-20 12:08:15 [http-nio-3000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-12-20 14:17:58 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:631)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:516)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:356)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:316)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:215)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1328)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:971)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:648)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:513)
+	... 5 common frames omitted
+2022-12-20 14:17:58 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:631)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:516)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:356)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:316)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:215)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1328)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:971)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:648)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:513)
+	... 5 common frames omitted
+2022-12-20 14:17:58 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:631)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:516)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:356)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:316)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:215)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1328)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:971)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:648)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:513)
+	... 5 common frames omitted
+2022-12-20 14:17:59 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:9, serverValue:1414832}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 14:17:59 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=165380044, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd72a704a2b1d8b208318, counter=3}, lastWriteDate=Tue Dec 20 14:17:58 ICT 2022, lastUpdateTimeNanos=376305342551724}
+2022-12-20 14:17:59 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:8, serverValue:1415646}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017
+2022-12-20 14:17:59 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=152103550, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=1, topologyVersion=TopologyVersion{processId=637cd68301f1c4f04c74bd9f, counter=4}, lastWriteDate=Tue Dec 20 14:17:58 ICT 2022, lastUpdateTimeNanos=376305343946217}
+2022-12-20 14:17:59 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:10, serverValue:1431986}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 14:17:59 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=143841353, setName='atlas-m3jp52-shard-0', canonicalAddress=ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, hosts=[ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017, ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017], passives=[], arbiters=[], primary='ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_EAST_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000016, setVersion=1, topologyVersion=TopologyVersion{processId=637cd6d60cac81c422e235e6, counter=6}, lastWriteDate=Tue Dec 20 14:17:59 ICT 2022, lastUpdateTimeNanos=376305421339043}
+2022-12-20 14:17:59 [cluster-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 14:18:04 [cluster-rtt-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:11, serverValue:1414834}] to ac-kyxjnbz-shard-00-02.cffdjx2.mongodb.net:27017
+2022-12-20 14:18:05 [cluster-rtt-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:12, serverValue:1431943}] to ac-kyxjnbz-shard-00-01.cffdjx2.mongodb.net:27017
+2022-12-20 14:18:05 [cluster-rtt-ClusterId{value='63a143333e94a84e9195bf4f', description='null'}-ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:13, serverValue:1415651}] to ac-kyxjnbz-shard-00-00.cffdjx2.mongodb.net:27017

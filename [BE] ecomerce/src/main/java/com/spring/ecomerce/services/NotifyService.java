@@ -13,5 +13,6 @@ public interface NotifyService {
 
     boolean deleteNotifyById(String id);
 
+    boolean updateNotifyForUser(String userId);
     boolean deleteNotifyForUser(String userId);
 }

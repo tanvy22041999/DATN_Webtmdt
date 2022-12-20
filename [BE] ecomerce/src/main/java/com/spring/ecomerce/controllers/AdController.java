@@ -87,14 +87,12 @@ public class AdController {
 
     @PutMapping("/ad/{id}")
     public String updateAd(@PathVariable(value = "id", required = false) String id,
-                           @ModelAttribute RegistryAdDTO updateDTO, @RequestBody LinkedHashMap<String, Boolean> active) throws SystemException {
+                           @ModelAttribute RegistryAdDTO updateDTO/*, @RequestBody LinkedHashMap<String, Boolean> active*/) throws SystemException {
         try{
-            if(active != null && active.size() > 0){
-                Boolean activeStatus =  active.getOrDefault("active", null);
-                if(activeStatus != null)
-                {
-                    updateDTO.setActive(activeStatus);
-                }
+            Boolean activeStatus = true;
+            if(activeStatus != null)
+            {
+                updateDTO.setActive(activeStatus);
             }
             AdEntity result = adService.updateAd(id, updateDTO);
             if(result != null){
