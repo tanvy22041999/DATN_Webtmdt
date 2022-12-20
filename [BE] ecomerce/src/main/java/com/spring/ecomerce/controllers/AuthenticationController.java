@@ -4,27 +4,21 @@ import com.spring.ecomerce.arch.BaseResponseEntity;
 import com.spring.ecomerce.dtos.clone.LoginUserDTO;
 import com.spring.ecomerce.dtos.TokenDetails;
 import com.spring.ecomerce.entities.clone.UserEntity;
-import com.spring.ecomerce.entities.response.ResponseData;
 import com.spring.ecomerce.exception.SystemException;
-import com.spring.ecomerce.exceptions.UserNotFoundAuthenticationException;
-import com.spring.ecomerce.repositories.UserRepository.UserRepository;
+import com.spring.ecomerce.repositories.UserRepository;
 import com.spring.ecomerce.securities.AccountDetailsService;
 import com.spring.ecomerce.securities.JwtTokenUtils;
 import com.spring.ecomerce.securities.JwtUserDetails;
 import com.spring.ecomerce.securities.provider.AccountAuthenticationToken;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/users")

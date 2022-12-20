@@ -58,7 +58,8 @@ class HomePage extends Component {
   render() {
     const {activeIndex} = this.state;
     const { t, bestSeller, newest, listAd } = this.props;
-    
+    console.log("best sell today");
+    console.log(JSON.stringify(bestSeller));
     return (<>
       <div className="promo-area">
         <div className="zigzag-bottom"></div>
@@ -88,7 +89,7 @@ class HomePage extends Component {
                         onExited={() => this.setState({animating: false})}
                         key={item.id}
                       >
-                        <Link to={item.link.replace("https://localhost:5000/#", "")}>
+                        <Link to={item.link.replace("https://localhost:3000/#", "")}>
                         <img src={item.image.publicUrl} alt={item.name} />
                         </Link>
                         
@@ -126,7 +127,7 @@ class HomePage extends Component {
         <div className="zigzag-bottom"></div>
         <div className="container">
           <div className="row">
-            <div className="col-12 my-2">
+            {/* <div className="col-12 my-2">
               <div className="latest-product">
                 <h2 className="text-center">{t('home.list.best')}</h2>
                 <div className="shadow p-3 mb-5 bg-white rounded">
@@ -139,7 +140,7 @@ class HomePage extends Component {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="col-12 my-2">
               <div className="latest-product">
                 <h2 className="text-center">{t('home.list.new')}</h2>

@@ -69,6 +69,16 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductEntity getDetailProduct(String id) {
+        Optional<ProductEntity> result = productRepository.findById(id);
+        if(result.isPresent()){
+            ProductEntity productFound = result.get();
+            return productFound;
+        }
+        return null;
+    }
+
+    @Override
     public String validateProduct(RegistryProductDTO registryProductDTO) {
         String productName = registryProductDTO.getName();
         String pathSeo = registryProductDTO.getPathseo();

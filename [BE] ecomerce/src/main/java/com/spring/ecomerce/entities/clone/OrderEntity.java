@@ -1,4 +1,43 @@
 package com.spring.ecomerce.entities.clone;
 
-public class OrderEntity {
+import com.spring.ecomerce.entities.inner.OrderList;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Document(collection = "order")
+public class OrderEntity extends BasicEntity{
+    @Id
+    private String id;
+
+    private String user;
+
+    private Double totalPrice;
+
+    private Integer totalQuantity;
+
+    private String shippingPhonenumber;
+
+    private String email;
+
+    private String shippingAddress;
+
+    private String note;
+
+    private boolean paid;
+
+    private String paymentMethod;
+
+    private Integer status;
+
+    private boolean confirmed;
+
+    private boolean active;
+
+    private OrderList orderList;
 }

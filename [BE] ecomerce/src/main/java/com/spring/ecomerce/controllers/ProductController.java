@@ -12,7 +12,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -37,6 +36,23 @@ public class ProductController {
             Map<String, Object> dataResponse = new HashMap<>();
             dataResponse.put("total", results.getTotalElements());
             dataResponse.put("products", results.getContent());
+            baseResponse.retrieved();
+            return baseResponse.getResponseBody(dataResponse);
+
+        }catch (Exception ex){
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_GET", null));
+        }
+
+        return baseResponse.getResponseBody();
+    }
+
+    @GetMapping("/{id}")
+    public String getDetailProduct(@PathVariable(value = "id", required = false) String id) throws SystemException {
+        try{
+            ProductEntity result = productService.getDetailProduct(id);
+
+            Map<String, Object> dataResponse = new HashMap<>();
+            dataResponse.put("product", result);
             baseResponse.retrieved();
             return baseResponse.getResponseBody(dataResponse);
 

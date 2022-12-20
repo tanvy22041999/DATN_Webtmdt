@@ -45,10 +45,7 @@ export default function(state = INITIAL_STATE, action) {
         loggedIn: true,
       };
     case AuthorizationActionTypes.LOGIN_ERROR:
-      /* eslint-disable */
-      var { message } = action.payload;
-      toastError(message);
-      /* eslint-disable */
+      toastSuccess('Đăng nhập thất bại');
       localStorage.removeItem('AUTH_USER')
       return {
         ...state,

@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ProductService {
     Page<ProductEntity> getAll(Integer limit, Integer page, String keyword);
+
+    ProductEntity getDetailProduct(String id);
     String validateProduct(RegistryProductDTO registryProductDTO);
     ProductEntity addNewProduct(RegistryProductDTO registryProductDTO);
     List<ProductEntity> getHotSold();

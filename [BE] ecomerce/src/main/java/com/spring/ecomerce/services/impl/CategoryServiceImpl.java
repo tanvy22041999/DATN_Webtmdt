@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -63,6 +64,13 @@ public class CategoryServiceImpl implements CategoryService {
         }
 
         Page<CategoryEntity> results = categoryRepository.getAll(queryData, pageable);
+        if(results.getContent().size() > 0){
+            for(CategoryEntity category : results.getContent()){
+                if(category.getSpecification()!= null && category.getSpecification().size()>0){
+                    category.setSpecifications(combineListSpecification(category.getSpecification()));
+                }
+            }
+        }
         return results;
     }
 
@@ -70,7 +78,9 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryEntity findById(String id) {
         Optional<CategoryEntity> result = categoryRepository.findById(id);
         if(result.isPresent()){
-            return result.get();
+            CategoryEntity categoryFound = result.get();
+            categoryFound.setSpecifications(combineListSpecification(categoryFound.getSpecification()));
+            return categoryFound;
         }
         return null;
     }
@@ -113,7 +123,7 @@ public class CategoryServiceImpl implements CategoryService {
                 if(specification.getId() != null){
                     SpecificationEntity specificationFound = specificationService.findById(specification.getId());
                     if(specificationFound != null){
-                        newCate.getSpecifications().add(specificationFound);
+                        newCate.getSpecification().add(specificationFound.getId());
                     }
                 }
             }
@@ -138,6 +148,12 @@ public class CategoryServiceImpl implements CategoryService {
         if(categoryDTO.getNameEn() != null) categoryUpdate.setNameEn(categoryDTO.getNameEn());
         if(categoryDTO.getPathseo() != null) categoryUpdate.setPathseo(categoryDTO.getPathseo());
         if(categoryDTO.getDescription() != null) categoryUpdate.setDescription(categoryDTO.getDescription());
+        if(categoryDTO.getAccessories() != null && !"".equals(categoryDTO.getAccessories())){
+             Boolean accesssories = Boolean.valueOf(categoryDTO.getAccessories());
+             if(accesssories != null){
+                 categoryUpdate.setAccessories(accesssories);
+             }
+        }
 
         //handle image
         String imageId = categoryDTO.getImage();
@@ -169,7 +185,7 @@ public class CategoryServiceImpl implements CategoryService {
                 if(specification.getId() != null){
                     SpecificationEntity specificationFound = specificationService.findById(specification.getId());
                     if(specificationFound != null){
-                        categoryUpdate.getSpecifications().add(specificationFound);
+                        categoryUpdate.getSpecification().add(specificationFound.getId());
                     }
                 }
             }
@@ -197,5 +213,19 @@ public class CategoryServiceImpl implements CategoryService {
         }
 
         return false;
+    }
+
+    private List<SpecificationEntity> combineListSpecification(List<String> specifyIds){
+        List<SpecificationEntity> specifications = new ArrayList<>();
+        if(specifyIds.size() > 0){
+            for(String specifyId : specifyIds){
+                SpecificationEntity specification = specificationService.findById(specifyId);
+                if(specification != null){
+                    specifications.add(specification);
+                }
+            }
+        }
+        return specifications;
+
     }
 }

@@ -243,7 +243,7 @@ class PurchasePage extends Component {
                           </div>
                           <div className="col-6 align-self-center ">
                             <p className="font-weight-bold mb-0">{product.name}</p>
-                            <p className="font-italic mb-0">{t('common.color')} {product.color && product.color.name_vn}</p>
+                            <p className="font-italic mb-0">{t('common.color')} {product.color && product.color.nameVn}</p>
                             <p className="mb-0">{t('order.amount.label')} {product.quantity}</p>
                           </div>
                           <div className="col-3 text-right">

@@ -114,7 +114,7 @@ class InstallmentDetail extends Component {
                             </div>
                             <div className="col-8 align-self-center">
                               <p className="font-weight-bold mb-0">{installmentItem.product.id.name}</p>
-                              <p className="font-italic mb-0">{t('common.color')} {installmentItem.product.color.name_vn}</p>
+                              <p className="font-italic mb-0">{t('common.color')} {installmentItem.product.color.nameVn}</p>
                               <p className="mb-0">{currency==="VND" 
                               ? numberWithCommas(installmentItem.product.product_price) 
                               : numberWithCommas(parseFloat(tryConvert(installmentItem.product.product_price, currency, false)).toFixed(2))} {currency}</p>

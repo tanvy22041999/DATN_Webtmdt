@@ -2,30 +2,28 @@ package com.spring.ecomerce.services.UserService;
 
 import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.dtos.PasswordDTO;
-import com.spring.ecomerce.dtos.ServiceResponse;
-import com.spring.ecomerce.dtos.UserDTO;
 import com.spring.ecomerce.dtos.clone.RegistryUserDTO;
 import com.spring.ecomerce.entities.Account;
 import com.spring.ecomerce.entities.OTP;
 import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.repositories.AccountRepository.AccountRepository;
 import com.spring.ecomerce.repositories.OTPRepository.OTPRepository;
-import com.spring.ecomerce.repositories.UserRepository.UserRepository;
+import com.spring.ecomerce.repositories.UserRepository;
 import com.spring.ecomerce.securities.JwtUserDetails;
 import com.spring.ecomerce.utils.EncodeUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
+import org.bson.BSONObject;
+import org.bson.BasicBSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -39,6 +37,21 @@ public class UserServiceImpl implements UserService {
     private MessageManager messageManager;
     @Autowired
     private OTPRepository otpRepository;
+
+    @Override
+    public Page<UserEntity> getAllUser(String phone, Integer page, Integer limit) {
+        Pageable pageable = PageRequest.of(page, limit);
+
+        BSONObject queryData = new BasicBSONObject();
+        queryData.put("validFlg", 1);
+        queryData.put("delFlg", 0);
+        if(!"".equals(phone)){
+            Map<String, Object> queryName = new HashMap<>();
+            queryName.put("$regex", ".*" + phone + ".*");
+            queryData.put("name", queryName);
+        }
+        return userRepository.getByConditionsForPageable(queryData, pageable);
+    }
 
     @Override
     public String validateUserBeforeAdd(RegistryUserDTO userDTO) {

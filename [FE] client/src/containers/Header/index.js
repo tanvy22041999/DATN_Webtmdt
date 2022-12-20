@@ -386,7 +386,7 @@ class Header extends Component {
               <div className="col-12 col-xl-3 align-self-center py-1">
                 <div className="shopping-item rounded-pill shadow-sm">
                   <Link to="/carts" className="text-decoration-none" data-tip data-for='cart'>
-                    <span className="rounded-circle bg-danger" style={{padding: "0.15rem 0.25rem"}}><i className="fa fa-shopping-cart text-white"></i></span> · <span className="cart-amunt">{notVND ? `${notVND} ${currencyCode}` : "Empty"}</span> 
+                    <span className="rounded-circle bg-danger" style={{padding: "0.15rem 0.25rem"}}><i className="fa fa-shopping-cart text-white"></i></span> · <span className="cart-amunt">{notVND ? `${notVND} ${currencyCode}` : "0 VND"}</span> 
                     <span className="product-count">{total}</span>
                   </Link>
                   <ReactTooltip id='cart' place="bottom" type="light" class="shadow-sm bg-white" effect="solid" getContent={(dataTip) => 

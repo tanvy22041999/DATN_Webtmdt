@@ -6,12 +6,13 @@ import com.spring.ecomerce.dtos.UserDTO;
 import com.spring.ecomerce.dtos.clone.RegistryUserDTO;
 import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.securities.JwtUserDetails;
+import org.springframework.data.domain.Page;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 public interface UserService {
-
+    Page<UserEntity> getAllUser(String phone, Integer page, Integer limit);
     String validateUserBeforeAdd(RegistryUserDTO userDTO);
     UserEntity findUserByPhoneNumber(String phoneNumber);
 

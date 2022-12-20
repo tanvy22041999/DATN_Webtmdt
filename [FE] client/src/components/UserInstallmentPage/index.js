@@ -210,7 +210,7 @@ class UserInstallmentPage extends Component {
                         </div>
                         <div className="col-6 col-md-3 align-self-center">
                           <p className="font-weight-bold mb-0">{installment.product.id.name}</p>
-                          <p className="font-italic mb-0">{t('common.color')} {installment.product.color && installment.product.color.name_vn}</p>
+                          <p className="font-italic mb-0">{t('common.color')} {installment.product.color && installment.product.color.nameVn}</p>
                           <p className="mb-0">{t('cart.price.table')} {numberWithCommas(installment.product.product_price)} VND</p>
                         </div>
                         <div className="col-6 col-md-3 align-self-center">

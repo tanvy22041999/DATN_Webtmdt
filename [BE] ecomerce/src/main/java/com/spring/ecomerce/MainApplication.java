@@ -2,7 +2,7 @@ package com.spring.ecomerce;
 
 import com.spring.ecomerce.entities.Account;
 import com.spring.ecomerce.entities.clone.UserEntity;
-import com.spring.ecomerce.repositories.UserRepository.UserRepository;
+import com.spring.ecomerce.repositories.UserRepository;
 import com.spring.ecomerce.services.AccountService.AccountService;
 import com.spring.ecomerce.utils.EnumRole;
 import org.springframework.beans.factory.annotation.Autowired;

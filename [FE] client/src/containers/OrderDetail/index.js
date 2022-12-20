@@ -145,7 +145,7 @@ class OrderDetail extends Component {
                       </div>
                       <div className="col-sm-3 align-self-center text-left">
                         <p className="text-dark m-0 font-weight-bold">{item.name}</p>
-                        <p className="text-dark m-0">{t('common.color')} {item.color && item.color.name_vn}</p>
+                        <p className="text-dark m-0">{t('common.color')} {item.color && item.color.nameVn}</p>
                       </div>
                       <div className="col-sm-3 align-self-center">
                         <p className="m-0">{numberWithCommas(item.price)} VND x {item.quantity}</p>

@@ -111,15 +111,15 @@ class RegisterPage extends Component {
 							<div className="col-12">
 								<div className="card">
 									<form action="index.html">
-										<h2 className="title">Create an Account</h2>
+										<h2 className="title">Tạo tài khoản</h2>
 										<div className="row">
 											<div className="col-12 col-sm-6 input-div one">
 												<div className="i">
 													<i className="fas fa-user-edit" />
 												</div>
 												<div className="div">
-													<h5>First name</h5>
-													<input type="text" className="input" name="firstname" value={firstname} onChange={this.onChange}/>
+													<h5>Họ</h5>
+													<input type="text" className="input" name="lastname" value={lastname} onChange={this.onChange} required/>
 												</div>
 											</div>
 											<div className="col-12 col-sm-6 input-div one">
@@ -127,8 +127,8 @@ class RegisterPage extends Component {
 													<i className="fas fa-user-edit" />
 												</div>
 												<div className="div">
-													<h5>Last name</h5>
-													<input type="text" className="input" name="lastname" value={lastname} onChange={this.onChange}/>
+													<h5>Tên</h5>
+													<input type="text" className="input" name="firstname" value={firstname} onChange={this.onChange} required/>
 												</div>
 											</div>
 										</div>
@@ -138,8 +138,8 @@ class RegisterPage extends Component {
 													<i className="fas fa-mobile-alt" />
 												</div>
 												<div className="div">
-													<h5>Phone number</h5>
-													<input type="tel" className="input" name="phonenumber" value={phonenumber} onChange={this.onChange}/>
+													<h5>Số điện thoại</h5>
+													<input type="tel" className="input" name="phonenumber" value={phonenumber} onChange={this.onChange} required/>
 												</div>
 											</div>
 										</div>
@@ -149,7 +149,7 @@ class RegisterPage extends Component {
 													<i className="fas fa-home" />
 												</div>
 												<div className="div">
-													<h5>Address</h5>
+													<h5>Địa chỉ</h5>
 													<input type="text" className="input" name="address" value={address} onChange={this.onChange}/>
 												</div>
 											</div>
@@ -212,7 +212,7 @@ class RegisterPage extends Component {
 												<i className="fas fa-lock" />
 											</div>
 											<div className="div">
-												<h5>Password</h5>
+												<h5>Mật khẩu</h5>
 												<input type="password" className="input" name="password" value={password} onChange={this.onChange}/>
 											</div>
 										</div>
@@ -221,7 +221,7 @@ class RegisterPage extends Component {
 												<i className="fas fa-check-circle" />
 											</div>
 											<div className="div">
-												<h5>Confirm Password</h5>
+												<h5>Xác nhận mật khẩu</h5>
 												<input type="password" className="input" name="confirmPassword" value={confirmPassword} onChange={this.onChange}/>
 											</div>
 										</div>
@@ -229,15 +229,15 @@ class RegisterPage extends Component {
 										<div className="row">
 											<div className="col-md-3 col-12">
 												<form className="p-0" action="/user/dang-nhap">
-													<input type="submit" className="btn" value="Login"/>
+													<input type="submit" className="btn" value="Đăng nhập"/>
 												</form>
 											</div>
 											<div className="col-md-6 col-12">
-												<input className="btn" value="Register" onClick={() => this.onRegister()}/>
+												<input className="btn" value="Đăng kí" onClick={() => this.onRegister()}/>
 											</div>
 											<div className="col-md-3 col-12">
 												<form className="p-0" action="/">
-													<input type="submit" className="btn" value="Home"/>
+													<input type="submit" className="btn" value="Trang chủ"/>
 												</form>
 											</div>
 										</div>
@@ -254,7 +254,7 @@ class RegisterPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-		listCity: state.address.city,
+	listCity: state.address.city,
     listDistrict: state.address.district,
     listWard: state.address.ward,
   };

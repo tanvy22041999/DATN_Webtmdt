@@ -76,7 +76,7 @@ class ReviewDetail extends Component {
             </div>
             <div className="col-9  align-self-center">
               <p className="font-weight-bold mb-0">{product.name}</p>
-              <p className="text-secondary mb-0">{t('common.color')}: {product.color.name_vn}</p>
+              <p className="text-secondary mb-0">{t('common.color')}: {product.color.nameVn}</p>
             </div>
           </div>
           <div className="review_box">

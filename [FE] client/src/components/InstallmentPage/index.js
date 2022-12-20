@@ -181,12 +181,12 @@ class InstallmentPage extends Component {
                       <p className="font-weight-bold mb-0">{product.name}</p>
                       <p className="font-italic mb-0">
                         {t('common.color')}{" "}
-                        {product.colors.find((i) => i.id === color).name_vn}
+                        {product.colors.find((i) => i.id === color.id).nameVn}
                       </p>
                       <p className="mb-0">
                       {currency==="VND" 
-                      ? numberWithCommas(product.colors.find((i) => i.id === color).price) 
-                      : numberWithCommas(parseFloat(tryConvert(product.colors.find((i) => i.id === color).price, currency, false)).toFixed(2))} {currency}
+                      ? numberWithCommas(product.colors.find((i) => i.id === color.id).price) 
+                      : numberWithCommas(parseFloat(tryConvert(product.colors.find((i) => i.id === color.id).price, currency, false)).toFixed(2))} {currency}
                       </p>
                     </div>
                   </div>

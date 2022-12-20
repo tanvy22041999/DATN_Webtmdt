@@ -1,5 +1,7 @@
-package com.spring.ecomerce.repositories.UserRepository;
+package com.spring.ecomerce.repositories;
+import com.spring.ecomerce.entities.clone.NotificationEntity;
 import com.spring.ecomerce.entities.clone.UserEntity;
+import org.bson.BSONObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -12,6 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserRepository extends MongoRepository<UserEntity, String> {
     UserEntity findByPhonenumber(String phoneNumber);
 
-    @Query(value = "{ 'nick_name' : { $regex: ?0, $options: 'i' }}", sort = "{'nick_name': -1}")
-    Page<UserEntity> findUserByNickNameNear(String nickname, Pageable pageable);
+    @Query(value = "?0", sort = "{'createTimeStamp': -1}")
+    Page<UserEntity> getByConditionsForPageable(BSONObject query, Pageable pageable);
 }

@@ -266,15 +266,15 @@ class DetailPage extends Component {
               <div className="col-12">
                 <h1 className="my-0 font-weight-bold">{product.name}</h1>
                 <div className="product-inner-price form-inline">
-                  <ins>{product.price_min && this.setPrice(currency, product.price_min, product.price_max)} {currency}</ins>
-                  {product.real_price_min && <del>{this.setPrice(currency, product.real_price_min, product.real_price_max)} {currency}</del>}
-                  {product.real_price_min && product.real_price_min > product.price_min && 
+                  <ins>{product.priceMin && this.setPrice(currency, product.priceMin, product.priceMax)} {currency}</ins>
+                  {product.realPriceMin && <del>{this.setPrice(currency, product.realPriceMin, product.realPriceMax)} {currency}</del>}
+                  {product.realPriceMin && product.realPriceMin > product.priceMin && 
                   <div className="discount ml-2">
                     <div className="d-flex h-discount text-orange">
                       <svg className="_2DRZW" viewBox="-0.5 -0.5 4 16">
                         <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" strokeWidth="1" transform="" stroke="currentColor" fill="#f69113"></path>
                       </svg>
-                  <div className="discount-content">{t('common.discount')} {parseInt((1 - product.price_min/product.real_price_min)*100)}%</div>
+                  <div className="discount-content">{t('common.discount')} {parseInt((1 - product.priceMin/product.realPriceMin)*100)}%</div>
                       <svg className="h-discount" viewBox="-0.5 -0.5 4 16">
                         <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" strokeWidth="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
                         </path>
@@ -298,7 +298,7 @@ class DetailPage extends Component {
                     onClick={()=> this.onReload(`/product/${item.product.pathseo}.${item.product.id}`)}>
                     <p className="mb-0 h6">{item.name} <span className={_check===item.product.id ? "d-inline-block" : "d-none"}>
                       <i className="fa fa-check"></i></span></p>
-                    <p className="mb-0 h7">{item.product.price_min ? this.setPrice(currency, item.product.price_min, item.product.price_min) : 'NaN'} {currency}</p>
+                    <p className="mb-0 h7">{item.product.priceMin ? this.setPrice(currency, item.product.priceMin, item.product.priceMin) : 'Loading'} {currency}</p>
                   </button>)
                 })}
               </div>}
@@ -311,7 +311,7 @@ class DetailPage extends Component {
                     className={item.amount===0 ? "card text-dark py-2 px-3 my-2 mr-3 bg-active" :"card text-dark py-2 px-3 my-2 mr-3"} 
                     onClick={() => this.setColor(item)} 
                     disabled={item.amount===0 ? true : false}>
-                    <p className="mb-0 h6">{item.name_vn} <span className={check===item.id ? "d-inline-block" : "d-none"}>
+                    <p className="mb-0 h6">{item.nameVn} <span className={check===item.id ? "d-inline-block" : "d-none"}>
                       <i className="fa fa-check"></i></span></p>
                     <p className="mb-0 h7">{this.setPrice(currency, item.price, item.price)} {currency}</p>
                   </button>)
@@ -391,7 +391,7 @@ class DetailPage extends Component {
                         </div>}
                       </div>
                     </div>
-                    <div className="tab-pane fade" id="like" role="tab" aria-labelledby="like-tab">
+                    {/* <div className="tab-pane fade" id="like" role="tab" aria-labelledby="like-tab">
                       <div className="row">
                         {review && review.length > 0 ? (like ? (like.length > 0 ? like.map((product, index) => {
                           return (
@@ -414,7 +414,7 @@ class DetailPage extends Component {
                         </div>
                       </div>}
                       </div>
-                    </div>
+                    </div> */}
                     <div className="tab-pane fade show active" id="relate" role="tab" aria-labelledby="relate-tab">
                       <div className="row">
                         {product.description && product.description.length > 15 ? (relate ? relate.map((product, index) => {
@@ -552,7 +552,7 @@ class DetailPage extends Component {
                                     fullSymbol="fa fa-star text-warning"
                                     readonly
                                   /> | <span className="font-italic">{item.updatedAt.slice(0,10)}</span></p>
-                                  <p className="text-secondary mb-0">Màu sắc: {item.color.name_vn}</p>
+                                  <p className="text-secondary mb-0">Màu sắc: {item.color.nameVn}</p>
                                   <p className="mb-0">{item.content}</p>
                                   <p className="directory rounded p-2 w-fit-content" onClick={()=> this.onLiked(item.id, item.like)}><i className="fa fa-thumbs-up text-secondary"></i><span className="ml-2 text-secondary">{item.like.length > 0 ? item.like.length :  `${t('detail.review.useful')}?`}</span></p>
                                 </div>

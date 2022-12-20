@@ -2,7 +2,7 @@ package com.spring.ecomerce.securities;
 
 import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.entities.clone.UserEntity;
-import com.spring.ecomerce.repositories.UserRepository.UserRepository;
+import com.spring.ecomerce.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

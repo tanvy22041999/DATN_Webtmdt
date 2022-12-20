@@ -64,7 +64,7 @@ public class GroupController {
     }
 
     @PostMapping("/groups")
-    public String addNewGroup(@ModelAttribute RegistryGroupDTO groupDTO) throws SystemException {
+    public String addNewGroup(@RequestBody RegistryGroupDTO groupDTO) throws SystemException {
         try{
             GroupEntity result = groupService.addNewGroup(groupDTO);
             if(result == null){
@@ -85,7 +85,7 @@ public class GroupController {
 
     @PutMapping("/groups/{id}")
     public String updateGroup(@PathVariable(value = "id", required = false) String id,
-                              @ModelAttribute RegistryGroupDTO updateDTO) throws SystemException {
+                              @RequestBody RegistryGroupDTO updateDTO) throws SystemException {
         try{
             GroupEntity result = groupService.updateGroup(id, updateDTO);
             if(result != null){

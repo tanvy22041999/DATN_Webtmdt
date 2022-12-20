@@ -16,9 +16,11 @@ import com.spring.ecomerce.securities.JwtTokenUtils;
 import com.spring.ecomerce.securities.JwtUserDetails;
 import com.spring.ecomerce.services.OTPService.OTPService;
 import com.spring.ecomerce.services.UserService.UserService;
+import lombok.Getter;
 import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -45,6 +47,28 @@ public class UserController {
     private OTPService otpService;
     @Autowired
     private JwtTokenUtils jwtTokenUtils;
+
+    @GetMapping()
+    public String getAllUser(@RequestParam(value = "limit", defaultValue = "10") Integer limit,
+                             @RequestParam(value = "page", defaultValue = "0") Integer page,
+                             @RequestParam(value = "phone", defaultValue="") String phone) throws SystemException {
+        try{
+            Page<UserEntity> results = userService.getAllUser(phone,page,limit);
+
+            Map<String, Object> dataResponse = new HashMap<>();
+            dataResponse.put("limit", limit);
+            dataResponse.put("page", page);
+            dataResponse.put("total", results.getTotalElements());
+            dataResponse.put("users", results.getContent());
+
+            baseResponse.retrieved();
+            return baseResponse.getResponseBody(dataResponse);
+        }catch (Exception ex){
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_GET", null));
+        }
+
+        return baseResponse.getResponseBody();
+    }
 
     @PostMapping("/signup")
     public String addNewUser(@RequestBody RegistryUserDTO userDTO) throws SystemException {
