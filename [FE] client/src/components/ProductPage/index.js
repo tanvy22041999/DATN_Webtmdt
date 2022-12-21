@@ -277,7 +277,7 @@ class ProductPage extends Component {
                 <option value="1">{t('shop.sort.inc')}</option>
                 <option value="-1">{t('shop.sort.des')}</option>
               </select>
-              {category && <button type="button" className="btn float-end mr-2 mt-1 mt-lg-0 bg-aqua text-primary" onClick={()=> {history.push(`/compare/${category.id}?compare=`)}}><i className="fa fa-balance-scale"></i> {t("compare.page.title")}</button>}
+              {/* {category && <button type="button" className="btn float-end mr-2 mt-1 mt-lg-0 bg-aqua text-primary" onClick={()=> {history.push(`/compare/${category.id}?compare=`)}}><i className="fa fa-balance-scale"></i> {t("compare.page.title")}</button>} */}
             </div>
           </div>
           <div className="row">

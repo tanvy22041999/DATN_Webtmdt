@@ -114,8 +114,9 @@ class DetailPage extends Component {
   }
 
   setColor = (item) =>{
+    debugger;
     this.setState({
-      imageColor: item.image_link,
+      imageColor: item.imageLink,
       check: item.id
     })
   }
@@ -123,6 +124,7 @@ class DetailPage extends Component {
   onAddToCart = (product, quantity) =>{
     var { onAddProductToCart, t } = this.props;
     const { check } = this.state;
+    debugger;
     product = {
       id: product.id,
       colors: product.colors,
@@ -241,7 +243,7 @@ class DetailPage extends Component {
     } = this.props;
     const {quantity, imageColor, check, _check } = this.state;
     const filter = getFilterParams(location.search);
-    
+     
     return (<>
       <div className="application">
         <Helmet>
@@ -283,14 +285,14 @@ class DetailPage extends Component {
                   </div>}
                 </div>
               </div>
-              <div className="col-12">
+              {/* <div className="col-12">
                 <Rating
                   initialRating={product.stars}
                   emptySymbol="fa fa-star text-secondary"
                   fullSymbol="fa fa-star text-warning"
                   readonly
                 /><span className="ml-2">{total} {t('common.review')}</span>
-              </div>
+              </div> */}
               {group && <div className="col-12 form-inline">
                 {group.products.map(item =>{
                   return(<button type="button" key={item.id} 
@@ -347,7 +349,7 @@ class DetailPage extends Component {
               </div>
               <div className="mb-2 border-bottom"></div>
               <div className="col-12 text-center">
-                <button className="btn btn-lighter" type="button" onClick={() => this.onCompare(product)}><i className="fa fa-balance-scale text-warning"></i> {t("compare.page.title")}</button>
+                {/* <button className="btn btn-lighter" type="button" onClick={() => this.onCompare(product)}><i className="fa fa-balance-scale text-warning"></i> {t("compare.page.title")}</button> */}
                 <button className="btn btn-lighter bg-aqua" type="button" onClick={() => this.onAddToCart(product, quantity)}><i className="fa fa-cart-plus text-danger"></i> {t('shop.add-to-cart.button')}</button>
                 <button className="btn btn-lighter" type="button" onClick={() => this.onInstallment(product)}><i className="fa fa-money-check-alt text-success"></i> {t('detail.installment.button')}</button>
               </div>

@@ -13,4 +13,6 @@ public interface ProductService {
     String validateProduct(RegistryProductDTO registryProductDTO);
     ProductEntity addNewProduct(RegistryProductDTO registryProductDTO);
     List<ProductEntity> getHotSold();
+
+    boolean saveAll(List<ProductEntity> productChanged);
 }

@@ -30,4 +30,6 @@ public class RegistryOrderDTO {
     private Integer totalQuantity;
 
     private List<ProductSelectedDTO> orderList;
+
+    private String errorProcessing;
 }

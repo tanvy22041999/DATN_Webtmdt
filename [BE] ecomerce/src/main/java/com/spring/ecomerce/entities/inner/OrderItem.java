@@ -10,7 +10,7 @@ import org.springframework.data.annotation.Persistent;
 
 @Getter
 @Setter
-public class OrderList {
+public class OrderItem {
     @JsonIgnore
     private String product;
     @JsonIgnore
@@ -18,7 +18,7 @@ public class OrderList {
 
     private String name;
     private String nameColor;
-    private String price;
+    private Double price;
     private ImageEntity image;
     private Integer quantity;
 

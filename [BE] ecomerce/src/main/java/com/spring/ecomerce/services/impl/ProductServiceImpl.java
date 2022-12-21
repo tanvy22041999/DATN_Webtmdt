@@ -263,6 +263,13 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.getByConditionsForList(queryData);
     }
 
+    @Override
+    public boolean saveAll(List<ProductEntity> productChanged) {
+        List<ProductEntity> productSaved = productRepository.saveAll(productChanged);
+        if(productSaved == null || productSaved.size() != productChanged.size()) return false;
+        return true;
+    }
+
     private ProductEntity findProductByKeyPairAndIgnoredCase(String key, String value){
         BSONObject queryData = new BasicBSONObject();
         queryData.put("validFlg", 1);

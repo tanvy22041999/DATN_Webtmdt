@@ -54,7 +54,7 @@ const cart = (state = initialState, action) =>{
           colors: [
             {
               id: item.color,
-              name_en: item.name_color,
+              nameEn: item.nameColor,
               price: item.price
             }
           ]

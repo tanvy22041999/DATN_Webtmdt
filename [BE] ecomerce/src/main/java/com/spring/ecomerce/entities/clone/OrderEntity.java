@@ -1,11 +1,13 @@
 package com.spring.ecomerce.entities.clone;
 
-import com.spring.ecomerce.entities.inner.OrderList;
+import com.spring.ecomerce.entities.inner.OrderItem;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -39,5 +41,5 @@ public class OrderEntity extends BasicEntity{
 
     private boolean active;
 
-    private OrderList orderList;
+    private List<OrderItem> orderList;
 }

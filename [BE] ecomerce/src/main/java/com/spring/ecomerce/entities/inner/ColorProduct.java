@@ -1,14 +1,15 @@
 package com.spring.ecomerce.entities.inner;
 
-import com.spring.ecomerce.entities.clone.ColorEntity;
 import com.spring.ecomerce.entities.clone.ImageEntity;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Getter
 @Setter
 public class ColorProduct {
-    private ColorEntity color;
+    @Field("idColor")
+    private String id;
     private String nameEn;
     private String nameVn;
     private ImageEntity image;

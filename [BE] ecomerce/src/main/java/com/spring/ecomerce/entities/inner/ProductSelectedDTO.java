@@ -8,5 +8,6 @@ import lombok.Setter;
 @Setter
 public class ProductSelectedDTO {
     private ProductEntity product;
+    private String color;
     private Integer quantity;
 }
