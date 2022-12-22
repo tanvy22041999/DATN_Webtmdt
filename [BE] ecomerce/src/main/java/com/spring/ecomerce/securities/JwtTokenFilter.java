@@ -1,9 +1,9 @@
 package com.spring.ecomerce.securities;
 
+import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.exceptions.UserNotFoundAuthenticationException;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,22 +28,22 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     private AccountDetailsService accountDetailsService;
 
     @Autowired
-    private MessageSource messageSource;
+    private MessageManager messageManager;
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
         final String requestTokenHeader = httpServletRequest.getHeader("Authorization");
         String username = null;
         String jwtToken = null;
-        if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ") && !httpServletRequest.getRequestURI().equals("/rest/login")) {
+        if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ") && !httpServletRequest.getRequestURI().equals("/users/login")) {
             jwtToken = requestTokenHeader.substring(7);
             Locale locale = LocaleContextHolder.getLocale();
             try {
                 username = jwtTokenUtils.getUsernameFromToken(jwtToken);
             } catch (IllegalArgumentException e) {
-                throw new UserNotFoundAuthenticationException(messageSource.getMessage("error.gettoken", null, locale));
+                throw new UserNotFoundAuthenticationException(messageManager.getMessage("ERROR_TOKEN", null));
             } catch (ExpiredJwtException e) {
-                throw new UserNotFoundAuthenticationException(messageSource.getMessage("error.tokenexpired", null, locale));
+                throw new UserNotFoundAuthenticationException(messageManager.getMessage("ERROR_TOKEN", null));
             }
         }
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {

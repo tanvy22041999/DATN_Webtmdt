@@ -12,9 +12,9 @@ import org.springframework.data.annotation.Persistent;
 @Setter
 public class OrderItem {
     @JsonIgnore
-    private String product;
+    private String productId;
     @JsonIgnore
-    private String color;
+    private String colorId;
 
     private String name;
     private String nameColor;
@@ -23,7 +23,7 @@ public class OrderItem {
     private Integer quantity;
 
     @Persistent
-    private ProductEntity productEntity;
+    private ProductEntity product;
     @Persistent
-    private ColorEntity colorEntity;
+    private ColorEntity color;
 }

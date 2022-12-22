@@ -11,9 +11,12 @@ import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @Document(collection = "order")
 public class OrderEntity extends BasicEntity{
+    public OrderEntity(){
+        status = -1;
+    }
+
     @Id
     private String id;
 
@@ -31,9 +34,9 @@ public class OrderEntity extends BasicEntity{
 
     private String note;
 
-    private boolean paid;
-
     private String paymentMethod;
+
+    private boolean paid;
 
     private Integer status;
 
