@@ -2,7 +2,9 @@ package com.spring.ecomerce.services.impl;
 
 import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.dtos.RegistryOrderDTO;
+import com.spring.ecomerce.dtos.clone.UpdateOrderDTO;
 import com.spring.ecomerce.entities.clone.BrandEntity;
+import com.spring.ecomerce.entities.clone.ColorEntity;
 import com.spring.ecomerce.entities.clone.OrderEntity;
 import com.spring.ecomerce.entities.clone.ProductEntity;
 import com.spring.ecomerce.entities.inner.ColorProduct;
@@ -72,8 +74,7 @@ public class OrderServiceImpl implements OrderService {
         if ("paypal".equals(orderDTO.getPaymentMethod())) {
             orderEntity.setPaid(true);
             orderEntity.setPaymentMethod("paypal");
-        }
-        else{
+        } else {
             orderEntity.setPaymentMethod("local");
         }
         orderEntity.setConfirmed(true);
@@ -152,36 +153,36 @@ public class OrderServiceImpl implements OrderService {
             queryData.put("confirmed", confirmed.equals(1) ? true : false);
         }
 
-        if(active != null){
+        if (active != null) {
             queryData.put("active", active.equals(1) ? true : false);
         }
 
-        if(status != null){
+        if (status != null) {
             queryData.put("status", status);
         }
 
-        if(!"".equals(paymentMethod)){
+        if (!"".equals(paymentMethod)) {
             queryData.put("paymentMethod", paymentMethod);
         }
 
-        if(!"".equals(user)){
+        if (!"".equals(user)) {
             queryData.put("user", user);
         }
 
-        if(!"".equals(shippingPhone)){
+        if (!"".equals(shippingPhone)) {
             queryData.put("shippingPhonenumber", shippingPhone);
         }
 
-        Page<OrderEntity> orders =  orderRepository.getAll(queryData, pageable);
+        Page<OrderEntity> orders = orderRepository.getAll(queryData, pageable);
         return orders;
     }
 
 
     @Override
-    public List<OrderEntity> combinePopulateForOrder(List<OrderEntity> orders){
-        if(orders.size() > 0){
-            for(OrderEntity order : orders){
-                for(OrderItem orderItem : order.getOrderList()){
+    public List<OrderEntity> combinePopulateForOrder(List<OrderEntity> orders) {
+        if (orders.size() > 0) {
+            for (OrderEntity order : orders) {
+                for (OrderItem orderItem : order.getOrderList()) {
                     String product = orderItem.getProductId();
                     orderItem.setProduct(productService.getDetailProduct(product));
                 }
@@ -195,9 +196,49 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public OrderEntity getById(String id) {
         Optional<OrderEntity> result = orderRepository.findById(id);
-        if(result.isPresent()){
+        if (result.isPresent()) {
             OrderEntity orderFound = this.combinePopulateForOrder(List.of(result.get())).get(0);
             return orderFound;
+        }
+        return null;
+    }
+
+    @Override
+    @Transactional
+    public OrderEntity updateOrder(String id, UpdateOrderDTO updateOrder) {
+        OrderEntity orderFound = this.getById(id);
+        if (orderFound != null) {
+            if (updateOrder.getStatus() != null && updateOrder.equals(1)) {
+                orderFound.setPaid(true);
+            } else {
+                if (updateOrder.getActive() != null && updateOrder.getActive().equals(false) && orderFound.getStatus().equals(1)) {
+                    List<ProductEntity> productEntities = new ArrayList<>();
+                    for (OrderItem orderItem : orderFound.getOrderList()) {
+                        ProductEntity productOrder = productService.getDetailProduct(orderItem.getProductId());
+                        if (productOrder != null) {
+                            for(ColorProduct color : productOrder.getColors()){
+                                if(color.getId().equals(orderItem.getColorId())){
+                                    productOrder.setAmount(productOrder.getAmount() + orderItem.getQuantity());
+                                }
+                            }
+                            productEntities.add(productOrder);
+                        } else {
+                            return null;
+                        }
+                    }
+
+                    productService.saveAll(productEntities);
+                }
+
+                if(updateOrder.getStatus() != null){
+                    orderFound.setStatus(updateOrder.getStatus());
+                }
+                if(updateOrder.getActive() != null){
+                    orderFound.setActive(updateOrder.getActive());
+                }
+            }
+
+            return orderRepository.save(orderFound);
         }
         return null;
     }

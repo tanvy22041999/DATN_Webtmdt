@@ -3,6 +3,8 @@ package com.spring.ecomerce.controllers;
 import com.spring.ecomerce.arch.BaseResponseEntity;
 import com.spring.ecomerce.commons.MessageManager;
 import com.spring.ecomerce.dtos.RegistryOrderDTO;
+import com.spring.ecomerce.dtos.clone.RegistryBrandDTO;
+import com.spring.ecomerce.dtos.clone.UpdateOrderDTO;
 import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.OrderEntity;
 import com.spring.ecomerce.exception.SystemException;
@@ -89,14 +91,35 @@ public class OrderController {
             }else{
                 JwtUserDetails userDetails = (JwtUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
                 OrderEntity orderSaved = orderService.addNewOrder(userDetails.getUserLogin().getId(), orderDTO);
+                baseResponse.created();
+                Map<String, Object> dataResponse = new HashMap<>();
+                dataResponse.put("order", orderSaved);
+                return baseResponse.getResponseBody(dataResponse);
             }
-            baseResponse.created();
-            Map<String, Object> dataResponse = new HashMap<>();
-//            dataResponse.put("ad", result);
-            return baseResponse.getResponseBody(dataResponse);
 
         }catch (Exception ex){
             baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
+        }
+
+        return baseResponse.getResponseBody();
+    }
+
+    @PutMapping("/{id}")
+    public String updateBrand(@PathVariable(value = "id", required = false) String id,
+                              @RequestBody UpdateOrderDTO updateOrder) throws SystemException {
+        try{
+            OrderEntity result = orderService.updateOrder(id, updateOrder);
+            if(result != null){
+                baseResponse.updated();
+                Map<String, Object> dataResponse = new HashMap<>();
+                dataResponse.put("data", result);
+                return baseResponse.getResponseBody(dataResponse);
+            }
+            else{
+                baseResponse.failed(HttpStatus.SC_BAD_REQUEST, messageManager.getMessage("INTERNAL_ERROR_UPDATE", null));
+            }
+        }catch (Exception ex){
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_GET", null));
         }
 
         return baseResponse.getResponseBody();

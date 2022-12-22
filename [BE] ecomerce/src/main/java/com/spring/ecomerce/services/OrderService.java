@@ -1,6 +1,7 @@
 package com.spring.ecomerce.services;
 
 import com.spring.ecomerce.dtos.RegistryOrderDTO;
+import com.spring.ecomerce.dtos.clone.UpdateOrderDTO;
 import com.spring.ecomerce.entities.clone.BrandEntity;
 import com.spring.ecomerce.entities.clone.OrderEntity;
 import org.springframework.core.annotation.Order;
@@ -19,4 +20,6 @@ public interface OrderService {
     List<OrderEntity> combinePopulateForOrder(List<OrderEntity> orders);
 
     OrderEntity getById(String id);
+
+    OrderEntity updateOrder(String id, UpdateOrderDTO updateOrder);
 }
