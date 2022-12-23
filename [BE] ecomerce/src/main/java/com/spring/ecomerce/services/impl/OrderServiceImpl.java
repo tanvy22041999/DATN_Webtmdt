@@ -77,8 +77,6 @@ public class OrderServiceImpl implements OrderService {
         } else {
             orderEntity.setPaymentMethod("local");
         }
-        orderEntity.setConfirmed(true);
-        orderEntity.setUser(userId);
 
         List<OrderItem> orderList = new ArrayList<>();
         List<ProductEntity> productEntities = new ArrayList<>();
@@ -123,8 +121,9 @@ public class OrderServiceImpl implements OrderService {
             return null;
         }
 
-        orderEntity.setConfirmed(true);
         orderEntity.setActive(true);
+        orderEntity.setConfirmed(false);
+        orderEntity.setUser(userId);
         orderEntity.setOrderList(orderList);
         return orderRepository.save(orderEntity);
     }

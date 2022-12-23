@@ -25,28 +25,28 @@ export default function Paypal({total_price,total, onCreateAnOrder, order_list, 
           // Nếu thành công thì set payment_method = paypal, isPaid = true
           if(shipToDifferentAddress === true) {
             data = {
-              order_list,
-              total_price: Math.round(parseInt(tryConvert(total_price, "USD", true))/10000)* 10000,
-              total_quantity: total,
-              shipping_phonenumber: shipping_phone,
+              orderList: order_list,
+              totalPrice: Math.round(parseInt(tryConvert(total_price, "USD", true))/10000)* 10000,
+              totalQuantity: total,
+              shippingPhonenumber: shipping_phone,
               email: authInfo.email,
-              shipping_address,
+              shippingAddress: shipping_address,
               note,
               status: -1,
-              payment_method: "paypal",
+              paymentMethod: "paypal",
               paid: true
             }
           }
           else{
             data = {
-              order_list,
-              total_price: Math.round(parseInt(tryConvert(total_price, "USD", true))/10000)* 10000,
-              total_quantity: total,
-              shipping_phonenumber: authInfo.phonenumber,
+              orderList: order_list,
+              totalPrice: Math.round(parseInt(tryConvert(total_price, "USD", true))/10000)* 10000,
+              totalQuantity: total,
+              shippingPhonenumber: authInfo.phonenumber,
               email: authInfo.email,
-              shipping_address: authInfo.address,
+              shippingAddress: authInfo.address,
               status: -1,
-              payment_method: "paypal",
+              paymentMethod: "paypal",
               note,
               paid: true
             }

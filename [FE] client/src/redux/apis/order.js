@@ -24,10 +24,10 @@ export const addOrder = (data) =>{
   return axiosService.post(`${API_ENDPOINT_AUTH}${url}`, data);
 }
 
-// http://localhost:3000/orders/email/:orderId  METHOD = GET
-export const sendConfirmEmail = (orderId) =>{
-  return axiosService.get(`${API_ENDPOINT_AUTH}${url}/email/${orderId}`);
-}
+// // http://localhost:3000/orders/email/:orderId  METHOD = GET
+// export const sendConfirmEmail = (orderId) =>{
+//   return axiosService.get(`${API_ENDPOINT_AUTH}${url}/email/${orderId}`);
+// }
 
 // http://localhost:3000/orders/confirm/:token
 export const confirmOrder = (token) =>{

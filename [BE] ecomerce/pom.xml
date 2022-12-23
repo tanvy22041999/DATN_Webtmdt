@@ -60,7 +60,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>1.18.22</version>
         </dependency>
         <dependency>
             <groupId>javax.validation</groupId>
@@ -106,16 +106,15 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${project.parent.version}</version>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>1.16.22</version>
-                        </exclude>
-                    </excludes>
-                    <executable>true</executable>
-                    <finalName>ecommerce</finalName>
+                    <mainClass>com.spring.ecomerce.MainApplication</mainClass>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

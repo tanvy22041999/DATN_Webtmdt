@@ -18,7 +18,11 @@ import OrdersActions from "../../redux/actions/order";
 import ProductsActions from "../../redux/actions/products";
 
 const statusList = [
-  {
+  { 
+    name: "Chờ xác nhận",
+    name_en: "Pending",
+    state: {confirmed:-1,active:1},
+  },{
     name: "Chờ giao hàng",
     name_en: "Not delivery yet",
     state: {confirmed:1,status:-1}
@@ -190,7 +194,6 @@ class PurchasePage extends Component {
     const { orderList, orderItem, location, history, t, total, language } = this.props;
     const { keyword } = this.state;
     const filter = getFilterParams(location.search);
-    debugger;
     return (
       <div className="bg-user-info py-4">
         <div className="container emp-profile p-0 mt-5 mb-2">

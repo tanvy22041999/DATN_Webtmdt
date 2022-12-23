@@ -150,9 +150,9 @@ class OrderDetail extends Component {
                       <div className="col-sm-3 align-self-center">
                         <p className="m-0">{numberWithCommas(item.price)} VND x {item.quantity}</p>
                       </div>
-                      {orderItem.status===1 && <div className="col-sm-3 align-self-center">
+                      {/* {orderItem.status===1 && <div className="col-sm-3 align-self-center">
                         <button className="btn btn-info" onClick={()=> this.onReview(item)}>{t('detail.review.tab')}</button>
-                      </div>}
+                      </div>} */}
                     </div>
                   </div>
                   )

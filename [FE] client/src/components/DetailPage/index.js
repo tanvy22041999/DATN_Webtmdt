@@ -114,7 +114,6 @@ class DetailPage extends Component {
   }
 
   setColor = (item) =>{
-    debugger;
     this.setState({
       imageColor: item.imageLink,
       check: item.id
@@ -124,7 +123,6 @@ class DetailPage extends Component {
   onAddToCart = (product, quantity) =>{
     var { onAddProductToCart, t } = this.props;
     const { check } = this.state;
-    debugger;
     product = {
       id: product.id,
       colors: product.colors,
@@ -365,10 +363,10 @@ class DetailPage extends Component {
                       <a className="nav-link" id="recent-tab" data-bs-toggle="tab" href="#recent" role="tab" aria-controls="recent"
                       aria-selected="false">{t('detail.recent.tab')}</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a className="nav-link" id="like-tab" data-bs-toggle="tab" href="#like" role="tab" aria-controls="like"
                       aria-selected="false">{t('detail.like.tab')}</a>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <a className="nav-link active" id="relate-tab" data-bs-toggle="tab" href="#relate" role="tab" aria-controls="relate"
                       >{t('detail.relate.tab')}</a>
@@ -441,23 +439,23 @@ class DetailPage extends Component {
               <div className="container">
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                   <li className="nav-item">
-                    <a className="nav-link" id="home-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="home" aria-selected="true">{t('detail.description.tab')}</a>
+                    <a className="nav-link active" id="home-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="home" aria-selected="true">{t('detail.description.tab')}</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" id="profile-tab" data-bs-toggle="tab" href="#specification" role="tab" aria-controls="profile"
                     aria-selected="false">{t('detail.specification.tab')}</a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a className="nav-link" id="contact-tab" data-bs-toggle="tab" href="#comment" role="tab" aria-controls="contact"
                     aria-selected="false">{t('detail.comment.tab')}</a>
-                  </li>
-                  <li className="nav-item">
+                  </li> */}
+                  {/* <li className="nav-item">
                     <a className="nav-link active" id="review-tab" data-bs-toggle="tab" href="#review" role="tab" aria-controls="review"
                     aria-selected="false">{t('detail.review.tab')}</a>
-                  </li>
+                  </li> */}
                 </ul>
                 <div className="tab-content" id="myTabContent">
-                  <div className="tab-pane fade" id="description" role="tabpanel" aria-labelledby="home-tab">
+                  <div className="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="home-tab">
                     {product.description ? <div className="text-center" dangerouslySetInnerHTML={{__html: draftToHtml(JSON.parse(product.description))}}></div> : ""}
                   </div>
                   <div className="tab-pane fade" id="specification" role="tabpanel" aria-labelledby="profile-tab">
@@ -478,14 +476,14 @@ class DetailPage extends Component {
                       </table>
                     </div>
                   </div>
-                  <div className="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="contact-tab">
+                  {/* <div className="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="contact-tab">
                     <div className="row">
                       <div className="col-12">
                         <div className="fb-comments" data-href={`${LOCAL}/#/product/${product.pathseo}/${product.id}`} data-width="100%" data-numposts="5"></div>
                       </div>
                     </div>
-                  </div>
-                  <div className="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+                  </div> */}
+                  {/* <div className="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
                     <div className="row">
                       <div className="col-lg-6">
                         <div className="row total_rate">
@@ -590,7 +588,7 @@ class DetailPage extends Component {
                           </div>}
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>
@@ -625,21 +623,12 @@ class DetailPage extends Component {
                     aria-selected="false">{t('detail.recent.tab')}</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" id="like-tab" data-bs-toggle="tab" href="#like" role="tab" aria-controls="like"
-                    aria-selected="false">{t('detail.like.tab')}</a>
-                  </li>
-                  <li className="nav-item">
                     <a className="nav-link active" id="relate-tab" data-bs-toggle="tab" href="#relate" role="tab" aria-controls="relate"
                     >{t('detail.relate.tab')}</a>
                   </li>
                 </ul>
                 <div className="tab-content" id="myTabContent">
                   <div className="tab-pane fade" id="recent" role="tab" aria-labelledby="recent-tab">
-                    <div className="row">
-                      <Loader/>
-                    </div>
-                  </div>
-                  <div className="tab-pane fade" id="like" role="tab" aria-labelledby="like-tab">
                     <div className="row">
                       <Loader/>
                     </div>

@@ -31,17 +31,17 @@ function* handleGetDetail({id}) {
   }
 }
 
-function* handleReConfirm({ payload }) {
-  try {
-    const result = yield call(sendConfirmEmail, payload);
-    const data = get(result, "data", {});
-    if (data.code !== 200) throw data;
-    if (data.message !== "success") throw data;
-    yield put(OrdersActions.onSendConfirmEmailSuccess(data));
-  } catch (error) {
-    yield put(OrdersActions.onSendConfirmEmailError(error));
-  }
-}
+// function* handleReConfirm({ payload }) {
+//   try {
+//     const result = yield call(sendConfirmEmail, payload);
+//     const data = get(result, "data", {});
+//     if (data.code !== 200) throw data;
+//     if (data.message !== "success") throw data;
+//     yield put(OrdersActions.onSendConfirmEmailSuccess(data));
+//   } catch (error) {
+//     yield put(OrdersActions.onSendConfirmEmailError(error));
+//   }
+// }
 
 /**
  *
@@ -72,8 +72,8 @@ function* handleCreate({ payload }) {
     /* Notification */
     yield put(ProductsActions.onClearCart({cart: state.cart, checkout: state.checkout}))
     yield put(ProductsActions.onClearCheckout())
-    const email = yield call(sendConfirmEmail, data.order.id);
-    yield put(OrdersActions.onSendConfirmEmailSuccess(email.data));
+    // const email = yield call(sendConfirmEmail, data.order.id);
+    // yield put(OrdersActions.onSendConfirmEmailSuccess(email.data));
   } catch (error) {
     yield put(OrdersActions.onCreateError(error));
   }
@@ -136,9 +136,9 @@ export function* watchCreate() {
 export function* watchConfirmOrder() {
   yield takeEvery(OrdersActionsTypes.CONFIRM_ORDER, handleConfirmOrder);
 }
-export function* watchReConfirm() {
-  yield takeEvery(OrdersActionsTypes.SEND_CONFIRM_EMAIL, handleReConfirm);
-}
+// export function* watchReConfirm() {
+//   yield takeEvery(OrdersActionsTypes.SEND_CONFIRM_EMAIL, handleReConfirm);
+// }
 export function* watchUpdate() {
   yield takeEvery(OrdersActionsTypes.UPDATE, handleUpdate);
 }
@@ -149,7 +149,7 @@ export default function* rootSaga() {
     fork(watchGetDetail),
     fork(watchCreate),
     fork(watchConfirmOrder),
-    fork(watchReConfirm),
+    // fork(watchReConfirm),
     fork(watchUpdate),
   ]);
 }

@@ -234,7 +234,6 @@ class CheckoutPage extends Component {
       cart,
       ship
     } = this.props;
-    debugger;
     return (
     <div className="container my-3">
       <div className="row">
