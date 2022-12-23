@@ -236,6 +236,9 @@ public class OrderServiceImpl implements OrderService {
                 if(updateOrder.getActive() != null){
                     orderFound.setActive(updateOrder.getActive());
                 }
+                if(updateOrder.getConfirmed() != null){
+                    orderFound.setConfirmed(updateOrder.getConfirmed());
+                }
             }
 
             return orderRepository.save(orderFound);

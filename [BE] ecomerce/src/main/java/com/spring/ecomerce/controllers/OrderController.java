@@ -45,7 +45,7 @@ public class OrderController {
                               @RequestParam(value = "active", required = false) Integer active,
                               @RequestParam(value = "status", required = false) Integer status,
                               @RequestParam(value = "paymentMethod", defaultValue = "") String paymentMethod,
-                              @RequestParam(value = "user", required = false) String user,
+                              @RequestParam(value = "user", defaultValue = "") String user,
                               @RequestParam(value = "phone", defaultValue = "") String shippingPhone) throws SystemException {
         try{
             Page<OrderEntity> results = orderService.getAllOrder(limit, page,keyword,paid,confirmed,active,status,paymentMethod,user,shippingPhone);

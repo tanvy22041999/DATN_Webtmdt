@@ -8,4 +8,5 @@ import lombok.Setter;
 public class UpdateOrderDTO {
     private Integer status;
     private Boolean active;
+    private Boolean confirmed;
 }

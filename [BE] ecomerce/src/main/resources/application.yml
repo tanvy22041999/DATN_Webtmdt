@@ -31,20 +31,6 @@ file:
 google:
   verifyUrl: https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=
 
-logging:
-  level:
-    org.springframework.cache: error
-  file:
-    name: logs/socialising
-  pattern:
-    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
-  logback:
-    rollingpolicy:
-      clean-history-on-start: true
-      max-file-size: 100MB
-      max-history: 7
-
-
 kafka:
   bootstrap-servers: ${KAFKA_SERVERS:stc:9094}
   topic:
