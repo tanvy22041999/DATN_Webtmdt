@@ -1,11 +1,9 @@
 package com.spring.ecomerce.services.UserService;
 
-import com.spring.ecomerce.dtos.PasswordDTO;
-import com.spring.ecomerce.dtos.ServiceResponse;
-import com.spring.ecomerce.dtos.UserDTO;
+import com.spring.ecomerce.dtos.clone.PasswordDTO;
 import com.spring.ecomerce.dtos.clone.RegistryUserDTO;
+import com.spring.ecomerce.dtos.clone.UpdateUserDTO;
 import com.spring.ecomerce.entities.clone.UserEntity;
-import com.spring.ecomerce.securities.JwtUserDetails;
 import org.springframework.data.domain.Page;
 
 import java.io.UnsupportedEncodingException;
@@ -18,9 +16,9 @@ public interface UserService {
 
    UserEntity createUser(RegistryUserDTO userDTO) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
-    boolean changePasswordByOTP(String userName, String newPassword);
+   UserEntity updateUser(String id, UpdateUserDTO updateUserDTO);
 
-    boolean changePasswordByLogin(JwtUserDetails userDetails, PasswordDTO passwordDTO);
+   UserEntity findById(String id);
 
-    boolean updateUser(UserEntity user);
+    UserEntity changePassword(UserEntity userLogin, PasswordDTO passwordDTO);
 }

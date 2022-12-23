@@ -181,11 +181,11 @@ class InstallmentPage extends Component {
                       <p className="font-weight-bold mb-0">{product.name}</p>
                       <p className="font-italic mb-0">
                         {t('common.color')}{" "}
-                        {product.colors.find((i) => i.id === color.id).nameVn}
+                        {product.colors.find((i) => i.id === color).nameVn}
                       </p>
                       <p className="mb-0">
                       {currency==="VND" 
-                      ? numberWithCommas(product.colors.find((i) => i.id === color.id).price) 
+                      ? numberWithCommas(product.colors.find((i) => i.id === color).price) 
                       : numberWithCommas(parseFloat(tryConvert(product.colors.find((i) => i.id === color.id).price, currency, false)).toFixed(2))} {currency}
                       </p>
                     </div>
@@ -317,7 +317,7 @@ class InstallmentPage extends Component {
                     return (
                       <div className="col-6 col-xl-4 my-1" key={index}>
                         <div className="rounded bg-aqua text-center h-100 p-2" style={{height: "215px"}}>
-                          <img className="w-50" src={assets(item.image)} alt={index}></img>
+                          <img className="w-50" src={'../../img/' + item.image} alt={index}></img>
                           <h4 className="my-0">{item.title}</h4>
                           <p className="my-0 text-secondary smaller">{item.content}</p>
                         </div>

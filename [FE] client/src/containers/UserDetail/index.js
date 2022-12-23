@@ -137,13 +137,13 @@ class UserDetail extends Component {
         <div className="row py-2">
           <div className="col-6">
             <div className="form-floating">
-              <input type="tel" className="form-control" id="phonenumber" name="phonenumber" value={phonenumber} onChange={this.onChange}/>
+              <input type="tel" className="form-control" id="phonenumber" name="phonenumber" value={phonenumber} onChange={this.onChange} disabled/>
               <label for="phonenumber">{t('checkout.phone.input')}</label>
             </div>
           </div>
           <div className="col-6">
             <div className="form-floating">
-              <input type="email" className="form-control" id="email" name="email" value={email} onChange={this.onChange} disabled/>
+              <input type="email" className="form-control" id="email" name="email" value={email} onChange={this.onChange} />
               <label for="email">Email</label>
             </div>
           </div>

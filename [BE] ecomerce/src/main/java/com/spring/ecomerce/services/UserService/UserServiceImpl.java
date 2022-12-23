@@ -1,15 +1,15 @@
 package com.spring.ecomerce.services.UserService;
 
 import com.spring.ecomerce.commons.MessageManager;
-import com.spring.ecomerce.dtos.PasswordDTO;
+import com.spring.ecomerce.dtos.clone.PasswordDTO;
 import com.spring.ecomerce.dtos.clone.RegistryUserDTO;
-import com.spring.ecomerce.entities.Account;
-import com.spring.ecomerce.entities.OTP;
+import com.spring.ecomerce.dtos.clone.UpdateUserDTO;
+import com.spring.ecomerce.entities.clone.ImageEntity;
 import com.spring.ecomerce.entities.clone.UserEntity;
 import com.spring.ecomerce.repositories.AccountRepository.AccountRepository;
 import com.spring.ecomerce.repositories.OTPRepository.OTPRepository;
 import com.spring.ecomerce.repositories.UserRepository;
-import com.spring.ecomerce.securities.JwtUserDetails;
+import com.spring.ecomerce.services.ImageService;
 import com.spring.ecomerce.utils.EncodeUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BSONObject;
@@ -30,13 +30,15 @@ import java.util.*;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private  UserRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
     private AccountRepository accountRepository;
     @Autowired
     private MessageManager messageManager;
     @Autowired
     private OTPRepository otpRepository;
+    @Autowired
+    private ImageService imageService;
 
     @Override
     public Page<UserEntity> getAllUser(String phone, Integer page, Integer limit) {
@@ -45,7 +47,7 @@ public class UserServiceImpl implements UserService {
         BSONObject queryData = new BasicBSONObject();
         queryData.put("validFlg", 1);
         queryData.put("delFlg", 0);
-        if(!"".equals(phone)){
+        if (!"".equals(phone)) {
             Map<String, Object> queryName = new HashMap<>();
             queryName.put("$regex", ".*" + phone + ".*");
             queryData.put("name", queryName);
@@ -58,16 +60,16 @@ public class UserServiceImpl implements UserService {
         String phoneNumber = userDTO.getPhonenumber();
         String password = userDTO.getPassword();
 
-        if(phoneNumber == null || "".equals(phoneNumber)){
+        if (phoneNumber == null || "".equals(phoneNumber)) {
             return messageManager.getMessage("ERROR_EMPTY_FIELD", new String[]{"Phone number"});
         }
 
-        if(password == null || "".equals(phoneNumber)){
+        if (password == null || "".equals(phoneNumber)) {
             return messageManager.getMessage("ERROR_EMPTY_FIELD", new String[]{"Password"});
         }
 
         UserEntity userDuplicate = this.findUserByPhoneNumber(phoneNumber);
-        if(userDuplicate != null){
+        if (userDuplicate != null) {
             return messageManager.getMessage("ERROR_STORED", new String[]{"User"});
         }
 
@@ -83,7 +85,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public UserEntity createUser(RegistryUserDTO userDTO) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         String password = EncodeUtils.getPasswordHash(userDTO.getPassword(), "SHA1");
-        if("".equals(password)){
+        if ("".equals(password)) {
             return null;
         }
 
@@ -102,40 +104,62 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
-    public boolean changePasswordByOTP(String userName, String newPassword) {
-        if(newPassword == null) return false;
-        if("".equals(newPassword)) return false;
+    public UserEntity updateUser(String id, UpdateUserDTO updateUserDTO) {
+        Optional<UserEntity> userOptional = userRepository.findById(id);
+        if (userOptional.isPresent()) {
+            UserEntity userFound = userOptional.get();
+            if (updateUserDTO.getImage() != null) {
+                ImageEntity imageUser = imageService.findById(updateUserDTO.getImage());
+                if (imageUser != null) {
+                    userFound.setImage(imageUser);
+                }
+            }
 
-        OTP otp = otpRepository.findByPhoneNumberAndType(userName,1);
-        if(otp != null){
-            if(otp.isActive()){
-                Account account = accountRepository.findByPhoneNumber(userName);
-                account.setPassword(newPassword);
-                accountRepository.save(account);
+            if (updateUserDTO.getAddress() != null && !"".equals(updateUserDTO.getAddress())) {
+                userFound.setAddress(updateUserDTO.getAddress());
+            }
 
-                otpRepository.delete(otp);
-                return true;
+            if (updateUserDTO.getLastname() != null && !"".equals(updateUserDTO.getLastname())) {
+                userFound.setLastname(updateUserDTO.getLastname());
+            }
+
+            if (updateUserDTO.getFirstname() != null && !"".equals(updateUserDTO.getFirstname())) {
+                userFound.setFirstname(updateUserDTO.getFirstname());
+            }
+
+            if (updateUserDTO.getEmail() != null && !"".equals(updateUserDTO.getEmail())) {
+                userFound.setEmail(updateUserDTO.getEmail());
+            }
+
+            if(updateUserDTO.getRole() != null && !"".equals(updateUserDTO.getRole())){
+                userFound.setRole(updateUserDTO.getRole());
+            }
+
+            return userRepository.save(userFound);
+        }
+
+        return null;
+    }
+
+    @Override
+    public UserEntity findById(String id) {
+        Optional<UserEntity> userOption = userRepository.findById(id);
+        if (userOption.isPresent()) {
+            return userOption.get();
+        }
+        return null;
+    }
+
+    @Override
+    public UserEntity changePassword(UserEntity userLogin, PasswordDTO passwordDTO) {
+        if (passwordDTO.getPassword() != null && !"".equals(passwordDTO.getPassword()) && passwordDTO.getNew_password() != null
+                && !"".equals(passwordDTO.getNew_password()) && !passwordDTO.getNew_password().equals(passwordDTO.getPassword())) {
+            String password = EncodeUtils.getPasswordHash(passwordDTO.getPassword(), "SHA1");
+            if(password != null && password.equals(userLogin.getPassword())){
+                userLogin.setPassword(EncodeUtils.getPasswordHash(passwordDTO.getNew_password(), "SHA1"));
+                return userRepository.save(userLogin);
             }
         }
-        return false;
+        return null;
     }
-
-    @Override
-    public boolean changePasswordByLogin(JwtUserDetails userDetails, PasswordDTO passwordDTO) {
-        if(userDetails.getPassword().equals(passwordDTO.getOldPassword()) && passwordDTO.getNewPassword() != ""){
-            Account account = accountRepository.findByPhoneNumber(userDetails.getUsername());
-            account.setPassword(passwordDTO.getNewPassword());
-
-            accountRepository.save(account);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public boolean updateUser(UserEntity user) {
-        return userRepository.save(user)==null?false:true;
-    }
-
 }

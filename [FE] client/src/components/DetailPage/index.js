@@ -391,30 +391,6 @@ class DetailPage extends Component {
                         </div>}
                       </div>
                     </div>
-                    {/* <div className="tab-pane fade" id="like" role="tab" aria-labelledby="like-tab">
-                      <div className="row">
-                        {review && review.length > 0 ? (like ? (like.length > 0 ? like.map((product, index) => {
-                          return (
-                              <ProductItem product={product} key={index} />
-                            )
-                        }) : <div className="col-12 my-4">
-                        <div className="text-center my-5">
-                          <div className="h-120">
-                          <img className="h-100" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/a60759ad1dabe909c46a817ecbf71878.png" alt="404 not found"></img>
-                          </div>
-                          <h4>{t("detail.like.not-founded")}</h4>
-                        </div>
-                      </div>) : <Loader/>)
-                        : <div className="col-12 my-4">
-                        <div className="text-center my-5">
-                          <div className="h-120">
-                          <img className="h-100" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/a60759ad1dabe909c46a817ecbf71878.png" alt="404 not found"></img>
-                          </div>
-                          <h4>{t("detail.like.not-founded")}</h4>
-                        </div>
-                      </div>}
-                      </div>
-                    </div> */}
                     <div className="tab-pane fade show active" id="relate" role="tab" aria-labelledby="relate-tab">
                       <div className="row">
                         {product.description && product.description.length > 15 ? (relate ? relate.map((product, index) => {
@@ -445,14 +421,6 @@ class DetailPage extends Component {
                     <a className="nav-link" id="profile-tab" data-bs-toggle="tab" href="#specification" role="tab" aria-controls="profile"
                     aria-selected="false">{t('detail.specification.tab')}</a>
                   </li>
-                  {/* <li className="nav-item">
-                    <a className="nav-link" id="contact-tab" data-bs-toggle="tab" href="#comment" role="tab" aria-controls="contact"
-                    aria-selected="false">{t('detail.comment.tab')}</a>
-                  </li> */}
-                  {/* <li className="nav-item">
-                    <a className="nav-link active" id="review-tab" data-bs-toggle="tab" href="#review" role="tab" aria-controls="review"
-                    aria-selected="false">{t('detail.review.tab')}</a>
-                  </li> */}
                 </ul>
                 <div className="tab-content" id="myTabContent">
                   <div className="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="home-tab">
@@ -463,132 +431,17 @@ class DetailPage extends Component {
                       <table className="table">
                         <tbody>
                           {product && product.specifications.map((item,index)=>{
-                            /* eslint-disable */
                               return (
                               <tr key={index}>
                                 <td colSpan="1" style={{width: "30%"}} className="font-weight-bold" scope="row">{item.name}</td>
                                 <td colSpan="1" style={{width: "70%"}}>{item.selection.length > 0 ? this.setSelector(item.selection) : item.value}</td>
                               </tr>
                               )
-                            /* eslint-disable */
                             })}
                         </tbody>
                       </table>
                     </div>
                   </div>
-                  {/* <div className="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="contact-tab">
-                    <div className="row">
-                      <div className="col-12">
-                        <div className="fb-comments" data-href={`${LOCAL}/#/product/${product.pathseo}/${product.id}`} data-width="100%" data-numposts="5"></div>
-                      </div>
-                    </div>
-                  </div> */}
-                  {/* <div className="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
-                    <div className="row">
-                      <div className="col-lg-6">
-                        <div className="row total_rate">
-                          <div className="col-6">
-              
-                            <div className="box_total">
-                              <h5>Overall</h5>
-                              <h1>{product.stars ? product.stars : ""}</h1>
-                              <h6>({total} {t('common.review')})</h6>
-                            </div>
-                          </div>
-                          <div className="col-6">
-                            <div className="rating_list">
-                              <h3>{t('detail.base.on')} {total} {t('common.review')}</h3>
-                              {count && <ul className="list-unstyled">
-                                <li>5 Star <span className="mx-2"><Rating
-                                  initialRating={5}
-                                  emptySymbol="fa fa-star text-secondary"
-                                  fullSymbol="fa fa-star text-warning"
-                                  readonly
-                                  /></span>{count.find(i => i.id===5) ? count.find(i => i.id===5).count  : 0}</li>
-                                <li>4 Star <span className="mx-2"><Rating
-                                  initialRating={4}
-                                  emptySymbol="fa fa-star text-secondary"
-                                  fullSymbol="fa fa-star text-warning"
-                                  readonly
-                                  /></span>{count.find(i => i.id===4) ? count.find(i => i.id===4).count  : 0}</li>
-                                <li>3 Star <span className="mx-2"><Rating
-                                  initialRating={3}
-                                  emptySymbol="fa fa-star text-secondary"
-                                  fullSymbol="fa fa-star text-warning"
-                                  readonly
-                                  /></span>{count.find(i => i.id===3) ? count.find(i => i.id===3).count  : 0}</li>
-                                <li>2 Star <span className="mx-2"><Rating
-                                  initialRating={2}
-                                  emptySymbol="fa fa-star text-secondary"
-                                  fullSymbol="fa fa-star text-warning"
-                                  readonly
-                                /></span>{count.find(i => i.id===2) ? count.find(i => i.id===2).count  : 0}</li>
-                                <li>1 Star <span className="mx-2"><Rating
-                                  initialRating={1}
-                                  emptySymbol="fa fa-star text-secondary"
-                                  fullSymbol="fa fa-star text-warning"
-                                  readonly
-                                /></span>{count.find(i => i.id===1) ? count.find(i => i.id===1).count  : 0}</li>
-                              </ul>}
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="review_list">
-                          {review && review.length > 0 ? review.map((item, index)=>{
-                            return (
-                              <div className="row" key={index}>
-                                <div className="col-12">
-                                <div className="float-start mr-3">
-                                  <img className="rounded-circle square-60" src={item.user && item.user.image ? item.user.image.publicUrl : INITIAL_IMAGE} alt=""/>
-                                </div>
-                                <div className="">
-                                  <p className="font-weight-bold mb-0">{item.user && item.user.firstname} {item.user && item.user.lastname}</p>
-                                  <p className="mb-0"><Rating
-                                    initialRating={item.rating}
-                                    emptySymbol="fa fa-star text-secondary"
-                                    fullSymbol="fa fa-star text-warning"
-                                    readonly
-                                  /> | <span className="font-italic">{item.updatedAt.slice(0,10)}</span></p>
-                                  <p className="text-secondary mb-0">Màu sắc: {item.color.nameVn}</p>
-                                  <p className="mb-0">{item.content}</p>
-                                  <p className="directory rounded p-2 w-fit-content" onClick={()=> this.onLiked(item.id, item.like)}><i className="fa fa-thumbs-up text-secondary"></i><span className="ml-2 text-secondary">{item.like.length > 0 ? item.like.length :  `${t('detail.review.useful')}?`}</span></p>
-                                </div>
-                                </div>
-                              </div>
-                            )
-                          }) : <div className="row my-1">
-                          <div className="col-12">
-                              <div className="text-center my-5">
-                                <div className="h-120">
-                                  <img className="h-100" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/d3eb7b91baeb280516583f958b10f601.png" alt="404 not found"></img>
-                                </div>
-                                <h4>{t('detail.review.not-yet')}</h4>
-                              </div>
-                            </div>
-                          </div>}
-                        </div>
-                        {review && review.length > 0 && <div className="product-pagination text-center">
-                          <nav className="float-end">
-                            <Pagination
-                              activePage={filter.page ? parseInt(filter.page)+1 : 1}
-                              itemsCountPerPage={3}
-                              totalItemsCount={total ? total : 10}
-                              pageRangeDisplayed={3}
-                              linkClass="page-link"
-                              itemClass="page-item"
-                              prevPageText={t('shop.pagination.prev')}
-                              nextPageText={t('shop.pagination.next')}
-                              hideFirstLastPages={true}
-                              onChange={this.handlePageChange.bind(this)}
-                            />
-                            </nav>
-                          </div>}
-                      </div>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </section>

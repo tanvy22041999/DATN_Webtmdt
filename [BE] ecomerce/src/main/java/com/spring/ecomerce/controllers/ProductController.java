@@ -89,6 +89,32 @@ public class ProductController {
         return baseResponse.getResponseBody();
     }
 
+    @PutMapping()
+    public String updateNewProduct(@PathVariable(name = "id", required = false) String id, @RequestBody RegistryProductDTO productDTO) throws SystemException {
+        try{
+            String messageValidate = productService.validateProduct(productDTO);
+            if(messageValidate != null){
+                baseResponse.failed(404, messageValidate);
+                return baseResponse.getResponseBody();
+            }
+
+            ProductEntity result = productService.updateProduct(id,productDTO);
+            if(result == null){
+                baseResponse.failed(HttpStatus.SC_BAD_REQUEST, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
+            }
+            else {
+                baseResponse.created();
+                Map<String, Object> dataResponse = new HashMap<>();
+                dataResponse.put("product", result);
+                return baseResponse.getResponseBody(dataResponse);
+            }
+        }catch (Exception ex){
+            baseResponse.failed(HttpStatus.SC_INTERNAL_SERVER_ERROR, messageManager.getMessage("INTERNAL_ERROR_CREATE", null));
+        }
+
+        return baseResponse.getResponseBody();
+    }
+
     @GetMapping("/hot-sold")
     public  String gotHotSellProduct() throws  SystemException{
         try{

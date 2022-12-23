@@ -92,7 +92,7 @@ class UserInfoPage extends Component {
                       <i className="fa fa-unlock-alt rounded-circle bg-primary p-2 text-white h-36-px w-auto"></i>
                     </div>
                     <div className="col-9 align-self-center h-100 text-left" style={{fontWeight: 500}}>
-                      {t('user.change-password.button')}
+                      Thay đổi mật khẩu
                     </div>
                   </div>
                 </button>

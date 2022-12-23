@@ -15,4 +15,5 @@ public interface ProductService {
     List<ProductEntity> getHotSold();
 
     boolean saveAll(List<ProductEntity> productChanged);
+    ProductEntity updateProduct(String id, RegistryProductDTO productDTO);
 }

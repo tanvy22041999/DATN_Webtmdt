@@ -270,6 +270,138 @@ public class ProductServiceImpl implements ProductService {
         return true;
     }
 
+    @Override
+    public ProductEntity updateProduct(String id, RegistryProductDTO productDTO) {
+        Optional<ProductEntity> productOptional = productRepository.findById(id);
+        if(productOptional.isPresent()){
+            ProductEntity productEntity = productOptional.get();
+            productEntity.setName(productDTO.getName());
+            productEntity.setAmount(productDTO.getAmount());
+            productEntity.setPathseo(productDTO.getPathseo());
+            productEntity.setWarrently(productDTO.getWarrently());
+            productEntity.setCircumstance(productDTO.getCircumstance());
+            productEntity.setIncluded(productDTO.getIncluded());
+            productEntity.setBigimage(imageService.findById(productDTO.getBigimage()));
+
+            List<ImageEntity> imageSaved = new ArrayList<>();
+            List<String> imageIds = productDTO.getImage();
+            if(imageIds != null && imageIds.size() > 0){
+                for(String imageId : imageIds){
+                    ImageEntity imageEntity = imageService.findById(imageId);
+                    if(imageEntity != null){
+                        imageSaved.add(imageEntity);
+                    }
+                }
+            }
+            productEntity.setImage(imageSaved);
+
+            productEntity.setDescription(productDTO.getDescription());
+            productEntity.setDescText(productDTO.getDescText());
+            productEntity.setWeight(productDTO.getWeight());
+            productEntity.setHeight(productDTO.getHeight());
+            productEntity.setLength(productDTO.getLength());
+            productEntity.setWidth(productDTO.getWidth());
+            if(productDTO.getCategory() != null){
+                productEntity.setCategory(categoryService.findById(productDTO.getCategory()));
+            }
+            if(productDTO.getBrand() != null){
+                productEntity.setBrand(brandService.findById(productDTO.getBrand()));
+            }
+            if(productEntity.getGroup() != null){
+                productEntity.setGroup(groupService.findById(productDTO.getGroup()));
+            }
+
+            //Specification product
+            List<SpecifyProductDTO> specificationEntities = productDTO.getSpecifications();
+            if(specificationEntities != null && specificationEntities.size() > 0){
+                List<SpecifyProduct> specifyProducts = new ArrayList<>();
+                for (SpecifyProductDTO specification : specificationEntities){
+                    if(specification.getId() != null){
+                        SpecificationEntity specificationFound = specificationService.findById(specification.getId());
+                        if(specificationFound != null){
+                            SpecifyProduct specifyProduct = new SpecifyProduct();
+                            specifyProduct.setSpecification(specificationFound);
+                            specifyProduct.setName(specificationFound.getName());
+                            specifyProduct.setSelection(new ArrayList<>());
+                            specifyProduct.setValue("");
+                            if(specification.getValue() != null && !"".equals(specification.getValue())){
+                                String value = specification.getValue();
+                                String valueIdStr = value.replace("[","").replace("]","");
+                                String[] valueIds = valueIdStr.split(",");
+                                if(valueIds.length > 0){
+                                    List<SelectorEntity> seletorSelected = new ArrayList<>();
+                                    for(String valueId :  valueIds){
+                                        SelectorEntity selectorEntity = selectorService.findById(valueId);
+                                        if(selectorEntity != null){
+                                            seletorSelected.add(selectorEntity);
+                                        }
+                                    }
+                                    specifyProduct.setValue(value);
+                                    specifyProduct.setSelection(seletorSelected);
+                                }
+                            }
+                        }
+                    }
+                }
+                productEntity.setSpecifications(specifyProducts);
+            }
+
+
+            //Color
+            List<ColorProduct> colorSaved = new ArrayList<>();
+            List<ColorProductDTO> colors = productDTO.getColors();
+            List<ColorProductDTO> validColorProduct = new ArrayList<>();
+            if(colors != null && colors.size() > 0){
+                for(ColorProductDTO colorProduct: colors){
+                    ColorEntity colorEntity = colorService.findById(colorProduct.getId());
+                    if(colorEntity != null){
+                        validColorProduct.add(colorProduct);
+
+                        ColorProduct validColor = new ColorProduct();
+                        validColor.setNameEn(colorEntity.getNameVn());
+                        validColor.setNameVn(colorEntity.getNameVn());
+                        validColor.setAmount(colorProduct.getAmount());
+                        validColor.setPrice(colorProduct.getPrice());
+                        validColor.setRealPrice(colorProduct.getRealPrice());
+                        if(colorProduct.getImage() != null){
+                            ImageEntity imageColor = imageService.findById(colorProduct.getImage());
+                            if(imageColor != null){
+                                validColor.setImage(imageColor);
+                                validColor.setImageLink(imageColor.getPublicUrl());
+                            }
+                            else{
+                                validColor.setImageLink(colorProduct.getImageLink());
+                            }
+                        }
+                        colorSaved.add(validColor);
+                    }
+                }
+            }
+
+            List<Double> prices = validColorProduct.stream().map(item -> item.getPrice()).collect(Collectors.toList());
+            List<Double> realPrices = validColorProduct.stream().map(item -> item.getRealPrice()).collect(Collectors.toList());
+
+            if(prices.size() > 0){
+                Double minPrice = Collections.min(prices);
+                Double maxPrice = Collections.max(prices);
+                productEntity.setPriceMin(minPrice);
+                productEntity.setPriceMax(maxPrice);
+            }
+
+            if(realPrices.size() > 0){
+                Double realMinPrice = Collections.min(prices);
+                Double realMaxPrice = Collections.max(prices);
+                productEntity.setRealPriceMin(realMinPrice);
+                productEntity.setRealPriceMax(realMaxPrice);
+            }
+
+            productEntity.setColors(colorSaved);
+
+            return productRepository.save(productEntity);
+        }
+        return null;
+    }
+
     private ProductEntity findProductByKeyPairAndIgnoredCase(String key, String value){
         BSONObject queryData = new BasicBSONObject();
         queryData.put("validFlg", 1);
