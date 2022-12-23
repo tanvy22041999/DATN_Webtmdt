@@ -22,7 +22,7 @@ class UserInfoPage extends Component {
   componentDidMount(){
     const {onGetListCity} = this.props;
     onGetListCity();
-    document.title = "[TellMe] Trang bán hàng";
+    document.title = "[ApumStore] Trang bán hàng";
   }
 
   componentWillUnmount(){

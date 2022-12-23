@@ -256,7 +256,7 @@ class Header extends Component {
     }
     const { total, totalPrice, currencyCode, language, keyword, itemsCount, edit }=this.state;
     const {userInfo, isLogin, listCategories, t, listProducts, currency, location, listNotification, cart} = this.props;
-    const notVND = currencyCode==="VND" ? numberWithCommas(totalPrice) : numberWithCommas(parseFloat(tryConvert(totalPrice, currencyCode, false)).toFixed(2));
+    const notVND = currencyCode==="VND" ? numberWithCommas(totalPrice) : numberWithCommas(totalPrice);
     this.checkLogin(userInfo);
 
     return (
@@ -324,10 +324,10 @@ class Header extends Component {
                     <i className="fa fa-money-bill-wave"></i>
                     <select className="select-box" onChange={this.handleChangeCurrency} value={currencyCode}>
                       <option value="VND">{t('header.vnd.select')}</option>
-                      <option value="USD">{t('header.usd.select')}</option>
+                      {/* <option value="USD">{t('header.usd.select')}</option>
                       <option value="CNY">{t('header.cny.select')}</option>
                       <option value="EUR">{t('header.eur.select')}</option>
-                      <option value="JPY">{t('header.jpy.select')}</option>
+                      <option value="JPY">{t('header.jpy.select')}</option> */}
                     </select>
                     </li>
                     <li className="dropdown dropdown-small">

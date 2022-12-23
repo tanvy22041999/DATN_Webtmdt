@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RestController
-public class ngngtAdController {
+public class AdController {
 
     @Autowired
     private AdService adService;

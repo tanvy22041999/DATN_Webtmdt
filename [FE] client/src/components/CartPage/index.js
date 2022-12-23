@@ -20,7 +20,7 @@ class CartPage extends Component {
   }
 
   UNSAFE_componentWillMount() {
-    document.title = "[TellMe] Trang bán hàng"
+    document.title = "[ApumStore] Trang bán hàng"
   }
 
   componentDidUpdate(prevProps) {

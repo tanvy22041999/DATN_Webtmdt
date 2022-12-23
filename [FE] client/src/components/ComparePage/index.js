@@ -30,7 +30,7 @@ class ComparePage extends Component {
   }
 
   componentDidMount() {
-    document.title = "[TellMe] Trang bán hàng"
+    document.title = "[ApumStore] Trang bán hàng"
     const { onCompare, onGetCategory, location, match } = this.props;
     const { filter } = this.state;
     const filters = getFilterParams(location.search);

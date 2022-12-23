@@ -11,7 +11,8 @@ import AuthorizationActions from '../../redux/actions/auth'
 import ForgotPassword from './ForgotPass';
 import { toastError } from '../../utils/toastHelper';
 // @Constance
-
+import brandpng from '../../img/identification-documents.png'
+import bgsvg from '../../img/brand.png'
 class LoginPage extends Component {
 	constructor(props) {
 		super(props);
@@ -49,7 +50,7 @@ class LoginPage extends Component {
 	}
 
 	componentDidMount(){ 
-		document.title = "[TellMe] Đăng nhập"
+		document.title = "[ApumStore] Đăng nhập"
 		this.improveScreen()
 	}
 
@@ -86,13 +87,13 @@ class LoginPage extends Component {
 			<div>
 				<img className="wave" src={ assets("wave.png")} alt="" />
 				<div className="container_login">
-					<div className="img">
-						<img src={ assets("bg.svg")} alt="" />
+				<div className="img">
+						<img src={ bgsvg} alt="" />
 					</div>
 					<div className="login-content">
 						<form>
-							<h2 className="title">Trang đăng nhập</h2>
-							<img className="pb-4" src={assets("brand.png")} alt=""></img>
+							<h2 className="title">Trang đăng nhập khách hàng</h2>
+							<img className="pb-4" src={brandpng} alt=""></img>
 							<div className="input-div one">
 								<div className="i">
 									<i className="fas fa-user" />

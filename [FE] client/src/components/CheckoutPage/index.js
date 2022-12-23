@@ -75,7 +75,7 @@ class CheckoutPage extends Component {
   }
 
   componentDidMount() {
-    document.title = "[TellMe] Trang bán hàng"
+    document.title = "[ApumStore] Trang bán hàng"
     const {onGetListCity} = this.props;
     var total = 0;
     var totalPrice = 0;

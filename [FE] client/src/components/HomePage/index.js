@@ -28,7 +28,7 @@ class HomePage extends Component {
 
   componentDidMount(){
     const {onGetBestSeller, onGetNewest, onGetListAd} = this.props;
-    document.title = "[TellMe] Trang bán hàng"
+    document.title = "[ApumStore] Trang bán hàng"
     onGetListAd({active: 1});
     onGetBestSeller();
     onGetNewest();

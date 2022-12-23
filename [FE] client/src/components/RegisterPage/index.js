@@ -29,7 +29,7 @@ class RegisterPage extends Component {
     const {onGetListCity} = this.props;
 		onGetListCity();
 		
-		document.title = "[TellMe] Đăng ký"
+		document.title = "[ApumStore] Đăng ký"
 		this.improveScreen();
   }
 

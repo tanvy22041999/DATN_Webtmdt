@@ -68,7 +68,7 @@ class UserInstallmentPage extends Component {
 
   componentWillReceiveProps(props){
     const {authInfo} = this.props;
-    document.title = "[TellMe] Trang bán hàng"
+    document.title = "[ApumStore] Trang bán hàng"
     if(props.authInfo !== authInfo){
       const { onGetList, location } = this.props;
       const { filter } = this.state;
