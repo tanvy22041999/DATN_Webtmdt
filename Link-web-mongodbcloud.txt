@@ -3,4 +3,7 @@ https://cloud.mongodb.com/v2/635525d6c65bad461a302793#/metrics/replicaSet/635526
 Link deploy Backend
 https://be-apumstore-production.up.railway.app
 Link deploy Frontend web
-https://fe-apumstore.herokuapp.com
+HomePage
+https://apum-store.vercel.app/
+AdminPage
+https://admin-apum-store.vercel.app/
